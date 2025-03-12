@@ -1,0 +1,5 @@
+# Pinning to avoid unexpected breakages.
+# Used by RTD to generate docs.
+Sphinx==7.0.1
+sphinx-autoapi==2.1.1
+myst-parser==2.0.0

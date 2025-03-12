@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "geoenv"
+version = "0.0.0"
+description = "A Python library that links geographic coordinates to environmental properties at a global scale."
+authors = ["Colin Smith <colin.smith@wisc.edu>"]
+maintainers = ["Colin Smith <colin.smith@wisc.edu>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pandas = "^2.2.3"
+geopandas = "^1.0.1"
+daiquiri = "^3.3.0"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-cov = "^6.0.0"
+sphinx = "^8.2.3"
+sphinx-autoapi = "^3.6.0"
+myst-parser = "^4.0.1"
+pylint = "^3.3.5"
+black = "^25.1.0"
+python-semantic-release = "^9.21.0"
+pytest-mock = "^3.14.0"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:tool.poetry.version"] # version location
+branch = "main"                             # branch to make releases of
+build_command = "poetry build"              # build dists
+dist_path = "dist/"                         # where to put dists
+upload_to_release = true                    # auto-convert GitHub release
+upload_to_pypi = false                      # don't auto-upload to PyPI
+remove_dist = false                         # don't remove dists
+patch_without_tag = false                   # patch release by default
+
+[tool.semantic_release.changelog]
+template_dir = "docs/source/_templates/"    # changelog template directory
+
+[tool.pylint.'MESSAGES.CONTROL']
+disable = "too-many-public-methods,c-extension-no-member"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

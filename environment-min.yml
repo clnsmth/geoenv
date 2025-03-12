@@ -1,0 +1,20 @@
+name: geoenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13
+  - black
+  - myst-parser
+  - pylint
+  - pytest
+  - pytest-cov
+  - pytest-mock
+  - python-semantic-release
+  - sphinx
+  - sphinx-autoapi
+  - daiquiri
+  - geopandas
+  - pandas
+  - requests
+prefix: /opt/miniconda3/envs/geoenv
