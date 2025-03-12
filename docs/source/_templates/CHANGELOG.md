@@ -3,6 +3,13 @@
 
 
 
+## v0.1.1 (2025-03-12)
+
+
+### Bug fixes
+
+* fix: trivial change for testing release to PyPI ([`8e5e3c0`](https://github.com/clnsmth/geoenv/commit/8e5e3c09123051b86b90d348feaf5347a48bf7a2)) 
+
 ## v0.1.0 (2025-03-12)
 
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "geoenv"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python library that links geographic coordinates to environmental properties at a global scale."
 authors = ["Colin Smith <colin.smith@wisc.edu>"]
 maintainers = ["Colin Smith <colin.smith@wisc.edu>"]
