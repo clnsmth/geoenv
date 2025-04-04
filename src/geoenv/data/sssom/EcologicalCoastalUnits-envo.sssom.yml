@@ -1,0 +1,13 @@
+mapping_set_id: 19823746-5ca4-493d-b2cc-8ea849624170
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_set_version: 0.0.0.9000
+mapping_set_description: This mapping set is a manually curated alignment of Global Ecological Classification of Coastal Segment Units (ECU; https://doi.org/10.5066/P9HWHSPU) with the Environment Ontology (ENVO; http://purl.obolibrary.org/obo/envo.owl). Property alignment was created using the Simple Standard for Sharing Ontology Mappings (SSSOM; https://doi.org/10.1093/database/baac035). The motivation of this mapping is to facilitate the classification of environmental properties, in ENVO terms, via queries against the ECU data source. A high degree of precision was attempted. Note, the ECU terminology is not a part of a formal semantic resource with web resolvable entities. Therefore, values in the subject_id field of EcologicalCoastalUnits-envo.sssom.tsv (CURIEs), will not be web resolvable once expanded. The curie_map property for ECU below, lists the authoritative definitions for the mapped ECU ecosystem attributes, which takes the form of a research article.
+subject_source: https://doi.org/10.5670/oceanog.2021.219
+subject_source_version: NA
+object_source: http://purl.obolibrary.org/obo/envo.owl
+object_source_version: http://purl.obolibrary.org/obo/envo/releases/2024-07-01/envo.owl
+curie_map:
+  ECU: https://doi.org/10.5670/oceanog.2021.219
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  SSSOM: https://w3id.org/sssom/
+  PATO: http://purl.obolibrary.org/obo/PATO_

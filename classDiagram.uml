@@ -1,0 +1,61 @@
+@startuml
+package "geoenv" {
+
+    class Resolver {
+        + data_source : DataSource[*]
+        + Resolver(data_source : DataSource[*])
+        + resolve(geometry : Geometry, semantic_resource : string) : Response
+    }
+
+    interface DataSource {
+        + data : dictionary
+        + geometry : dictionary
+        + properties : dictionary
+        + DataSource()
+        + convert_data() : Environment[0..*]
+        + get_environment(geometry : Geometry) : Environment[0..*]
+        + has_environment() : bool
+        + unique_environment() : dictionary[*]
+    }
+
+    class WorldTerrestrialEcosystems implements DataSource {
+    }
+
+    class EcologicalCoastalUnits implements DataSource {
+    }
+
+    class EcologicalMarineUnits implements DataSource {
+    }
+
+    class Geometry {
+        + data : dictionary
+        + Geometry(geometry : dictionary)
+        + geometry_type() : string
+        + is_supported() : bool
+        + point_to_polygon(buffer : float) : dictionary
+        + polygon_to_points(grid_size : float) : geometry[0..*]
+        + to_esri() : dictionary
+    }
+
+    class Environment {
+        + data : dictionary
+        + Environment(data : dictionary)
+    }
+
+    class Response {
+        + data : dictionary
+        + properties : dictionary
+        + Response(data : dictionary)
+        + apply_term_mapping(semantic_resource : string) : Response
+        + read(file_path : string) : Response
+        + to_schema_org() : dictionary
+        + write(file_path : string)
+    }
+
+    Resolver "1" -- "1..*" DataSource
+    Resolver "1" -- "1" Response
+    Resolver "1" -- "1" Geometry
+    DataSource "1" -- "0..*" Environment
+    DataSource "1" -- "1" Geometry
+}
+@enduml

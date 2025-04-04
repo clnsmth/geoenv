@@ -1,0 +1,41 @@
+subject_category	subject_id	subject_label	predicate_id	object_id	object_label	confidence	comment	mapping_justification	mapping_date	creator_id
+EMU:OceanName	EMU:Arctic	Arctic	skos:exactMatch	GAZ:00000323	Arctic Ocean	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:Baltic Sea	Baltic Sea	skos:exactMatch	GAZ:00002283	Baltic Sea	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:Indian Ocean	Indian Ocean	skos:exactMatch	GAZ:00000372	Indian Ocean	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:Mediterranean Sea	Mediterranean Sea	skos:exactMatch	GAZ:00002287	Mediterranean Sea	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:North Atlantic	North Atlantic	skos:exactMatch	GAZ:00000377	North Atlantic Ocean	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:North Pacific	North Pacific	skos:exactMatch	GAZ:00002410	North Pacific Ocean	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:South Atlantic	South Atlantic	skos:exactMatch	GAZ:00000378	South Atlantic Ocean	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:South China Sea	South China Sea	skos:exactMatch	GAZ:00008989	South China Sea	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:South Pacific	South Pacific	skos:exactMatch	GAZ:00002418	South Pacific Ocean	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:OceanName	EMU:Southern	Southern	skos:exactMatch	GAZ:00000373	Southern Ocean	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Depth	EMU:Epipelagic	Epipelagic	skos:exactMatch	ENVO:00000209	marine photic zone	1	The subject is an exact synonym of the object.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Depth	EMU:Mesopelagic	Mesopelagic	skos:exactMatch	ENVO:00000213	marine mesopelagic zone	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Depth	EMU:Bathypelagic	Bathypelagic	skos:exactMatch	ENVO:00000211	marine bathypelagic zone	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Depth	EMU:Abyssopelagic	Abyssopelagic	skos:exactMatch	ENVO:00000212	ENVO:00000212	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Temperature	EMU:Warm to Very Warm	Warm to Very Warm	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Temperature	EMU:Moderate to Cool	Moderate to Cool	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Temperature	EMU:Cold	Cold	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Temperature	EMU:Very Cold	Very Cold	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Temperature	EMU:Frozen/Superchilled	Frozen/Superchilled	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Salinity	EMU:Euhaline	Euhaline	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Salinity	EMU:Hyperhaline	Hyperhaline	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Salinity	EMU:Lower Polyhaline	Lower Polyhaline	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Salinity	EMU:Upper Polyhaline	Upper Polyhaline	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Salinity	EMU:Oligohaline	Oligohaline	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Salinity	EMU:Mesohaline	Mesohaline	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Dissolved Oxygen	EMU:Highly Oxic	Highly Oxic	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Dissolved Oxygen	EMU:Very Oxic 	Very Oxic 	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Dissolved Oxygen	EMU:Oxic	Oxic	skos:closeMatch	ENVO:01001063	oxic water	0.8	The object definition is not as precise as the subject definition.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Dissolved Oxygen	EMU:Hypoxic	Hypoxic	skos:exactMatch	ENVO:01001064	hypoxic water	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Dissolved Oxygen	EMU:Severely Hypoxic	Severely Hypoxic	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Dissolved Oxygen	EMU:Anoxic	Anoxic	skos:exactMatch	ENVO:01000173	anoxic water	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Nitrate	EMU:High Nitrate	High Nitrate	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Nitrate	EMU:Medium Nitrate 	Medium Nitrate 	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Nitrate	EMU:Low Nitrate	Low Nitrate	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Phosphate	EMU:High Phosphate	High Phosphate	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Phosphate	EMU:Medium Phosphate	Medium Phosphate	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Phosphate	EMU:Low Phosphate	Low Phosphate	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Silicate	EMU:High Silicate	High Silicate	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Silicate	EMU:Medium Silicate 	Medium Silicate 	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+EMU:Silicate	EMU:Low Silicate	Low Silicate	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931

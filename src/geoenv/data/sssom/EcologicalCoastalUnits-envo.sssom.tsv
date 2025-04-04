@@ -1,0 +1,33 @@
+subject_category	subject_id	subject_label	predicate_id	object_id	object_label	confidence	comment	mapping_justification	mapping_date	creator_id
+ECU:Slope	ECU:Flat	Flat	skos:exactMatch	PATO:0000407	flat	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Slope	ECU:Sloping	Sloping	skos:exactMatch	PATO:0001481	sloped	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Slope	ECU:Steeply Sloping	Steeply Sloping	skos:broadMatch	PATO:0001481	sloped	1	The subject has a "steeply" qualifier that the object lacks.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Slope	ECU:Vertical	Vertical	skos:exactMatch	PATO:0001854	vertical	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Sinuosity	ECU:Straight	Straight	skos:exactMatch	PATO:0002180	straight	1	Definitions match.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Sinuosity	ECU:Sinuous	Sinuous	skos:closeMatch	PATO:0000967	undulate	1	The subject is a related synonym of the object.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Sinuosity	ECU:Very Sinuous	Very Sinuous	skos:broadMatch	PATO:0000967	undulate	1	The subject has a "very" qualifier that the object lacks.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Erodibility	ECU:High Erodibility	High Erodibility	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Erodibility	ECU:Medium Erodibility	Medium Erodibility	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Erodibility	ECU:Low Erodibility	Low Erodibility	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:River Discharge	ECU:Low River Discharge	Low River Discharge	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:River Discharge	ECU:Moderate River Discharge	Moderate River Discharge	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:River Discharge	ECU:High River Discharge	High River Discharge	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Wave Height	ECU:Quiescent	Quiescent	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Wave Height	ECU:Very Low Wave Energy	Very Low Wave Energy	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Wave Height	ECU:Low Wave Energy	Low Wave Energy	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Wave Height	ECU:Moderate Wave Energy	Moderate Wave Energy	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Wave Height	ECU:Moderately High Wave Energy	Moderately High Wave Energy	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Wave Height	ECU:High Wave Energy	High Wave Energy	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Wave Height	ECU:Very High Wave Energy	Very High Wave Energy	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Tidal Range	ECU:Atidal	Atidal	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Tidal Range	ECU:Microtidal	Microtidal	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Tidal Range	ECU:Minimally Tidal	Minimally Tidal	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Tidal Range	ECU:Moderately Tidal	Moderately Tidal	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Tidal Range	ECU:Macrotidal	Macrotidal	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Tidal Range	ECU:Megatidal	Megatidal	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Turbidity	ECU:Clear	Clear	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Turbidity	ECU:Moderately Turbid	Moderately Turbid	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Turbidity	ECU:Turbid	Turbid	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-03	https://orcid.org/0000-0003-2261-9931
+ECU:Chlorophyll	ECU:Low Chlorophyll	Low Chlorophyll	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-12	https://orcid.org/0000-0003-2261-9931
+ECU:Chlorophyll	ECU:Moderate Chlorophyll	Moderate Chlorophyll	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-12	https://orcid.org/0000-0003-2261-9931
+ECU:Chlorophyll	ECU:High Chlorophyll	High Chlorophyll	skos:exactMatch	SSSOM:NoMapping		0.8	The subject is not in ENVO.	semapv:ManualMappingCuration	2025-02-12	https://orcid.org/0000-0003-2261-9931

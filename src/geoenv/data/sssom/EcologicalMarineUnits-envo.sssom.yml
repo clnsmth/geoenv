@@ -1,0 +1,13 @@
+mapping_set_id: 7233be45-bf3b-4244-94b2-4fa6b8f66943
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_set_version: 0.0.0.9000
+mapping_set_description: This mapping set is a manually curated alignment of Ecological Marine Units 2023 (EMU; https://doi.org/10.5066/P9Q6ZSGN) with the Environment Ontology (ENVO; http://purl.obolibrary.org/obo/envo.owl). Property alignment was created using the Simple Standard for Sharing Ontology Mappings (SSSOM; https://doi.org/10.1093/database/baac035). The motivation of this mapping is to facilitate the classification of environmental properties, in ENVO terms, via queries against the EMU data source. A high degree of precision was attempted. Note, the EMU terminology is not a part of a formal semantic resource with web resolvable entities. Therefore, values in the subject_id field of EcologicalMarineUnits-envo.sssom.tsv (CURIEs), will not be web resolvable once expanded. The curie_map property for EMU below, lists the authoritative definitions for the mapped EMU ecosystem attributes, which takes the form of a research article.
+subject_source: https://doi.org/10.5670/oceanog.2017.116
+subject_source_version: NA
+object_source: http://purl.obolibrary.org/obo/envo.owl
+object_source_version: http://purl.obolibrary.org/obo/envo/releases/2024-07-01/envo.owl
+curie_map:
+  EMU: https://doi.org/10.5670/oceanog.2017.116
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  SSSOM: https://w3id.org/sssom/
+  GAZ: http://purl.obolibrary.org/obo/GAZ_

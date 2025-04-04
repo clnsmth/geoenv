@@ -1,0 +1,703 @@
+{
+    "objectIdFieldName": "OBJECTID",
+    "uniqueIdField": {
+        "name": "OBJECTID",
+        "isSystemMaintained": true
+    },
+    "globalIdFieldName": "",
+    "geometryType": "esriGeometryPoint",
+    "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+    },
+    "fields": [
+        {
+            "name": "UnitTop",
+            "type": "esriFieldTypeSmallInteger",
+            "alias": "Unit Top",
+            "sqlType": "sqlTypeOther",
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "UnitBottom",
+            "type": "esriFieldTypeSmallInteger",
+            "alias": "Unit Bottom",
+            "sqlType": "sqlTypeOther",
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "OceanName",
+            "type": "esriFieldTypeSmallInteger",
+            "alias": "Ocean Name",
+            "sqlType": "sqlTypeOther",
+            "domain": {
+                "type": "codedValue",
+                "name": "Ocean_ID",
+                "mergePolicy": "esriMPTDefaultValue",
+                "splitPolicy": "esriSPTDefaultValue",
+                "codedValues": [
+                    {
+                        "name": "Arctic",
+                        "code": 1
+                    },
+                    {
+                        "name": "Baltic Sea",
+                        "code": 2
+                    },
+                    {
+                        "name": "Indian Ocean",
+                        "code": 3
+                    },
+                    {
+                        "name": "Mediterranean Sea",
+                        "code": 4
+                    },
+                    {
+                        "name": "North Atlantic",
+                        "code": 5
+                    },
+                    {
+                        "name": "North Pacific",
+                        "code": 6
+                    },
+                    {
+                        "name": "South Atlantic",
+                        "code": 7
+                    },
+                    {
+                        "name": "South China Sea",
+                        "code": 8
+                    },
+                    {
+                        "name": "South Pacific",
+                        "code": 9
+                    },
+                    {
+                        "name": "Southern",
+                        "code": 10
+                    }
+                ]
+            },
+            "defaultValue": null
+        },
+        {
+            "name": "Name_2018",
+            "type": "esriFieldTypeSmallInteger",
+            "alias": "Name 2018",
+            "sqlType": "sqlTypeOther",
+            "domain": {
+                "type": "codedValue",
+                "name": "Cluster_Number_EMU_Name",
+                "mergePolicy": "esriMPTDefaultValue",
+                "splitPolicy": "esriSPTDefaultValue",
+                "codedValues": [
+                    {
+                        "name": "n/a",
+                        "code": 0
+                    },
+                    {
+                        "name": "Mesopelagic, Cold, Polyhaline, Severely Hypoxic, Low Nitrate, Medium Phosphate, High Silicate",
+                        "code": 1
+                    },
+                    {
+                        "name": "Epipelagic, Cold, Polyhaline, Hypoxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 2
+                    },
+                    {
+                        "name": "Bathypelagic, Very Cold, Euhaline, Severely Hypoxic, High Nitrate, Medium Phosphate, High Silicate",
+                        "code": 3
+                    },
+                    {
+                        "name": "Mesopelagic, Cold, Polyhaline, Severely Hypoxic, Low Nitrate, High Phosphate, High Silicate",
+                        "code": 4
+                    },
+                    {
+                        "name": "Epipelagic, Superchilled, Polyhaline, Highly Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 5
+                    },
+                    {
+                        "name": "Epipelagic, Cold, Polyhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 6
+                    },
+                    {
+                        "name": "Epiplagic, Moderate to Cool, Mesohaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 7
+                    },
+                    {
+                        "name": "Epipelagic, Moderate to Cool, Euhaline, Oxic, Medium Nitrate, Low Phosphate, Low Silicate",
+                        "code": 8
+                    },
+                    {
+                        "name": "Mesopelagic, Moderate to Cool, Euhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 9
+                    },
+                    {
+                        "name": "Mesopelagic, Cold, Euhaline, Severely Hypoxic, High Nitrate, Low Phosphate, Low Silicate",
+                        "code": 10
+                    },
+                    {
+                        "name": "Epipelagic, Moderate to Cool, Euhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 11
+                    },
+                    {
+                        "name": "Epipelagic, Very Cold, Mesohaline, Severely Hypoxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 12
+                    },
+                    {
+                        "name": "Bathypelagic, Very Cold, Euhaline, Hypoxic, High Nitrate, Medium Phosphate, High Silicate",
+                        "code": 13
+                    },
+                    {
+                        "name": "Bathypelagic, Very Cold, Euhaline, Oxic, High Nitrate, Low Phosphate, High Silicate",
+                        "code": 14
+                    },
+                    {
+                        "name": "Bathypelagic, Cold, Polyhaline, Anoxic, Low Nitrate, High Phosphate, High Silicate",
+                        "code": 15
+                    },
+                    {
+                        "name": "Epipelagic, Very Cold, Mesohaline, Highly Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 16
+                    },
+                    {
+                        "name": "Epipelagic, Cold, Mesohaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 17
+                    },
+                    {
+                        "name": "Epipelagic, Warm to Very Warm, Euhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 18
+                    },
+                    {
+                        "name": "Epipelagic, Cold, Euhaline, Oxic, Medium Nitrate, Low Phosphate, Low Silicate",
+                        "code": 19
+                    },
+                    {
+                        "name": "Epipelagic, Very Cold, Mesohaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 20
+                    },
+                    {
+                        "name": "Epipelagic, Warm to Very Warm, Euhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 21
+                    },
+                    {
+                        "name": "Epipelagic, Frozen/Superchilled, Euhaline, Highly Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 23
+                    },
+                    {
+                        "name": "Epipelagic, Warm to Very Warm, Euhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 24
+                    },
+                    {
+                        "name": "Epipelagic, Frozen/Superchilled, Euhaline, Highly Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 25
+                    },
+                    {
+                        "name": "Mesopelagic, Moderate to Cool, Euhaline, Hypoxic, Medium Nitrate, Low Phosphate, Low Silicate",
+                        "code": 26
+                    },
+                    {
+                        "name": "Epipelagic, Very Cold, Polyhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 27
+                    },
+                    {
+                        "name": "Epiplagic, Moderate to Cool, Mesohaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 28
+                    },
+                    {
+                        "name": "Bathypelagic, Very Cold, Euhaline, Oxic, Medium Nitrate, Low Phosphate, Low Silicate",
+                        "code": 29
+                    },
+                    {
+                        "name": "Epipelagic, Very Cold, Euhaline, Oxic, Medium Nitrate, Low Phosphate, Low Silicate",
+                        "code": 30
+                    },
+                    {
+                        "name": "Epipelagic, Frozen/Superchilled, Euhaline, Oxic, Medium Nitrate, Low Phosphate, Medium Silicate",
+                        "code": 31
+                    },
+                    {
+                        "name": "Epipelagic, Warm to Very Warm, Mesohaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 32
+                    },
+                    {
+                        "name": "Mesopelagic, Very Cold, Euhaline, Severely Hypoxic, High Nitrate, Medium Phosphate, Medium Silicate",
+                        "code": 33
+                    },
+                    {
+                        "name": "Epipelagic, Frozen/Superchilled, Euhaline, Oxic, Low Nitrate, Low Phosphate, Low Silicate",
+                        "code": 35
+                    },
+                    {
+                        "name": "Bathypelagic, Very Cold, Euhaline, Oxic, Medium Nitrate, Low Phosphate, Low Silicate",
+                        "code": 36
+                    },
+                    {
+                        "name": "Bathypelagic, Very Cold, Euhaline, Oxic, High Nitrate, Low Phosphate, Medium Silicate",
+                        "code": 37
+                    }
+                ]
+            },
+            "defaultValue": null
+        }
+    ],
+    "features": [
+        {
+            "attributes": {
+                "UnitTop": 0,
+                "UnitBottom": -5,
+                "OceanName": 6,
+                "Name_2018": 18
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -5,
+                "UnitBottom": -10,
+                "OceanName": 6,
+                "Name_2018": 18
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -10,
+                "UnitBottom": -15,
+                "OceanName": 6,
+                "Name_2018": 18
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -15,
+                "UnitBottom": -20,
+                "OceanName": 6,
+                "Name_2018": 18
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -20,
+                "UnitBottom": -25,
+                "OceanName": 6,
+                "Name_2018": 18
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -25,
+                "UnitBottom": -30,
+                "OceanName": 6,
+                "Name_2018": 18
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -30,
+                "UnitBottom": -35,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -35,
+                "UnitBottom": -40,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -40,
+                "UnitBottom": -45,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -45,
+                "UnitBottom": -50,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -50,
+                "UnitBottom": -55,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -55,
+                "UnitBottom": -60,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -60,
+                "UnitBottom": -65,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -65,
+                "UnitBottom": -70,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -70,
+                "UnitBottom": -75,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -75,
+                "UnitBottom": -80,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -80,
+                "UnitBottom": -85,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -85,
+                "UnitBottom": -90,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -90,
+                "UnitBottom": -95,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -95,
+                "UnitBottom": -100,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -100,
+                "UnitBottom": -125,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -125,
+                "UnitBottom": -150,
+                "OceanName": 6,
+                "Name_2018": 24
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -150,
+                "UnitBottom": -175,
+                "OceanName": 6,
+                "Name_2018": 11
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -175,
+                "UnitBottom": -200,
+                "OceanName": 6,
+                "Name_2018": 11
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -200,
+                "UnitBottom": -225,
+                "OceanName": 6,
+                "Name_2018": 11
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -225,
+                "UnitBottom": -250,
+                "OceanName": 6,
+                "Name_2018": 26
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -250,
+                "UnitBottom": -275,
+                "OceanName": 6,
+                "Name_2018": 8
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -275,
+                "UnitBottom": -300,
+                "OceanName": 6,
+                "Name_2018": 8
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -300,
+                "UnitBottom": -325,
+                "OceanName": 6,
+                "Name_2018": 8
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -325,
+                "UnitBottom": -350,
+                "OceanName": 6,
+                "Name_2018": 8
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -350,
+                "UnitBottom": -375,
+                "OceanName": 6,
+                "Name_2018": 8
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -375,
+                "UnitBottom": -400,
+                "OceanName": 6,
+                "Name_2018": 8
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -400,
+                "UnitBottom": -425,
+                "OceanName": 6,
+                "Name_2018": 19
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -425,
+                "UnitBottom": -450,
+                "OceanName": 6,
+                "Name_2018": 19
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -450,
+                "UnitBottom": -475,
+                "OceanName": 6,
+                "Name_2018": 19
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -475,
+                "UnitBottom": -500,
+                "OceanName": 6,
+                "Name_2018": 19
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -500,
+                "UnitBottom": -550,
+                "OceanName": 6,
+                "Name_2018": 19
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -600,
+                "UnitBottom": -650,
+                "OceanName": 6,
+                "Name_2018": 19
+            },
+            "geometry": {
+                "x": -157.875,
+                "y": 21.124999999999982
+            }
+        }
+    ]
+}

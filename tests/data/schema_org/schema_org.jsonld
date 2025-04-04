@@ -1,0 +1,80 @@
+{
+    "@context": "https://schema.org/",
+    "@id": "5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
+    "@type": "Place",
+    "description": "Point on land",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.905931,
+        "longitude": -122.622364,
+        "elevation": null
+    },
+    "additionalProperty": [
+        {
+            "@type": "PropertyValue",
+            "name": "Spatial reference system",
+            "propertyID": "https://dbpedia.org/page/Spatial_reference_system",
+            "value": "https://www.w3.org/2003/01/geo/wgs84_pos"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "temperature",
+            "value": "Warm Temperate"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "moisture",
+            "value": "Moist"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "landCover",
+            "value": "Cropland"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "landForm",
+            "value": "Mountains"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "climate",
+            "value": "Warm Temperate Moist"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "ecosystem",
+            "value": "Warm Temperate Moist Cropland on Mountains"
+        }
+    ],
+    "keywords": [
+        {
+            "@id": "http://purl.obolibrary.org/obo/ENVO_01000206",
+            "@type": "DefinedTerm",
+            "name": "temperate",
+            "inDefinedTermSet": "https://ontobee.org/ontology/ENVO",
+            "termCode": "ENVO_01000206"
+        },
+        {
+            "@id": "http://purl.obolibrary.org/obo/ENVO_01000828",
+            "@type": "DefinedTerm",
+            "name": "humid air",
+            "inDefinedTermSet": "https://ontobee.org/ontology/ENVO",
+            "termCode": "ENVO_01000828"
+        },
+        {
+            "@id": "http://purl.obolibrary.org/obo/ENVO_01000892",
+            "@type": "DefinedTerm",
+            "name": "area of cropland",
+            "inDefinedTermSet": "https://ontobee.org/ontology/ENVO",
+            "termCode": "ENVO_01000892"
+        },
+        {
+            "@id": "http://purl.obolibrary.org/obo/ENVO_00000080",
+            "@type": "DefinedTerm",
+            "name": "mountain range",
+            "inDefinedTermSet": "https://ontobee.org/ontology/ENVO",
+            "termCode": "ENVO_00000080"
+        }
+    ]
+}

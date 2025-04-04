@@ -1,0 +1,12 @@
+mapping_set_id: 331bdb03-3d62-4131-a343-f4e8f6f3e2be
+license: https://creativecommons.org/publicdomain/zero/1.0/
+mapping_set_version: 0.0.0.9000
+mapping_set_description: This mapping set is a manually curated alignment of World Terrestrial Ecosystems 2020 (WTE; https://doi.org/10.5066/P9DO61LP) with the Environment Ontology (ENVO; http://purl.obolibrary.org/obo/envo.owl). Property alignment was created using the Simple Standard for Sharing Ontology Mappings (SSSOM; https://doi.org/10.1093/database/baac035). The motivation of this mapping is to facilitate the classification of environmental properties, in ENVO terms, via queries against the WTE data source. A high degree of precision was attempted. Note, the WTE terminology is not a part of a formal semantic resource with web resolvable entities. Therefore, values in the subject_id field of WorldTerrestrialEcosystems-envo.sssom.tsv (CURIEs), will not be web resolvable once expanded. The curie_map property for WTE below, lists the authoritative definitions for the mapped WTE ecosystem attributes, which takes the form of a research article.
+subject_source: https://doi.org/10.1016/j.gecco.2019.e00860
+subject_source_version: NA
+object_source: http://purl.obolibrary.org/obo/envo.owl
+object_source_version: http://purl.obolibrary.org/obo/envo/releases/2024-07-01/envo.owl
+curie_map:
+  WTE: https://doi.org/10.1016/j.gecco.2019.e00860
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  SSSOM: https://w3id.org/sssom/

@@ -1,5 +1,5 @@
 Welcome to `geoenv`
-==============================================
+===================
 
 Release v\ |version|. (:ref:`Installation <quickstart>`)
 
@@ -15,22 +15,118 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
     :target: https://codecov.io/github/clnsmth/geoenv
     :alt: Code coverage status
 
-A Python library that links geographic coordinates to environmental properties at a global scale.
+`geoenv` is a Python library that links geographic coordinates to environmental properties at a global scale. These properties are described using the terminology of the source data, with options to map to other semantic resources, including controlled vocabularies and ontologies. By default, `geoenv` maps to ENVO (`Environment Ontology`_).
 
--------------------
+If you know of a data source, vocabulary, or ontology that could enhance this effort, please share it—even if it overlaps with existing resources.
 
-Brief introduction
+.. _Environment Ontology: https://sites.google.com/site/environmentontology/
 
-The User Guide
---------------
+Motivation
+----------
 
-This part of the documentation begins with some background information about `geoenv`, then focuses on step-by-step instructions for getting the most out of it.
+There is a vast amount of data available from diverse sources, and geoenv offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
 
-.. toctree::
-   :maxdepth: 2
+Quick Start
+-----------
 
-   user/quickstart
-   user/support
+Install the current release from GitHub.
+
+.. code-block:: bash
+
+    pip install git+https://github.com/clnsmth/geoenv.git@main
+
+Resolve a geometry to its environment(s).
+
+.. code-block:: python
+
+    from geoenv.data_sources import WorldTerrestrialEcosystems
+    from geoenv.resolver import Resolver
+    from geoenv.geometry import Geometry
+
+    # Create a geometry in GeoJSON format
+    point_on_land = {
+        "type": "Point",
+        "coordinates": [
+            -122.622364,
+            37.905931
+        ]
+    }
+    geometry = Geometry(point_on_land)
+
+    # Configure the resolver with one or more data sources
+    resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
+
+    # Resolve the geometry to environmental descriptions
+    response = resolver.resolve(
+        geometry,
+        identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
+        description="Point on land",
+    )
+
+The response is a GeoJSON Feature containing a list of environments and their associated properties. These properties map to semantic resources, ENVO by default.
+
+.. code-block:: json
+
+    {
+      "type": "Feature",
+      "identifier": "5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.622364,
+          37.905931
+        ]
+      },
+      "properties": {
+        "description": "Point on land",
+        "environment": [
+          {
+            "type": "Environment",
+            "dataSource": {
+              "identifier": "https://doi.org/10.5066/P9DO61LP",
+              "name": "WorldTerrestrialEcosystems"
+            },
+            "dateCreated": "2025-03-07 15:53:09",
+            "properties": {
+              "temperature": "Warm Temperate",
+              "moisture": "Moist",
+              "landCover": "Cropland",
+              "landForm": "Mountains",
+              "climate": "Warm Temperate Moist",
+              "ecosystem": "Warm Temperate Moist Cropland on Mountains"
+            },
+            "mappedProperties": [
+              {
+                "label": "temperate",
+                "uri": "http://purl.obolibrary.org/obo/ENVO_01000206"
+              },
+              {
+                "label": "humid air",
+                "uri": "http://purl.obolibrary.org/obo/ENVO_01000828"
+              },
+              {
+                "label": "area of cropland",
+                "uri": "http://purl.obolibrary.org/obo/ENVO_01000892"
+              },
+              {
+                "label": "mountain range",
+                "uri": "http://purl.obolibrary.org/obo/ENVO_00000080"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+
+Format the response as Schema.org.
+
+.. code-block:: python
+
+    schema_org = response.to_schema_org()
+
+
+
 
 The API Documentation / Guide
 -----------------------------

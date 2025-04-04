@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'geoenv'
-copyright = '2023, Colin Smith'
+copyright = '2025, Colin Smith'
 author = 'Colin Smith'
 release = '0.0.0'
 
