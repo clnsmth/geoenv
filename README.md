@@ -16,6 +16,8 @@
   </a>
 </p>
 
+# geoenv
+
 ---
 
 **Documentation**: [https://geoenv.readthedocs.io/en/latest/](https://geoenv.readthedocs.io/en/latest/)
@@ -24,9 +26,7 @@
 
 ---
 
-## What is `geoenv`?
-
-**geoenv** is a Python library that links geographic locations—like points and polygons—to environmental descriptions using global datasets and semantic vocabularies.
+`geoenv` is a Python library that links geographic locations—like points and polygons—to environmental descriptions using global datasets and semantic vocabularies.
 
 It’s like reverse geocoding, but for **environments**.
 
@@ -140,7 +140,9 @@ The result is a GeoJSON Feature with structured environments mapped to ENVO (by 
 
 ```
 
-But how do I link results back to my data? 
+---
+
+### But how do I link results back to my data? 
 
 That's what the resolver's `identifier` and `description` parameters are for. Set these to what ever values are useful for your application.
 
@@ -168,6 +170,10 @@ These will then be displayed in the GeoJSON response and accessible whenever you
 
 ```
 
+---
+
+### Can I resolve against multiple data sources?
+
 But we don't always know where a geometry will resolve to. That's OK. We can configure the resolver with a list of data sources to query and it will try them all.
 
 ```python
@@ -193,6 +199,10 @@ The response is a list of environments listing each data source.
 ```json
 response
 ```
+---
+
+### Support for Schema.org?
+
 
 We may want to represent this in Schema.org format. The response is already structured to be easily converted to Schema.org. 
 
@@ -205,25 +215,10 @@ Presto
 ```json
 schema.org example
 ```
-
----
-
-## Coming Soon
-- Support for additional data sources (e.g., marine, freshwater)
-
-- Expanded ontology mapping (Wikidata, SWEET, etc.)
-
-- CLI tool for batch resolution
-
-- Caching and local fallback
-
 ---
 
 ## Motivation
-Environmental data is siloed across formats, vocabularies, and sources.
-geoenv helps bridge those gaps by exposing environmental semantics directly from geometry.
-
-It’s designed to make integrated analysis easier—and more reusable.
+There is a vast amount of data available from diverse sources, and `geoenv` offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
 
 ---
 

@@ -3,67 +3,74 @@
 Contributor's Guide
 ===================
 
-Welcome to the open source community building this toolkit! We're thrilled you're interested in contributing – your ideas and efforts are what make this project thrive.
+Welcome—and thank you for considering contributing to `geoenv`!
 
-We encourage you to explore the guide and familiarize yourself with our collaborative development process. If you have any questions or need help getting started, feel free to reach out on our `GitHub issue`_ tracker.
+We're excited to have you here. Whether you're fixing a bug, improving docs, or proposing a new feature, your contributions make this project better.
 
-Be Courteous
-------------
+Got a question or idea? Start a conversation in our `GitHub issues`_!
 
-In the spirit of collaboration, we emphasize the importance of maintaining a respectful and inclusive environment.
+.. _GitHub issues: https://github.com/clnsmth/geoenv/issues
 
-In this project, we uphold a golden rule that applies to all forms of contribution, including bug reports and feature requests: treat everyone involved with respect. We value the diverse perspectives and experiences of our contributors and encourage constructive and courteous interactions.
+Be Respectful
+-------------
 
-See the :ref:`Code of Conduct <conduct>` for details.
+We’re committed to creating a friendly, welcoming space for collaboration.
+
+Please be kind and constructive in all interactions. Diversity of background, perspective, and experience strengthens our community.
+
+See our :ref:`Code of Conduct <conduct>` for details.
 
 .. _Code of Conduct: https://geoenv.readthedocs.io/en/latest/dev/conduct/
 
-Contribution Suitability
+Is Your Idea a Good Fit?
 ------------------------
 
-The final decision regarding the suitability of a contribution for the project rests with the project maintainers. While we carefully consider all contributions, there may be instances where certain contributions are not aligned with the project's current goals or needs, and as a result, they may be declined.
+Not sure if your idea fits the project? Let’s talk!
 
-Need some feedback on whether your idea is suitable for the project? Open a `GitHub issue`_. We're happy to discuss your ideas and provide feedback!
+Open a quick `GitHub issue`_ and we’ll help you assess it. While we thoughtfully review every suggestion, the maintainers ultimately determine what aligns with the project goals.
 
 .. _GitHub issue: https://github.com/clnsmth/geoenv/issues
 
-Code Contributions
-------------------
+How to Contribute Code
+----------------------
 
-Steps for Submitting Code
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Here’s a simple guide to submitting a pull request:
 
-Here are a sequence of steps to help with your code contribution:
-
-1. Fork the project repository on GitHub.
-2. Create a `feature branch` from the `development` branch.
-3. Install the package by running ``poetry install`` at the command line.
-4. Verify that all tests pass on your system by running ``poetry run pytest`` at the command line. In case of failures, conduct a thorough investigation. If you require assistance in diagnosing the issue, follow the guidelines for filing :ref:`bug-reports`.
-5. Construct test cases that effectively illustrate the bug or feature.
-6. Implement your changes, including any relevant documentation updates following our :ref:`documentation-contributions` guidelines.
-7. Re-run the complete test suite to ensure the success of all tests.
-8. Format and analyze your code according to our :ref:`code-format-and-analysis` guidelines.
-9. Ensure the docs build following the :ref:`documentation-contributions` guidelines.
-10. Check that the sdist and wheels build by running ``poetry build`` at the command line.
-11. Commit your work following our :ref:`commit-message` guidelines.
-12. Submit a GitHub Pull Request to the `development` branch of the upstream repository.
+1. Fork the repo.
+2. Create a new feature branch off `development`.
+3. Install the project:
+   ``poetry install``
+4. Run the tests:
+   ``poetry run pytest``
+   Investigate and fix any failures.
+5. Add test cases to support your change.
+6. Make your changes. Update docs where relevant (see :ref:`documentation-contributions`).
+7. Re-run tests to confirm everything still works.
+8. Format and lint your code (see :ref:`code-format-and-analysis`).
+9. Build the docs:
+   ``poetry run make --directory=docs clean html``
+10. Build the package:
+    ``poetry build``
+11. Write a good commit message (see :ref:`commit-message`).
+12. Open a Pull Request targeting the `development` branch.
 
 .. _reStructuredText: https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html
 .. _pytest: https://docs.pytest.org/en/latest/
 .. _Angular commit style: https://github.com/angular/angular/blob/convert/CONTRIBUTING.md#-commit-message-format
 
-Code Review
-~~~~~~~~~~~
+We’ll review your submission and may offer suggestions. Once everything looks good—it’s in!
 
-Once contributions have undergone a code review process, they will be merged. It is generally recommended to incorporate any feedback received during the code review, unless there are strong objections. If, after submitting your objections, it is determined that the original feedback is still applicable, you will have to either implement the suggested changes or retract your contribution.
+Code Style & Linting
+~~~~~~~~~~~~~~~~~~~~
 
-.. _code-format-and-analysis:
+To keep the codebase consistent, we use:
 
-Code Format and Analysis
-~~~~~~~~~~~~~~~~~~~~~~~~
+- **`Black`** for automatic formatting
+- **`Pylint`** for static code analysis
 
-Our project uses a couple tools to ensure the code base has a consistent
-style and format as it grows. We use `Black`_ for code formatting and `Pylint`_ for static code analysis. Both can be run from the command line::
+Run both with:
+
+::
 
     poetry run black src/ tests/
     poetry run pylint src/ tests/
@@ -71,48 +78,67 @@ style and format as it grows. We use `Black`_ for code formatting and `Pylint`_ 
 .. _Black: https://black.readthedocs.io/en/stable/
 .. _Pylint: https://pylint.pycqa.org/en/latest/
 
+.. _code-format-and-analysis:
+
 .. _documentation-contributions:
 
-Documentation Contributions
+Improving the Documentation
 ---------------------------
 
-We greatly appreciate any efforts to enhance the project documentation! The documentation files reside within the ``docs/`` directory and are written in `reStructuredText`_. We utilize `Sphinx`_ to generate a comprehensive suite of documentation. The API documentation is automatically generated by Sphinx from docstrings formatted according to `PEP 287`_.
+We love doc updates!
 
-Build the docs from the command line::
+The docs live in the ``docs/`` directory and use `Sphinx`_ + `reStructuredText`_.
+
+To build them locally:
+
+::
 
     poetry run make --directory=docs clean html
 
+API docs are generated from `PEP 287`_-style docstrings.
 
 .. _reStructuredText: https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html
 .. _Sphinx: http://sphinx-doc.org/index.html
 .. _PEP 287: https://peps.python.org/pep-0287/
+
+.. _documentation-contributions:
 
 .. _bug-reports:
 
 Bug Reports
 -----------
 
-We value your help in improving this project! To avoid duplicate reports, it's helpful to quickly check the existing `GitHub issues`_  to see if the bug has already been reported.
+If you find a bug, we want to hear about it! First, check the `GitHub issues`_ to see if it’s already been reported.
 
-If you are reporting a bug, please use the `Bug report`_ issue template. We appreciate it!
+If it’s new, please use the `Bug report`_ issue template.
 
 .. _Bug report: https://github.com/clnsmth/geoenv/issues/new/choose
 .. _GitHub issues: https://github.com/clnsmth/geoenv/issues
 
 Feature Requests
-----------------
+------------------
 
-Feature requests help this project grow with the user community. If you have an idea for a new feature, we'd love to hear about it! Before submitting a feature request, we kindly request you to check the existing `GitHub issues`_ to ensure that the feature hasn't been requested.
+Got an idea for a feature? Let’s explore it! Before submitting, please search existing `GitHub issues`_.
 
-If you are proposing a feature, please use the `Feature request`_ issue template. Thanks!
+To propose something new, use the `Feature request`_ template.
 
 .. _Feature request: https://github.com/clnsmth/geoenv/issues/new/choose
 
 .. _commit-message:
 
-Commit Messages
----------------
+Writing Good Commit Messages
+-------------------------------
 
-Commit messages are incredibly valuable for understanding the project's code. When crafting your commit message, please provide context about the changes being made and the reasons behind them.
+A good commit message explains *what* changed and *why*.
 
-To ensure readability, we recommend to keep the commit message header under 52 characters and the body within 72 characters.
+We recommend:
+
+- Limit the **header** to 52 characters or less.
+- Wrap the **body** at 72 characters.
+- Follow the `Angular style`_ format when possible.
+
+.. _Angular style: https://github.com/angular/angular/blob/convert/CONTRIBUTING.md#-commit-message-format
+
+.. _commit-message:
+
+Thank you again for contributing to geoenv ❤️. You help make open science more powerful and more connected.
