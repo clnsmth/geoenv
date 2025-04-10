@@ -2,7 +2,7 @@
   <img src="https://your-url.com/logo.png" alt="geoenv" width="200">
 </p>
 <p align="center">
-  <em>Map geographies to environments. Semantic, extensible, and built for global scale.</em>
+  <em>Map geographies to environmental semantics.</em>
 </p>
 <p align="center">
   <a href="https://github.com/clnsmth/geoenv/actions/workflows/ci-cd.yml">
@@ -16,8 +16,6 @@
   </a>
 </p>
 
-# geoenv
-
 ---
 
 **Documentation**: [https://geoenv.readthedocs.io/en/latest/](https://geoenv.readthedocs.io/en/latest/)
@@ -25,6 +23,9 @@
 **Source Code**: [https://github.com/clnsmth/geoenv](https://github.com/clnsmth/geoenv)
 
 ---
+
+## 🚀 What is `geoenv`?
+
 
 `geoenv` is a Python library that links geographic locations—like points and polygons—to environmental descriptions using global datasets and semantic vocabularies.
 
@@ -34,23 +35,23 @@ Whether you're working with field samples, sensor deployments, or satellite obse
 
 ### Highlights
 
-- **Global data support**  
+- 🌍 **Global data support**  
   Works with terrestrial and ecological datasets at global scale.
   
-- **Semantically rich**  
+- 🧠 **Semantically rich**  
   Maps environmental terms to [ENVO](https://sites.google.com/site/environmentontology/) and other vocabularies.
 
-- **Extensible**  
+- 🔌 **Extensible**  
   Plug in your own data sources or vocabularies.
 
-- **Built for integration**  
+- 🧰 **Built for integration**  
   Returns structured GeoJSON + Schema.org outputs for interoperability.
 
 > Know of a useful dataset, vocabulary, or ontology? [Suggest it!](https://github.com/clnsmth/geoenv/issues)
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
 
 Install directly from GitHub:
 
@@ -217,10 +218,10 @@ schema.org example
 ```
 ---
 
-## Motivation
+## 📚 Motivation
 There is a vast amount of data available from diverse sources, and `geoenv` offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
 
 ---
 
-## License
+## 📄 License
 This project is licensed under the terms of the MIT license.

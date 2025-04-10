@@ -11,8 +11,8 @@ Got a question or idea? Start a conversation in our `GitHub issues`_!
 
 .. _GitHub issues: https://github.com/clnsmth/geoenv/issues
 
-Be Respectful
--------------
+👥 Be Respectful
+----------------
 
 We’re committed to creating a friendly, welcoming space for collaboration.
 
@@ -22,8 +22,8 @@ See our :ref:`Code of Conduct <conduct>` for details.
 
 .. _Code of Conduct: https://geoenv.readthedocs.io/en/latest/dev/conduct/
 
-Is Your Idea a Good Fit?
-------------------------
+💡 Is Your Idea a Good Fit?
+---------------------------
 
 Not sure if your idea fits the project? Let’s talk!
 
@@ -31,8 +31,8 @@ Open a quick `GitHub issue`_ and we’ll help you assess it. While we thoughtful
 
 .. _GitHub issue: https://github.com/clnsmth/geoenv/issues
 
-How to Contribute Code
-----------------------
+🛠️ How to Contribute Code
+-------------------------
 
 Here’s a simple guide to submitting a pull request:
 
@@ -82,8 +82,8 @@ Run both with:
 
 .. _documentation-contributions:
 
-Improving the Documentation
----------------------------
+📘 Improving the Documentation
+------------------------------
 
 We love doc updates!
 
@@ -105,8 +105,8 @@ API docs are generated from `PEP 287`_-style docstrings.
 
 .. _bug-reports:
 
-Bug Reports
------------
+🐛 Bug Reports
+--------------
 
 If you find a bug, we want to hear about it! First, check the `GitHub issues`_ to see if it’s already been reported.
 
@@ -115,8 +115,8 @@ If it’s new, please use the `Bug report`_ issue template.
 .. _Bug report: https://github.com/clnsmth/geoenv/issues/new/choose
 .. _GitHub issues: https://github.com/clnsmth/geoenv/issues
 
-Feature Requests
-------------------
+✨ Feature Requests
+-------------------
 
 Got an idea for a feature? Let’s explore it! Before submitting, please search existing `GitHub issues`_.
 
@@ -126,7 +126,7 @@ To propose something new, use the `Feature request`_ template.
 
 .. _commit-message:
 
-Writing Good Commit Messages
+✍🏽Writing Good Commit Messages
 -------------------------------
 
 A good commit message explains *what* changed and *why*.
@@ -141,4 +141,4 @@ We recommend:
 
 .. _commit-message:
 
-Thank you again for contributing to geoenv ❤️. You help make open science more powerful and more connected.
+Thank you again for contributing to geoenv 💚. You help make open science more powerful and more connected.

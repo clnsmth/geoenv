@@ -3,167 +3,131 @@
 Project Design
 ==============
 
-Welcome to the design document for `geoenv`. This document provides an in-depth overview of the architectural design, key components, and design principles behind our work. It aims to enhance your understanding of our project's design philosophy and empower you to contribute effectively.
+Welcome to the design guide for `geoenv`! This page provides an in-depth overview of the architecture, components, and principles that shape the project. Our goal is to make geoenv intuitive to understand and easy to contribute to.
 
-We encourage you to explore this document and reach out with any questions or suggestions. Your feedback is invaluable as we continuously improve and evolve our project.
+Have suggestions or questions? Open a `GitHub issue <https://github.com/clnsmth/geoenv/issues>`\_—we'd love your feedback!
 
-Overview
---------
+🌍 Project Overview
+------------------
 
-The goal of this project is to resolve geographic locations, expressed as
-geometries, to environments and their descriptive properties. To achieve this,
-we have established a set of functional and non-functional design requirements.
+`geoenv` resolves geographic locations (as geometries) into meaningful environmental descriptions using curated datasets and semantic vocabularies.
 
-Design Requirements
--------------------
+To make this possible, we designed around a clear set of priorities:
 
-**Functional Requirements**
+Functional Goals
+~~~~~~~~~~~~~~~~
 
--  Resolve geographic locations to detailed environmental descriptions.
--  Support widely used, high-value data sources relevant to this goal.
--  Provide an API that enables efficient iteration over large numbers of
-   geometries.
--  Allow dynamic selection of data sources based on domains of interest.
--  Link location identifiers to results for recall and alignment.
+- Resolve geographic points and polygons to detailed environmental metadata
+- Support key, high-value data sources
+- Provide an API that scales to many geometries
+- Enable dynamic data source selection
+- Maintain traceability via location identifiers
 
-**Interoperability Requirements**
+Interoperability
+~~~~~~~~~~~~~~~~
 
--  Implement using open and widely adopted standards.
--  Map environmental terms to multiple semantic resources.
--  Represent response data using Schema.org conventions.
+- Use open, widely adopted standards
+- Map terms to multiple ontologies and vocabularies
+- Output data in Schema.org-compatible formats
 
-**Efficiency Goals**
+Efficiency
+~~~~~~~~~~
 
--  Cache results to prevent redundant queries.
--  Locally cache data sources whenever possible to improve query
-   efficiency.
--  Avoid querying data sources when the geometry falls outside their
-   supported bounds.
+- Cache responses to avoid redundant queries
+- Cache data sources locally where possible
+- Avoid querying when geometries are out of bounds
 
-**Sustainability Goals**
+Sustainability
+~~~~~~~~~~~~~~
 
--  Support extensibility for new data sources through new
-   implementations of the ``DataSource`` ABC class.
--  Establish the project as a long-term, well-maintained community
-   effort.
+- Use pluggable `DataSource` implementations
+- Ensure long-term community-driven growth
 
-Implementation and Architecture
---------------------------------
+🏗️ Architecture
+---------------
 
-This project is structured around a set of classes that encapsulate
-distinct components of the geometry-to-environment process. Each class
-defines properties and behaviors necessary to interact within the
-system.
+The system is composed of core classes that collaborate using clearly defined contracts. The architecture follows a **strategy pattern** for modular extensibility.
 
 .. image:: classDiagram.png
    :alt: Strategy Pattern
    :align: center
    :width: 700
 
-**Resolver**
+Resolver
+~~~~~~~~
 
-The ``Resolver`` class serves as the primary client-facing API. Clients
-configure the resolver with one or more ``DataSource`` instances to
-query. The ``resolve`` method iterates through the selected data sources
-using a defined ``Geometry``, constructs a list of returned
-``Environment`` objects, maps them to the Environmental Ontology (ENVO)
-by default, and returns a ``Response``.
+The `Resolver` is the main entry point. You pass in a `Geometry` and a list of `DataSource` instances, and get back a structured `Response`:
 
-**Response**
+- Calls each data source with the input geometry
+- Wraps results into `Environment` objects
+- Maps terms to ENVO by default
+- Returns a `Response` object with the result set
 
-The ``Response`` class structures the results returned by the
-``Resolver`` according to the response data model. The data model is
-formatted as a GeoJSON Geometry Object with the ``properties`` field
-containing the resolved environments and their descriptions. See the
-Data Model section for a full description [link].
+Response
+~~~~~~~~
 
-Methods of the ``Response`` class enable working with the response
-content, including:
+The `Response` structures results using a GeoJSON-like format, where environmental descriptions are stored under `properties.environment`.
 
--  Mapping environments and their descriptive terms to different
-   semantic resource.
--  Transformation of the response into a Schema.org-compliant format,
-   aligned with `Science-On-Schema.Org`_ conventions.
--  Writing/reading of data for storage or further processing.
+You can:
 
-.. _Science-On-Schema.Org: https://github.com/ESIPFed/science-on-schema.org/
+- Map terms to other vocabularies
+- Convert the response to Science-On-Schema.Org format
+- Save or load the result for reuse
 
-**DataSource and Implementations**
+DataSource (ABC)
+~~~~~~~~~~~~~~~~
 
-The ``DataSource`` class is an abstract base class (ABC) that concrete
-implementations extend. Each ``DataSource`` adheres to standardized
-properties and methods for interoperability while supporting custom
-functionality as needed.
+Defines the interface for any data source:
 
-Implementations must support the geometry types defined in the
-``Geometry`` class, either directly or through approximations (e.g.,
-querying representative points for a polygon if the data source does not
-support polygon queries). In such cases, the data source documentation
-should clearly explain this behavior and provide options to control it.
+- Standard methods and properties for consistency
+- Custom behaviors for data-specific needs
+- May implement fallback behavior (e.g., point approximation for polygons)
 
-A ``DataSource`` returns an ``Environment`` object containing the
-retrieved environmental descriptions.
+Returns an `Environment` for each query.
 
-**Environment**
+Environment
+~~~~~~~~~~~
 
-The ``Environment`` class encapsulates environment descriptions returned
-by a ``DataSource``. It undergoes minimal processing, ensuring that only
-the relevant descriptions are retained.
+Encapsulates the returned values from a data source:
 
-**Geometry**
+- Lightweight, minimal post-processing
+- Includes original terms
 
-The ``Geometry`` class manages client-supplied geometries in GeoJSON
-format and provides utility methods for data sources to process
-geometries according to their specific requirements. Features include:
+Geometry
+~~~~~~~~
 
--  Identifying geometry types.
--  Converting point locations into polygons based on client parameters.
--  Transforming geometries into formats required by data sources (e.g.,
-   ``to_esri``).
+Handles all client-supplied geometries in GeoJSON:
 
-Currently, the ``Geometry`` class only supports GeoJSON ``Point`` and
-``Polygon`` types, with plans to support additional types, including
-``GeometryCollections``, in the future.
+- Identifies type (Point, Polygon)
+- Converts points to polygons
+- Transforms to formats required by a data source
 
+Supports GeoJSON `Point` and `Polygon` types for now, with plans for `GeometryCollections`.
 
-Response Data Schema
---------------------
+📦 Response Data Format
+-----------------------
 
-The response object is structured as a GeoJSON-like feature containing information about geographic coordinates and their corresponding environmental properties. Below is the schema description:
+The output is a GeoJSON-style `Feature` with nested environmental data.
 
-**Root Level**
+**Top Level:**
 
-- **type** (string): Indicates the type of GeoJSON feature. Currently set to "Feature".
-- **identifier** (string): A unique identifier for the feature, set through the ``identifier`` parameter of the ``resolve`` method.
-- **geometry** (object): Defines the spatial geometry of the feature, and is set through the ``geometry`` parameter of the ``resolve`` method.
-- **properties** (object): Contains descriptive and environmental information.
+- **type** (string): always "Feature"
+- **identifier** (string): unique ID for the query
+- **geometry** (object): the original geometry
+- **properties** (object): extra metadata, including environments
 
-**Properties**
+**Properties:**
 
-- **description** (string): A human-readable description of the geographic feature, set through the ``description`` parameter of the ``resolve`` method.
-- **environment** (array): An array of environments associated with the geographic feature.
+- **description** (string): the geometry description
+- **environment** (array): the resolved environments
 
-**Environment Object**
+**Environment Object:**
 
-- **type** (string): Describes the type of entity. Set to "Environment".
-- **dataSource** (object): Information about the source of the environmental data.
-- **dateCreated** (string): The date and time of the data source query, formatted as "YYYY-MM-DD HH:MM:SS".
-- **properties** (object): The properties that describe the environment.
-- **mappedProperties** (array): An array of mappings to controlled vocabularies and ontologies.
-
-**Data Source Object**
-
-- **identifier** (string): A persistent identifier (e.g., DOI) for the data source.
-- **name** (string): The name of the data source.
-
-**Properties Object**
-
-Key value pairs representing environmental properties.
-
-**Mapped Property Object**
-
-- **label** (string): A human-readable label for the mapped term (e.g., "temperate").
-- **uri** (string): A URI pointing to the term's definition in a controlled vocabulary or ontology (e.g., an ENVO URI).
+- **type** (string): always "Environment"
+- **dataSource** (object): ID and name of the source
+- **dateCreated** (string): timestamp of the query
+- **properties** (object): key/value pairs of environmental properties
+- **mappedProperties** (array): label/uri pairs for semantic mappings
 
 **Example**
 
@@ -171,173 +135,92 @@ Key value pairs representing environmental properties.
 
     {
       "type": "Feature",
-      "identifier": "5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-            [
-                [-123.552, 39.804],
-                [-120.83, 39.804],
-                [-120.83, 40.441],
-                [-123.552, 40.441],
-                [-123.552, 39.804]
-            ]
-        ]
-      },
+      "identifier": "...",
+      "geometry": {...},
       "properties": {
-        "description": "Polygon on land",
+        "description": "...",
         "environment": [
           {
             "type": "Environment",
             "dataSource": {
-              "identifier": "https://doi.org/10.5066/P9DO61LP",
-              "name": "WorldTerrestrialEcosystems"
+              "identifier": "...",
+              "name": "..."
             },
-            "dateCreated": "2025-02-18 08:27:46",
+            "dateCreated": "...",
             "properties": {
               "temperature": "Warm Temperate",
               "moisture": "Dry",
-              "landCover": "Grassland",
-              "landForm": "Plains",
-              "climate": "Warm Temperate Dry",
-              "ecosystem": "Warm Temperate Dry Grassland on Plains"
             },
             "mappedProperties": [
-              {
-                "label": "temperate",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_01000206"
-              },
-              {
-                "label": "arid",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_01000230"
-              },
-              {
-                "label": "grassland area",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_00000106"
-              },
-              {
-                "label": "plain",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_00000086"
-              }
+              {"label": "temperate", "uri": "..."},
+              {"label": "arid", "uri": "..."}
             ]
           }
         ]
       }
     }
 
+🧠 Semantic Mapping
+-------------------
 
-Semantic Mapping
-----------------
+We use `SSSOM <https://mapping-commons.github.io/sssom/>`\_ to link data source terminology to semantic vocabularies.
 
-This project uses the `Simple Standard for Sharing Ontological Mappings`_
-(SSSOM) to facilitate semantic mapping between ``DataSource``
-terminologies and adopted semantic resources. Semantic mapping is
-implemented in the ``apply_term_mapping`` method of the ``Response``
-class.
+- Mapping logic lives in ``Response.apply_term_mapping``
+- Each data source has SSSOM files for each ontology
+- Mappings are auto-discovered by filename
 
-.. _Simple Standard for Sharing Ontological Mappings: https://mapping-commons.github.io/sssom/
+🚨 Error Handling
+-----------------
 
-Error Handling
---------------
+Error Propagation
+~~~~~~~~~~~~~~~~~~
 
-Error handling will be implemented to ensure the package operates
-robustly and provides clear feedback to users. The strategy focuses on
-distinguishing between expected errors (e.g., invalid geometries,
-unsupported data sources) and unexpected failures (e.g., network
-outages, internal bugs).
+- Raised at the relevant layer
+- Always include actionable info
 
-**Error Classes**
+Logging with daiquiri
+~~~~~~~~~~~~~~~~~~~~~
 
-Custom error classes will be introduced to categorize and handle errors
-consistently:
+- Supports DEBUG, INFO, WARNING, ERROR
+- Logs include relevant metadata
 
--  ``GeometryError``: Raised when an invalid or unsupported geometry
-   is provided to the ``Geometry`` class.
--  ``DataSourceError``: Raised for issues specific to a
-   ``DataSource`` (e.g., missing required parameters, unsupported query
-   types).
--  ``ResolutionError``: Raised by the ``Resolver`` when a query
-   cannot be processed due to conflicts between geometries and data
-   sources.
--  ``TermMappingError``: Raised when a mapping between data source
-   terms and a semantic resource fails or an expected mapping file
-   is missing or malformed.
--  ``NetworkError``: Raised for network-related failures, such as
-   timeouts or unreachable data sources.
+🧪 Testing
+-----------
 
-All custom errors will extend from a base ``ResolverError`` class,
-allowing users to catch all package-specific errors in a single handler
-if needed.
+We ensure coverage through:
 
-**Error Propagation**
+- **Geometry tests** – validation, conversions, type detection
+- **DataSource tests** – standard contract + edge cases
+- **Response tests** – semantic mapping and transformation checks
+- **Mock tests** – generated from real HTTP requests
+- **Integration tests** – Resolver end-to-end scenarios
 
--  Errors will be raised at the most relevant layer (e.g., ``Geometry``,
-   ``DataSource``, ``Resolver``) with informative messages, including
-   suggestions for resolution where appropriate.
--  The ``Resolver`` class will expose an optional ``suppress_errors``
-   argument. When enabled, the ``resolve`` method will log errors
-   without raising exceptions, allowing iteration to continue through
-   remaining geometries or data sources.
+Run mock generation with `create_mock_data.py`.
 
-**Logging**
+➕ Adding a New Data Source
+---------------------------
 
-Logging will be handled using the ``daiquiri`` package, which provides
-structured logging and flexibility for users to configure log outputs
-easily. Key logging practices include:
+**Data Source**
 
--  **Logger Configuration**: Loggers will be configured at the module
-   level using ``daiquiri`` with a default output to standard error.
--  **Log Levels**: Support for ``DEBUG``, ``INFO``, ``WARNING``, and
-   ``ERROR`` levels, allowing users to set verbosity.
--  **Structured Logs**: Include relevant metadata (e.g., data source
-   name, geometry type) in logs for easier debugging.
--  **Error Logging**: All raised exceptions will be logged with
-   ``ERROR`` level. If ``suppress_errors`` is enabled, errors will still
-   be logged but processing will continue.
+1. Add a module under `data_sources/`
+2. Register it in `data_sources/__init__.py`
+3. Implement the `DataSource` ABC
+4. Support all required geometry types
+5. Document special behaviors or config options
+6. Keep data source-specific utilities scoped to the module
 
-Testing
---------
+**Semantic Mappings**
 
-The testing framework ensures coverage for key components and behaviors.
+1. Create SSSOM files for your vocabularies
+2. Follow filename conventions for discovery
 
--  **Geometry**: Validate geometry processing methods and expected
-   responses.
--  **Data source**: Ensure standardized behaviors across data sources,
-   with custom tests for unique cases.
--  **Response**: Confirm correct mapping and transformation of
-   environmental terms to semantic resources, and
-   Schema.org format.
--  **Mock data tests**: Compare mock data with real HTTP responses to
-   detect discrepancies.
--  **Integration tests**: Test ``Resolver`` functionality and end-to-end
-   workflows.
+**Tests**
 
-Mock data is generated and maintained using ``create_mock_data.py``,
-automating HTTP requests and storing responses for testing.
+1. Create mock geometries
+2. Use `create_mock_data.py` to record responses
+3. Add tests for both valid and invalid inputs
+4. Test both expected and edge behavior
 
-Adding a New Data Source
--------------------------
 
-Integrating a new data source involves the following steps:
+We're building geoenv to be sustainable, useful, and open. Your input helps shape its future 💚
 
-**Implement the Data Source**
-
-1. Create a new module in the ``data_sources/`` directory.
-2. Import the module in ``data_sources/__init__.py``.
-3. Implement the ``DataSource`` ABC, following existing examples.
-4. Ensure support for geometry types consistent with other data sources.
-5. Document any unique behaviors or configurable options.
-6. Keep data source-specific utilities within the module.
-
-**Implement Semantic Mappings**
-
-1. Create an SSSOM mapping file for each semantic resource.
-2. Follow standard naming conventions for file discovery.
-
-**Implement Tests**
-
-1. Define representative mock geometries.
-2. Use ``create_mock_data.py`` to generate mock responses.
-3. Add tests to validate mock data.
-4. Create custom test modules for non-standard behaviors.
-5. Integrate success and failure scenarios into the broader test suite.

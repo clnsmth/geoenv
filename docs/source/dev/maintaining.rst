@@ -5,23 +5,23 @@ Maintainers Guide
 
 Welcome—and thank you for helping maintain `geoenv`! Maintainers keep the engine running and the community thriving. This guide complements the :ref:`contributing` guide and includes everything you need to manage contributions and releases.
 
-As a maintainer, you’re still a contributor—please follow the same steps when submitting code or documentation changes.
+🤝 As a maintainer, you’re still a contributor—please follow the same steps when submitting code or documentation changes.
 
-Collaboration Comes First
--------------------------
+🤗 Collaboration Comes First
+----------------------------
 
 Sometimes we meet contributors halfway—cleaning up commits, refining docs, or offering extra help. That’s okay. A kind and helpful tone makes a big difference.
 
 If you're short on time, it's totally fine—just leave a comment to let contributors know when you’ll be back.
 
-Reviewing Pull Requests
---------------------------
+🔍 Reviewing Pull Requests
+---------------------------
 
 Pull request reviews help ensure contributions are:
 
-- Aligned with project goals
-- Tested and reliable
-- Documented and understandable
+- ✅ Aligned with project goals
+- 🧪 Tested and reliable
+- 📚 Documented and understandable
 
 Even though maintainers *can* bypass reviews, we encourage PR review in all cases.
 
@@ -42,8 +42,8 @@ When reviewing a pull request, please follow this checklist:
 Once reviewed, the PR is ready to merge into `development`. See :ref:`merging-features-into-development` for how.
 
 
-Working with Git & GitHub
--------------------------
+🔧 Working with Git & GitHub
+----------------------------
 
 We value small, focused commits and transparent development practices.
 
@@ -57,9 +57,11 @@ We use two styles:
 
 Example:
 
-``feat: add framework for new feature (#3, #5)``
+``feat: add framework for new feature (#3, #5)`` ✅
+
 not
-``feat(module): add framework for new feature``
+
+``feat(module): add framework for new feature`` ❌
 
 Do your best to keep:
 
@@ -73,8 +75,8 @@ Do your best to keep:
 
 
 
-Branch Strategy
----------------
+🌳 Branch Strategy
+------------------
 
 - `main`: Current stable release
 - `development`: In-progress features (always stable & releasable)
@@ -141,19 +143,19 @@ All hotfixes go through the same flow:
 
 Never hotfix `main` directly.
 
-Branch Protection & Secrets
----------------------------
+🔐 Branch Protection & Secrets
+------------------------------
 
 Branch Rules
 ~~~~~~~~~~~~
 
 The following are enforced on `main` and `development`:
 
-- PR approval
-- CI checks pass
-- Branch is up-to-date
-- Conversations resolved
-- Linear commit history
+- ✅ PR approval
+- ✅ CI checks pass
+- ✅ Branch is up-to-date
+- ✅ Conversations resolved
+- ✅ Linear commit history
 
 Maintainers *can* skip PR approval, but it’s encouraged in most cases.
 
@@ -163,8 +165,8 @@ Release Token
 A GitHub secret named ``RELEASE_TOKEN`` (a maintainer’s personal access token) is required for :ref:`cd-workflow` to complete.
 
 
-CI & CD Workflows
------------------
+⚙️ CI & CD Workflows
+--------------------
 
 GitHub Actions power our automation.
 
@@ -196,13 +198,13 @@ Runs on push to `main`:
 
 .. _developing-features-as-a-maintainer:
 
-Developing as a Maintainer
---------------------------
+🏗️ Developing as a Maintainer
+-----------------------------
 
 You don’t need to fork the repo—just create a `feature` branch directly in the upstream repository and open a pull request to `development`.
 
-Dependency & Environment Management
------------------------------------
+📦 Dependency & Environment Management
+--------------------------------------
 
 We use `Poetry`_ for managing development and distribution dependencies.
 

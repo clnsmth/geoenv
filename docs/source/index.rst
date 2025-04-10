@@ -26,16 +26,16 @@ Whether you're working with field samples, sensor deployments, or satellite obse
 Highlights
 ----------
 
-- **Global data support**
+- 🌍 **Global data support**
   Works with terrestrial and ecological datasets at global scale.
 
-- **Semantically rich**
+- 🧠 **Semantically rich**
   Maps environmental terms to `ENVO <https://sites.google.com/site/environmentontology/>`_ and other vocabularies.
 
-- **Extensible**
+- 🔌 **Extensible**
   Plug in your own data sources or vocabularies.
 
-- **Built for integration**
+- 🧰 **Built for integration**
   Returns structured GeoJSON + Schema.org outputs for interoperability.
 
 .. note::
@@ -45,8 +45,8 @@ Highlights
 
 .. _quickstart:
 
-Quick Start
------------
+⚡ Quick Start
+-------------
 
 Install directly from GitHub:
 
@@ -205,12 +205,12 @@ Presto
 
    schema.org example
 
-Motivation
-----------
+📚 Motivation
+-------------
 
 There is a vast amount of data available from diverse sources, and `geoenv` offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
 
-License
--------
+📄 License
+----------
 
 This project is licensed under the terms of the MIT license.
