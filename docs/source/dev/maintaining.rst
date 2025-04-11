@@ -3,32 +3,34 @@
 Maintainers Guide
 =================
 
-Welcome—and thank you for helping maintain `geoenv`! Maintainers keep the engine running and the community thriving. This guide complements the :ref:`contributing` guide and includes everything you need to manage contributions and releases.
+Welcome—and thank you for helping maintain `geoenv`! 🚀
 
-🤝 As a maintainer, you’re still a contributor—please follow the same steps when submitting code or documentation changes.
+Maintainers keep the engine running and the community thriving. This guide complements the :ref:`contributing` guide and includes everything you need to manage contributions and releases.
 
-🤗 Collaboration Comes First
-----------------------------
+As a maintainer, you’re still a contributor—please follow the same steps when submitting code or documentation changes.
+
+Collaboration Comes First
+-------------------------
 
 Sometimes we meet contributors halfway—cleaning up commits, refining docs, or offering extra help. That’s okay. A kind and helpful tone makes a big difference.
 
 If you're short on time, it's totally fine—just leave a comment to let contributors know when you’ll be back.
 
-🔍 Reviewing Pull Requests
----------------------------
+Reviewing Pull Requests
+-----------------------
 
-Pull request reviews help ensure contributions are:
+Pull request reviews 🔍 help ensure contributions are:
 
-- ✅ Aligned with project goals
-- 🧪 Tested and reliable
-- 📚 Documented and understandable
+- Aligned with project goals
+- Tested and reliable
+- Documented and understandable
 
 Even though maintainers *can* bypass reviews, we encourage PR review in all cases.
 
 Review Checklist
 ~~~~~~~~~~~~~~~~
 
-When reviewing a pull request, please follow this checklist:
+When reviewing a pull request, please follow this checklist 📋:
 
 1. Point the pull request to the `development` branch.
 2. Open a GitHub review on the pull request.
@@ -36,51 +38,18 @@ When reviewing a pull request, please follow this checklist:
 4. Check the CI logs—look for any Pylint messages (even if not failing).
 5. Ensure new features or bug fixes include meaningful test coverage.
 6. Review the code and docs diffs.
-7. Confirm commit messages follow :ref:`commit-message-style`.
+7. Confirm commit messages follow :ref:`writing-good-commit-messages`.
 8. Submit the review, or collaborate via a `feature branch` if needed.
 
 Once reviewed, the PR is ready to merge into `development`. See :ref:`merging-features-into-development` for how.
 
 
-🔧 Working with Git & GitHub
-----------------------------
-
-We value small, focused commits and transparent development practices.
-
-Commit Message Style
-~~~~~~~~~~~~~~~~~~~~
-
-We use two styles:
-
-- **Contributor commits**: Follow the guidelines in :ref:`commit-message`
-- **Squash merge commits**: Use Angular-style commits (without scope) for `Python Semantic Release`_
-
-Example:
-
-``feat: add framework for new feature (#3, #5)`` ✅
-
-not
-
-``feat(module): add framework for new feature`` ❌
-
-Do your best to keep:
-
-- Header ≤ 52 characters (72 max)
-- Body lines ≤ 72 characters
-
-*To bypass semantic release, remove Angular-style keywords from the header.*
-
-.. _Python Semantic Release: https://python-semantic-release.readthedocs.io/en/latest/
-.. _Angular commit style: https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit
-
-
-
-🌳 Branch Strategy
-------------------
+Branch Strategy
+---------------
 
 - `main`: Current stable release
 - `development`: In-progress features (always stable & releasable)
-- `feature/*`: All new work starts here
+- `feature`: All new work starts here
 
 .. _feature-branches:
 
@@ -95,12 +64,11 @@ Example: ``30-release-workflow``
 Merging into Development
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a feature is complete merge the feature branch into `development` using GitHub:
+When a feature is complete, merge the feature branch into `development` using GitHub:
 
-1. Edit the commit header (Angular-style)
-2. Keep the commit body as-is
-3. Add related GitHub issue references in the `commit message footer`_
-4. **Squash merge** the pull request
+1. Squash merge the pull request
+2. Edit the commit message to follow :ref:`writing-good-commit-messages`
+3. Delete the feature branch
 
 Forgot something? Just open a new PR. Don’t resurrect merged branches.
 
@@ -122,12 +90,12 @@ Instead:
 6. Merge `development` into `main`
 7. Push to `main`
 
-This preserves a clean, linear history with correct Angular-style commits.
+This preserves a clean, linear history with correct commit styling.
 
 After merging:
 
-8. CI/CD runs a release via `Python Semantic Release`_, ensure this completes
-9. Docs are deployed to `readthedocs.io`_, ensure this completes
+8. CI/CD runs a release via `Python Semantic Release`_
+9. Docs are deployed to `readthedocs.io`_
 10. Pull `main` and `development` again to sync locally
 
 .. _readthedocs.io: https://geoenv.readthedocs.io/en/latest/
@@ -138,37 +106,37 @@ After merging:
 Hotfixes
 ~~~~~~~~
 
-All hotfixes go through the same flow:
+All hotfixes 🚑 go through the same flow:
 `feature` → `development` → `main`
 
 Never hotfix `main` directly.
 
-🔐 Branch Protection & Secrets
-------------------------------
+Branch Protection & Secrets
+---------------------------
 
 Branch Rules
 ~~~~~~~~~~~~
 
-The following are enforced on `main` and `development`:
+The following GitHub branch rules ✅ are enforced on `main` and `development`:
 
-- ✅ PR approval
-- ✅ CI checks pass
-- ✅ Branch is up-to-date
-- ✅ Conversations resolved
-- ✅ Linear commit history
+- PR approval
+- CI checks pass
+- Branch is up-to-date
+- Conversations resolved
+- Linear commit history
 
 Maintainers *can* skip PR approval, but it’s encouraged in most cases.
 
 Release Token
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
-A GitHub secret named ``RELEASE_TOKEN`` (a maintainer’s personal access token) is required for :ref:`cd-workflow` to complete.
+A GitHub secret 🔐 named ``RELEASE_TOKEN`` (a maintainer’s personal access token) is required for :ref:`cd-workflow` to complete.
 
 
-⚙️ CI & CD Workflows
---------------------
+CI & CD Workflows
+-----------------
 
-GitHub Actions power our automation.
+GitHub Actions power our automation. 🤖
 
 .. _ci-workflow:
 
@@ -180,7 +148,7 @@ Runs on PRs and pushes to `main` / `development`. It checks:
 1. Code formatting with `Black`_ (required)
 2. Linting with `Pylint`_ (optional but encouraged)
 3. Testing with `Pytest`_ (required)
-4. Docs build with Sphinx (required)
+4. Docs build with `Sphinx`_ (required)
 
 .. _cd-workflow:
 
@@ -198,15 +166,15 @@ Runs on push to `main`:
 
 .. _developing-features-as-a-maintainer:
 
-🏗️ Developing as a Maintainer
------------------------------
+Developing as a Maintainer
+--------------------------
 
-You don’t need to fork the repo—just create a `feature` branch directly in the upstream repository and open a pull request to `development`.
+You don’t need to fork the repo—just create a `feature` branch directly in the upstream repository and open a pull request to `development`. 🏗
 
-📦 Dependency & Environment Management
---------------------------------------
+Dependency & Environment Management
+-----------------------------------
 
-We use `Poetry`_ for managing development and distribution dependencies.
+We use `Poetry`_ for managing development and distribution dependencies. 📦
 
 For users who prefer `Conda`_, we provide `environment.yml` files to help maintain compatibility.
 
@@ -226,3 +194,6 @@ To generate `requirements.txt` for pip installs:
 .. _Poetry: https://python-poetry.org/
 .. _Conda: https://conda.io/projects/conda/en/latest/
 .. _pip: https://pip.pypa.io/en/stable/
+.. _Python Semantic Release: https://python-semantic-release.readthedocs.io/en/latest/
+.. _Angular commit style: https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit
+.. _Sphinx: https://www.sphinx-doc.org/en/master/

@@ -3,23 +3,23 @@
 Project Design
 ==============
 
-Welcome to the design guide for `geoenv`! This page provides an in-depth overview of the architecture, components, and principles that shape the project. Our goal is to make geoenv intuitive to understand and easy to contribute to.
+Welcome to the design guide for `geoenv`! This page provides an in-depth overview of the architecture, components, and principles that shape the project. Our goal is to make `geoenv` intuitive to understand and easy to contribute to.
 
-Have suggestions or questions? Open a `GitHub issue <https://github.com/clnsmth/geoenv/issues>`\_—we'd love your feedback!
+Have suggestions or questions? Open a `GitHub issue <https://github.com/clnsmth/geoenv/issues>`_ —we'd love your feedback!
 
-🌍 Project Overview
-------------------
+Project Overview
+----------------
 
-`geoenv` resolves geographic locations (as geometries) into meaningful environmental descriptions using curated datasets and semantic vocabularies.
+`geoenv` resolves geographic locations (as geometries) into meaningful environmental descriptions using spatial datasets 🌍 and semantic vocabularies 📖.
 
 To make this possible, we designed around a clear set of priorities:
 
 Functional Goals
 ~~~~~~~~~~~~~~~~
 
-- Resolve geographic points and polygons to detailed environmental metadata
-- Support key, high-value data sources
-- Provide an API that scales to many geometries
+- Resolve spatial geometries to detailed environmental descriptions
+- Support key, high-value spatial data sources
+- Efficiently iterate over large numbers of geometries
 - Enable dynamic data source selection
 - Maintain traceability via location identifiers
 
@@ -28,14 +28,14 @@ Interoperability
 
 - Use open, widely adopted standards
 - Map terms to multiple ontologies and vocabularies
-- Output data in Schema.org-compatible formats
+- Output data in GeoJSON-compatible format
+- Convert to `Science-On-Schema.Org`_ `Spatial Coverage`
 
 Efficiency
 ~~~~~~~~~~
 
 - Cache responses to avoid redundant queries
 - Cache data sources locally where possible
-- Avoid querying when geometries are out of bounds
 
 Sustainability
 ~~~~~~~~~~~~~~
@@ -43,10 +43,10 @@ Sustainability
 - Use pluggable `DataSource` implementations
 - Ensure long-term community-driven growth
 
-🏗️ Architecture
----------------
+Architecture
+------------
 
-The system is composed of core classes that collaborate using clearly defined contracts. The architecture follows a **strategy pattern** for modular extensibility.
+The system is composed of core classes that collaborate using clearly defined contracts. The architecture 🏗 follows a **strategy pattern** for modular extensibility.
 
 .. image:: classDiagram.png
    :alt: Strategy Pattern
@@ -60,18 +60,18 @@ The `Resolver` is the main entry point. You pass in a `Geometry` and a list of `
 
 - Calls each data source with the input geometry
 - Wraps results into `Environment` objects
-- Maps terms to ENVO by default
+- Maps terms to `ENVO`_ by default
 - Returns a `Response` object with the result set
 
 Response
 ~~~~~~~~
 
-The `Response` structures results using a GeoJSON-like format, where environmental descriptions are stored under `properties.environment`.
+The `Response` structures results using a GeoJSON format, where environmental descriptions are stored under `properties.environment`.
 
 You can:
 
 - Map terms to other vocabularies
-- Convert the response to Science-On-Schema.Org format
+- Convert the response to `Science-On-Schema.Org`_
 - Save or load the result for reuse
 
 DataSource (ABC)
@@ -80,7 +80,7 @@ DataSource (ABC)
 Defines the interface for any data source:
 
 - Standard methods and properties for consistency
-- Custom behaviors for data-specific needs
+- Custom behaviors for data source-specific needs
 - May implement fallback behavior (e.g., point approximation for polygons)
 
 Returns an `Environment` for each query.
@@ -104,10 +104,10 @@ Handles all client-supplied geometries in GeoJSON:
 
 Supports GeoJSON `Point` and `Polygon` types for now, with plans for `GeometryCollections`.
 
-📦 Response Data Format
------------------------
+Response Data Format
+--------------------
 
-The output is a GeoJSON-style `Feature` with nested environmental data.
+The output is a GeoJSON `Feature` with nested environmental data. 📦
 
 **Top Level:**
 
@@ -160,23 +160,22 @@ The output is a GeoJSON-style `Feature` with nested environmental data.
       }
     }
 
-🧠 Semantic Mapping
--------------------
+Semantic Mapping
+----------------
 
-We use `SSSOM <https://mapping-commons.github.io/sssom/>`\_ to link data source terminology to semantic vocabularies.
+We use `SSSOM <https://mapping-commons.github.io/sssom/>`_ to link data source terminology to semantic vocabularies. 🧠
 
 - Mapping logic lives in ``Response.apply_term_mapping``
-- Each data source has SSSOM files for each ontology
-- Mappings are auto-discovered by filename
+- Each data source has SSSOM files for each ontology/vocabulary
 
-🚨 Error Handling
------------------
+Error Handling
+--------------
 
 Error Propagation
 ~~~~~~~~~~~~~~~~~~
 
-- Raised at the relevant layer
-- Always include actionable info
+- Raised at the relevant layer 🚨
+- Always include actionable info ✅
 
 Logging with daiquiri
 ~~~~~~~~~~~~~~~~~~~~~
@@ -184,10 +183,10 @@ Logging with daiquiri
 - Supports DEBUG, INFO, WARNING, ERROR
 - Logs include relevant metadata
 
-🧪 Testing
------------
+Testing
+-------
 
-We ensure coverage through:
+We ensure test 🧪 coverage through:
 
 - **Geometry tests** – validation, conversions, type detection
 - **DataSource tests** – standard contract + edge cases
@@ -195,10 +194,8 @@ We ensure coverage through:
 - **Mock tests** – generated from real HTTP requests
 - **Integration tests** – Resolver end-to-end scenarios
 
-Run mock generation with `create_mock_data.py`.
-
-➕ Adding a New Data Source
----------------------------
+Adding a New Data Source
+------------------------
 
 **Data Source**
 
@@ -222,5 +219,7 @@ Run mock generation with `create_mock_data.py`.
 4. Test both expected and edge behavior
 
 
-We're building geoenv to be sustainable, useful, and open. Your input helps shape its future 💚
+`We're building geoenv to be sustainable, useful, and open. Your input helps shape its future 💚`
 
+.. _ENVO: https://sites.google.com/site/environmentontology/
+.. _Science-On-Schema.Org: https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#spatial-coverage

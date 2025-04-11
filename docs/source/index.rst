@@ -21,32 +21,27 @@ It’s like reverse geocoding, but for environments.
 
 Whether you're working with field samples, sensor deployments, or satellite observations, `geoenv` helps you describe the environment with consistent, interoperable metadata.
 
-.. _Environment Ontology: https://sites.google.com/site/environmentontology/
+**Highlights**
 
-Highlights
-----------
+- **Global data support**:
+  Works with terrestrial, coastal, and marine environments at global scale.
 
-- 🌍 **Global data support**
-  Works with terrestrial and ecological datasets at global scale.
+- **Semantically rich**:
+  Maps environmental terms to `ENVO`_ and other vocabularies.
 
-- 🧠 **Semantically rich**
-  Maps environmental terms to `ENVO <https://sites.google.com/site/environmentontology/>`_ and other vocabularies.
+- **Extensible**:
+  Plug in new data sources or vocabularies.
 
-- 🔌 **Extensible**
-  Plug in your own data sources or vocabularies.
-
-- 🧰 **Built for integration**
+- **Built for integration**:
   Returns structured GeoJSON + Schema.org outputs for interoperability.
 
-.. note::
-
-   Know of a useful dataset, vocabulary, or ontology? `Suggest it! <https://github.com/clnsmth/geoenv/issues>`_
+Know of a useful data source or vocabulary? `Suggest it! <https://github.com/clnsmth/geoenv/issues>`_
 
 
 .. _quickstart:
 
-⚡ Quick Start
--------------
+Quick Start
+-----------
 
 Install directly from GitHub:
 
@@ -59,10 +54,10 @@ Resolve a point on land:
 .. code-block:: python
 
    from geoenv.data_sources import WorldTerrestrialEcosystems
-   from geoenv.resolver import Resolver
    from geoenv.geometry import Geometry
+   from geoenv.resolver import Resolver
 
-   # Define a geometry in GeoJSON format
+   # Define a geometry in GeoJSON format (Point or Polygon)
    geometry = Geometry(
        {
            "type": "Point",
@@ -73,13 +68,13 @@ Resolve a point on land:
        }
    )
 
-   # Configure the resolver with one or more data sources
+   # Configure the resolver with a data source (there can be multiple)
    resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
 
    # Resolve the geometry to environmental descriptions
    response = resolver.get_environment(geometry)
 
-The result is a GeoJSON Feature with structured environments mapped to ENVO (by default):
+The response is a GeoJSON `Feature` with structured environments mapped to `ENVO`_ (by default):
 
 .. code-block:: json
 
@@ -134,83 +129,15 @@ The result is a GeoJSON Feature with structured environments mapped to ENVO (by 
      }
    }
 
-But how do I link results back to my data?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-That's what the resolver's ``identifier`` and ``description`` parameters are for. Set these to whatever values are useful for your application.
-
-.. code-block:: python
-
-   response = resolver.get_environment(
-       geometry = geometry,
-       identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-       description="Point on land",
-   )
-
-These will then be displayed in the GeoJSON response and accessible whenever you need it.
-
-.. code-block:: json
-
-   {
-     "type": "Feature",
-     "identifier": "5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-     "geometry": {... same as before},
-     "properties": {
-       "description": "Point on land",
-       "environment": [... same as before]
-     }
-   }
-
-Can I resolve against multiple data sources?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-But we don't always know where a geometry will resolve to. That's OK. We can configure the resolver with a list of data sources to query and it will try them all.
-
-.. code-block:: python
-
-   from geoenv.resolver import Resolver
-   from geoenv.data_sources import (WorldTerrestrialEcosystems,
-                                    EcologicalCoastalUnits,
-                                    EcologicalMarineUnits)
-
-   # Now configured with 3 data sources
-   resolver = Resolver(
-       data_source=[
-           WorldTerrestrialEcosystems(),
-           EcologicalCoastalUnits(),
-           EcologicalMarineUnits()
-       ]
-   )
-
-   response = resolver.get_environment(geometry)
-
-The response is a list of environments listing each data source.
-
-.. code-block:: json
-
-   response
-
-Support for Schema.org?
-~~~~~~~~~~~~~~~~~~~~~~~
-
-We may want to represent this in Schema.org format. The response is already structured to be easily converted to Schema.org.
-
-.. code-block:: python
-
-   response.to_schema_org()
-
-Presto
-
-.. code-block:: json
-
-   schema.org example
-
-📚 Motivation
--------------
+Motivation
+----------
 
 There is a vast amount of data available from diverse sources, and `geoenv` offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
 
-📄 License
-----------
+License
+-------
 
 This project is licensed under the terms of the MIT license.
+
+
+.. _ENVO: https://sites.google.com/site/environmentontology/
