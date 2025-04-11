@@ -15,160 +15,129 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
     :target: https://codecov.io/github/clnsmth/geoenv
     :alt: Code coverage status
 
-`geoenv` is a Python library that links geographic coordinates to environmental properties at a global scale. These properties are described using the terminology of the source data, with options to map to other semantic resources, including controlled vocabularies and ontologies. By default, `geoenv` maps to ENVO (`Environment Ontology`_).
+`geoenv` is a Python library that links geographic locations—like points and polygons—to environmental descriptions using global datasets and semantic vocabularies.
 
-If you know of a data source, vocabulary, or ontology that could enhance this effort, please share it—even if it overlaps with existing resources.
+It’s like reverse geocoding, but for environments.
 
-.. _Environment Ontology: https://sites.google.com/site/environmentontology/
+Whether you're working with field samples, sensor deployments, or satellite observations, `geoenv` helps you describe the environment with consistent, interoperable metadata.
 
-Motivation
-----------
+**Highlights**
 
-There is a vast amount of data available from diverse sources, and geoenv offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
+- **Global data support**:
+  Works with terrestrial, coastal, and marine environments at global scale.
+
+- **Semantically rich**:
+  Maps environmental terms to `ENVO`_ and other vocabularies.
+
+- **Extensible**:
+  Plug in new data sources or vocabularies.
+
+- **Built for integration**:
+  Returns structured GeoJSON + Schema.org outputs for interoperability.
+
+Know of a useful data source or vocabulary? `Suggest it! <https://github.com/clnsmth/geoenv/issues>`_
+
+
+.. _quickstart:
 
 Quick Start
 -----------
 
-Install the current release from GitHub.
+Install directly from GitHub:
 
 .. code-block:: bash
 
-    pip install git+https://github.com/clnsmth/geoenv.git@main
+   pip install git+https://github.com/clnsmth/geoenv.git@main
 
-Resolve a geometry to its environment(s).
+Resolve a point on land:
 
 .. code-block:: python
 
-    from geoenv.data_sources import WorldTerrestrialEcosystems
-    from geoenv.resolver import Resolver
-    from geoenv.geometry import Geometry
+   from geoenv.data_sources import WorldTerrestrialEcosystems
+   from geoenv.geometry import Geometry
+   from geoenv.resolver import Resolver
 
-    # Create a geometry in GeoJSON format
-    point_on_land = {
-        "type": "Point",
-        "coordinates": [
-            -122.622364,
-            37.905931
-        ]
-    }
-    geometry = Geometry(point_on_land)
+   # Define a geometry in GeoJSON format (Point or Polygon)
+   geometry = Geometry(
+       {
+           "type": "Point",
+           "coordinates": [
+               -122.622364,
+               37.905931
+           ]
+       }
+   )
 
-    # Configure the resolver with one or more data sources
-    resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
+   # Configure the resolver with a data source (there can be multiple)
+   resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
 
-    # Resolve the geometry to environmental descriptions
-    response = resolver.resolve(
-        geometry,
-        identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-        description="Point on land",
-    )
+   # Resolve the geometry to environmental descriptions
+   response = resolver.get_environment(geometry)
 
-The response is a GeoJSON Feature containing a list of environments and their associated properties. These properties map to semantic resources, ENVO by default.
+The response is a GeoJSON `Feature` with structured environments mapped to `ENVO`_ (by default):
 
 .. code-block:: json
 
-    {
-      "type": "Feature",
-      "identifier": "5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -122.622364,
-          37.905931
-        ]
-      },
-      "properties": {
-        "description": "Point on land",
-        "environment": [
-          {
-            "type": "Environment",
-            "dataSource": {
-              "identifier": "https://doi.org/10.5066/P9DO61LP",
-              "name": "WorldTerrestrialEcosystems"
-            },
-            "dateCreated": "2025-03-07 15:53:09",
-            "properties": {
-              "temperature": "Warm Temperate",
-              "moisture": "Moist",
-              "landCover": "Cropland",
-              "landForm": "Mountains",
-              "climate": "Warm Temperate Moist",
-              "ecosystem": "Warm Temperate Moist Cropland on Mountains"
-            },
-            "mappedProperties": [
-              {
-                "label": "temperate",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_01000206"
-              },
-              {
-                "label": "humid air",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_01000828"
-              },
-              {
-                "label": "area of cropland",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_01000892"
-              },
-              {
-                "label": "mountain range",
-                "uri": "http://purl.obolibrary.org/obo/ENVO_00000080"
-              }
-            ]
-          }
-        ]
-      }
-    }
+   {
+     "type": "Feature",
+     "identifier": null,
+     "geometry": {
+       "type": "Point",
+       "coordinates": [
+         -122.622364,
+         37.905931
+       ]
+     },
+     "properties": {
+       "description": null,
+       "environment": [
+         {
+           "type": "Environment",
+           "dataSource": {
+             "identifier": "https://doi.org/10.5066/P9DO61LP",
+             "name": "WorldTerrestrialEcosystems"
+           },
+           "dateCreated": "2025-03-07 15:53:09",
+           "properties": {
+             "temperature": "Warm Temperate",
+             "moisture": "Moist",
+             "landCover": "Cropland",
+             "landForm": "Mountains",
+             "climate": "Warm Temperate Moist",
+             "ecosystem": "Warm Temperate Moist Cropland on Mountains"
+           },
+           "mappedProperties": [
+             {
+               "label": "temperate",
+               "uri": "http://purl.obolibrary.org/obo/ENVO_01000206"
+             },
+             {
+               "label": "humid air",
+               "uri": "http://purl.obolibrary.org/obo/ENVO_01000828"
+             },
+             {
+               "label": "area of cropland",
+               "uri": "http://purl.obolibrary.org/obo/ENVO_01000892"
+             },
+             {
+               "label": "mountain range",
+               "uri": "http://purl.obolibrary.org/obo/ENVO_00000080"
+             }
+           ]
+         }
+       ]
+     }
+   }
+
+Motivation
+----------
+
+There is a vast amount of data available from diverse sources, and `geoenv` offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
+
+License
+-------
+
+This project is licensed under the terms of the MIT license.
 
 
-Format the response as Schema.org.
-
-.. code-block:: python
-
-    schema_org = response.to_schema_org()
-
-
-
-
-The API Documentation / Guide
------------------------------
-
-If you are looking for information on a specific function, class, or method,
-this part of the documentation is for you.
-
-.. toctree::
-   :maxdepth: 2
-
-   user/api
-
-
-The Contributor Guide
----------------------
-
-If you want to contribute to the project, this part of the documentation is for
-you.
-
-.. toctree::
-   :maxdepth: 3
-
-   dev/contributing
-
-The Maintainer Guide
---------------------
-
-If you are a project maintainer, this part of the documentation is for
-you.
-
-.. toctree::
-   :maxdepth: 3
-
-   dev/maintaining
-
-Project Design
---------------
-
-The project design documentation provides an overview of the project's
-architecture and design decisions.
-
-.. toctree::
-   :maxdepth: 3
-
-   dev/design
+.. _ENVO: https://sites.google.com/site/environmentontology/

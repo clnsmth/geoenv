@@ -1,61 +1,73 @@
 # geoenv
 
+_Map geographies to environmental semantics._
+
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 ![example workflow](https://github.com/clnsmth/geoenv/actions/workflows/ci-cd.yml/badge.svg)
 [![codecov](https://codecov.io/github/clnsmth/geoenv/graph/badge.svg?token=2J4MNIXCTD)](https://codecov.io/github/clnsmth/geoenv)
 
-`geoenv` is a Python library that links geographic coordinates to environmental properties at a global scale. These properties are described using the terminology of the source data, with options to map to other semantic resources, including controlled vocabularies and ontologies. By default, `geoenv` maps to ENVO ([Environment Ontology](https://sites.google.com/site/environmentontology/)).
+`geoenv` is a Python library that links geographic locations—like points and polygons—to environmental descriptions using global datasets and semantic vocabularies.
 
-If you know of a **data source, vocabulary, or ontology** 
-that could enhance this effort, please share it—even if it overlaps with existing resources.
+It’s like reverse geocoding, but for environments.
 
-## Motivation
+Whether you're working with field samples, sensor deployments, or satellite observations, `geoenv` helps you describe the environment with consistent, interoperable metadata.
 
-There is a vast amount of data available from diverse sources, and geoenv offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
+### Highlights
+
+- **Global data support**:  
+  Works with terrestrial, coastal, and marine environments at global scale.
+  
+- **Semantically rich**:  
+  Maps environmental terms to [ENVO](https://sites.google.com/site/environmentontology/) and other vocabularies.
+
+- **Extensible**:  
+  Plug in new data sources or vocabularies.
+
+- **Built for integration**:  
+  Returns structured GeoJSON + Schema.org outputs for interoperability.
+
+> Know of a useful data source or vocabulary? [Suggest it!](https://github.com/clnsmth/geoenv/issues)
+
 
 ## Quick Start
 
-Install the current release from GitHub.
+Install directly from GitHub:
 
 ```bash
 pip install git+https://github.com/clnsmth/geoenv.git@main
 ```
 
-Resolve a geometry to its environment(s).
+Resolve a point on land:
 
 ```python
 from geoenv.data_sources import WorldTerrestrialEcosystems
-from geoenv.resolver import Resolver
 from geoenv.geometry import Geometry
+from geoenv.resolver import Resolver
 
-# Create a geometry in GeoJSON format
-point_on_land = {
-    "type": "Point",
-    "coordinates": [
-        -122.622364,
-        37.905931
-    ]
-}
-geometry = Geometry(point_on_land)
+# Define a geometry in GeoJSON format (Point or Polygon)
+geometry = Geometry(
+    {
+        "type": "Point",
+        "coordinates": [
+            -122.622364,
+            37.905931
+        ]
+    }
+)
 
-# Configure the resolver with one or more data sources
+# Configure the resolver with a data source (there can be multiple)
 resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
 
 # Resolve the geometry to environmental descriptions
-response = resolver.get_environment(
-    geometry,
-    identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-    description="Point on land",
-)
-
+response = resolver.get_environment(geometry)
 ```
 
-The response is a GeoJSON feature containing a list of environments and their associated properties. These properties map to semantic resources, ENVO by default.
+The response is a GeoJSON `Feature` with structured environments mapped to [ENVO](https://sites.google.com/site/environmentontology/) (by default):
 
 ```json
 {
   "type": "Feature",
-  "identifier": "5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
+  "identifier": null,
   "geometry": {
     "type": "Point",
     "coordinates": [
@@ -64,7 +76,7 @@ The response is a GeoJSON feature containing a list of environments and their as
     ]
   },
   "properties": {
-    "description": "Point on land",
+    "description": null,
     "environment": [
       {
         "type": "Environment",
@@ -108,8 +120,10 @@ The response is a GeoJSON feature containing a list of environments and their as
 ```
 
 
-Format the response as Schema.org.
+## Motivation
+There is a vast amount of data available from diverse sources, and `geoenv` offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
 
-```python
-schema_org = response.to_schema_org()
-```
+
+
+## License
+This project is licensed under the terms of the MIT license.
