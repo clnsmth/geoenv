@@ -25,17 +25,11 @@ jobs:
     - name: Install poetry
       uses: snok/install-poetry@v1
     - name: Install package
-      run: poetry install
+      run: poetry install --sync --with dev
 
       # Format code and error on issues. This is an easy check to pass.
-    - uses: psf/black@stable
-      with:
-        jupyter: true
-        src: ./src
-    - uses: psf/black@stable
-      with:
-        jupyter: true
-        src: ./tests
+    - name: Run Black formatter
+      run: poetry run black src/ tests/
 
       # Analyze code but don't error on issues. This check encourages best
       # practices and offers flexibility in adoption.
