@@ -33,10 +33,6 @@ jobs:
 
       # Analyze code but don't error on issues. This check encourages best
       # practices and offers flexibility in adoption.
-    - name: Install poetry
-      uses: snok/install-poetry@v1
-    - name: Install package
-      run: poetry install
     - name: Analyze code with pylint
       run: |
         poetry run pylint src/ --exit-zero --disable=C0103,W0621,R0904
