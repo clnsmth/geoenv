@@ -1,5 +1,7 @@
-Welcome to `geoenv`
-===================
+`geoenv`
+========
+
+`Map geometries to environmental semantics`
 
 Release v\ |version|. (:ref:`Installation <quickstart>`)
 
@@ -15,25 +17,22 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
     :target: https://codecov.io/github/clnsmth/geoenv
     :alt: Code coverage status
 
-`geoenv` is a Python library that links geographic locations—like points and polygons—to environmental descriptions using global datasets and semantic vocabularies.
+`geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments.
 
-It’s like reverse geocoding, but for environments.
+Motivation
+----------
 
-Whether you're working with field samples, sensor deployments, or satellite observations, `geoenv` helps you describe the environment with consistent, interoperable metadata.
+Finding datasets based on their environmental context is a challenge in data synthesis. The process often relies on vague or inconsistent metadata. This variability presents a barrier to reliable, large-scale analysis due to time lost in data discovery and incomplete search results.
 
-**Highlights**
+`geoenv` addresses this by using a dataset's originating location as a consistent and objective starting point. It programmatically maps the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach enriches datasets with uniform, semantic metadata, making them easier to discover, query, and integrate at scale.
 
-- **Global data support**:
-  Works with terrestrial, coastal, and marine environments at global scale.
+Key Features
+------------
 
-- **Semantically rich**:
-  Maps environmental terms to `ENVO`_ and other vocabularies.
-
-- **Extensible**:
-  Plug in new data sources or vocabularies.
-
-- **Built for integration**:
-  Returns structured GeoJSON + Schema.org outputs for interoperability.
+- **Automated Semantic Annotation:** Supplements inconsistent, manual descriptions with standardized environmental terms from controlled vocabularies.
+- **Structured, Interoperable Output:** Generates GeoJSON objects enriched with formal terms from `ENVO`_ (by default).
+- **Global Coverage:** Provides worldwide coverage for terrestrial, coastal, and marine environments using high-resolution data sources.
+- **Extensible:** Designed to accommodate new data sources or vocabularies for specific research needs.
 
 Know of a useful data source or vocabulary? `Suggest it! <https://github.com/clnsmth/geoenv/issues>`_
 
@@ -129,15 +128,24 @@ The response is a GeoJSON `Feature` with structured environments mapped to `ENVO
      }
    }
 
-Motivation
-----------
+Related Projects
+----------------
 
-There is a vast amount of data available from diverse sources, and `geoenv` offers a straightforward way to expose the environmental semantics of these datasets. By doing so, it provides a mechanism to connect otherwise disparate data sources through a shared environmental context, unlocking new opportunities for integrated analysis and research.
+The `Global Ecosystems Atlas`_ is a project that provides a comprehensive, harmonized open resource on the world's ecosystems. It standardizes diverse geospatial datasets by mapping them to the `IUCN Global Ecosystem Typology`_, a hierarchical classification of environments.
+
+.. _Global Ecosystems Atlas: https://globalecosystemsatlas.org/
+.. _IUCN Global Ecosystem Typology: https://global-ecosystems.org/
+
+Contributing
+------------
+
+We welcome contributions! If you know of a useful data source or vocabulary, and have ideas for new features, or find a bug, please `open an issue`_ to start a discussion.
+
+.. _open an issue: https://github.com/clnsmth/geoenv/issues
 
 License
 -------
 
 This project is licensed under the terms of the MIT license.
-
 
 .. _ENVO: https://sites.google.com/site/environmentontology/
