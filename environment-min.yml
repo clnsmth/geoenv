@@ -1,9 +1,9 @@
-name: geoenv-test
+name: geoenv
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.11
+  - python==3.11.13
   - black
   - myst-parser
   - pylint
