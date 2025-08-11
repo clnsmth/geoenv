@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "geoenv"
-version = "0.2.1"
+version = "0.2.2"
 description = "Map geometries to environmental semantics"
 authors = ["Colin Smith <colin.smith@wisc.edu>"]
 maintainers = ["Colin Smith <colin.smith@wisc.edu>"]
