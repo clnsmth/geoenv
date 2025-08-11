@@ -3,6 +3,13 @@
 
 
 
+## v0.2.4 (2025-08-11)
+
+
+### Bug fixes
+
+* fix: don't template sidebars ([`b2f9b26`](https://github.com/clnsmth/geoenv/commit/b2f9b265d23af915f48d2d069a7e79bb3149d439)) 
+
 ## v0.2.3 (2025-08-11)
 
 
