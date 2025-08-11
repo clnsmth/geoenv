@@ -9,7 +9,7 @@ _Map geometries to environmental semantics_
     <img src="https://img.shields.io/pypi/v/geoenv?color=%2334D058&label=pypi" alt="Package version">
 </a>
 
-`geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments.
+`geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments. 
 
 ## Motivation
 
