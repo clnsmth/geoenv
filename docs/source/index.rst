@@ -17,6 +17,10 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
     :target: https://codecov.io/github/clnsmth/geoenv
     :alt: Code coverage status
 
+.. image:: https://img.shields.io/pypi/v/geoenv?color=%2334D058&label=pypi
+    :target: https://pypi.org/project/geoenv/
+    :alt: Package version
+
 `geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments.
 
 Motivation
@@ -42,11 +46,11 @@ Know of a useful data source or vocabulary? `Suggest it! <https://github.com/cln
 Quick Start
 -----------
 
-Install directly from GitHub:
+Install from PyPI:
 
 .. code-block:: bash
 
-   pip install git+https://github.com/clnsmth/geoenv.git@main
+   pip install geoenv
 
 Resolve a point on land:
 
