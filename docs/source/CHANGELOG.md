@@ -3,6 +3,13 @@
 
 
 
+## v0.2.3 (2025-08-11)
+
+
+### Bug fixes
+
+* fix: broken logo reference ([`6942561`](https://github.com/clnsmth/geoenv/commit/69425618f73cf3caea8ad81c6b1630501054c750)) 
+
 ## v0.2.2 (2025-08-11)
 
 
