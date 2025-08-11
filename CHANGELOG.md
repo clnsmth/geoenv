@@ -3,6 +3,13 @@
 
 
 
+## v0.2.0 (2025-03-12)
+
+
+### Features
+
+* feat: release to production PyPI ([`544f6c8`](https://github.com/clnsmth/geoenv/commit/544f6c85125862edc02d1ed3a1455680fdbfddd8)) 
+
 ## v0.1.1 (2025-03-12)
 
 
