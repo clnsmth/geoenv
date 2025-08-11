@@ -8,7 +8,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = ">=3.11"
 pandas = "^2.2.3"
 geopandas = "^1.0.1"
 daiquiri = "^3.3.0"
