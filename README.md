@@ -15,7 +15,8 @@ _Map geometries to environmental semantics_
 
 Finding datasets based on their environmental context is a challenge in data synthesis. The process often relies on vague or inconsistent metadata. This variability presents a barrier to reliable, large-scale analysis due to time lost in data discovery and incomplete search results.
 
-`geoenv` addresses this by using a dataset's originating location as a consistent and objective starting point. It programmatically maps the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach enriches datasets with uniform, semantic metadata, making them easier to discover, query, and integrate at scale.
+`geoenv` helps address this challenge by using a dataset’s originating location as a consistent and objective starting point. It can programmatically map the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach aims to enrich datasets with uniform, semantic metadata, making them potentially easier to discover, query, and integrate at scale.
+
 
 ## Key Features
 
