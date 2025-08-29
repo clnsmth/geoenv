@@ -17,9 +17,10 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
     :target: https://codecov.io/github/clnsmth/geoenv
     :alt: Code coverage status
 
-.. image:: https://img.shields.io/pypi/v/geoenv?color=%2334D058&label=pypi
+.. image:: https://img.shields.io/pypi/v/geoenv?color=blue
     :target: https://pypi.org/project/geoenv/
-    :alt: Package version
+    :alt: PyPI - Version
+
 
 `geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments.
 
