@@ -5,9 +5,8 @@ _Map geometries to environmental semantics_
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 ![example workflow](https://github.com/clnsmth/geoenv/actions/workflows/ci-cd.yml/badge.svg)
 [![codecov](https://codecov.io/github/clnsmth/geoenv/graph/badge.svg?token=2J4MNIXCTD)](https://codecov.io/github/clnsmth/geoenv)
-<a href="https://pypi.org/project/geoenv/" target="_blank">
-    <img src="https://img.shields.io/pypi/v/geoenv?color=%2334D058&label=pypi" alt="Package version">
-</a>
+![PyPI - Version](https://img.shields.io/pypi/v/geoenv?color=blue)
+
 
 `geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments. 
 
