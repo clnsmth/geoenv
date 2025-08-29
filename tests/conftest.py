@@ -1,5 +1,6 @@
 """Configuration for the test suite"""
 
+import os
 import json
 import tempfile
 from importlib.resources import files
@@ -14,8 +15,15 @@ from geoenv.utilities import EnvironmentDataModel
 
 @pytest.fixture()
 def use_mock():
-    """Use mock data for testing purposes."""
-    return True  # Change this to False for real HTTP requests and data
+    """
+    Use mock data for testing purposes.
+
+    Controlled by the GEOENV_USE_MOCK environment variable. If GEOENV_USE_MOCK
+    is not set, defaults to True (use mocks). Set GEOENV_USE_MOCK to 'false'
+    (case-insensitive) to disable mocks and use real HTTP requests.
+    """
+    value = os.environ.get("GEOENV_USE_MOCK", "true").lower()
+    return value not in {"false"}
 
 
 @pytest.fixture

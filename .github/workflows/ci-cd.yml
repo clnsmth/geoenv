@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [main, development]
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Every Sunday at 00:00 UTC
 
 jobs:
 
@@ -49,6 +51,29 @@ jobs:
     # Build docs
     - name: Build documentation
       run: poetry run make html --directory docs/
+
+
+  test-real-requests:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    env:
+      GEOENV_USE_MOCK: "false"
+    steps:
+      # Set up job requirements
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Check-out repository
+        uses: actions/checkout@v4
+      - name: Install poetry
+        uses: snok/install-poetry@v1
+      - name: Install package
+        run: poetry install --sync --with dev
+
+      # Test
+      - name: Test with pytest
+        run: poetry run pytest tests/
 
 
   cd:
