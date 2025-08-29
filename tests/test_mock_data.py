@@ -6,13 +6,14 @@ import pytest
 from tests.data.create_mock_data import create_mock_response_content
 
 
-def test_mock_response_content(use_mock, tmp_path):
+@pytest.mark.asyncio
+async def test_mock_response_content(use_mock, tmp_path):
     """Test the mock response content is consistent with new response data"""
 
     if use_mock:
         pytest.skip("Skipping test when use_mock is False")
 
-    create_mock_response_content(output_directory=tmp_path)  # fresh responses
+    await create_mock_response_content(output_directory=tmp_path)  # fresh responses
     for file in tmp_path.iterdir():
         with open(file, "r", encoding="utf-8") as f:
             print(file.name)

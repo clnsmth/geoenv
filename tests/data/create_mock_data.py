@@ -11,7 +11,7 @@ from geoenv.resolver import construct_response
 from tests.conftest import load_geometry
 
 
-def create_mock_response_content(
+async def create_mock_response_content(
     output_directory: Path = files("tests.data.response"),
 ) -> None:
     """Get response content for each data_source, and for both success and fail
@@ -23,7 +23,7 @@ def create_mock_response_content(
     # WTE Success
     geometry = Geometry(load_geometry("point_on_land"))
     data_source = WorldTerrestrialEcosystems()
-    response = data_source._request(geometry)
+    response = await data_source._request(geometry)
     json = dumps(response, indent=4)
     with open(output_directory.joinpath("wte_success.json"), "w") as f:
         f.write(json)
@@ -31,7 +31,7 @@ def create_mock_response_content(
     # WTE Fail
     geometry = Geometry(load_geometry("point_on_ocean"))
     data_source = WorldTerrestrialEcosystems()
-    response = data_source._request(geometry)
+    response = await data_source._request(geometry)
     json = dumps(response, indent=4)
     with open(output_directory.joinpath("wte_fail.json"), "w") as f:
         f.write(json)
@@ -39,7 +39,7 @@ def create_mock_response_content(
     # ECU Success
     geometry = Geometry(load_geometry("polygon_on_land_and_ocean"))
     data_source = EcologicalCoastalUnits()
-    response = data_source._request(geometry)
+    response = await data_source._request(geometry)
     json = dumps(response, indent=4)
     with open(output_directory.joinpath("ecu_success.json"), "w") as f:
         f.write(json)
@@ -47,7 +47,7 @@ def create_mock_response_content(
     # ECU Fail
     geometry = Geometry(load_geometry("polygon_on_land"))
     data_source = EcologicalCoastalUnits()
-    response = data_source._request(geometry)
+    response = await data_source._request(geometry)
     json = dumps(response, indent=4)
     with open(output_directory.joinpath("ecu_fail.json"), "w") as f:
         f.write(json)
@@ -55,7 +55,7 @@ def create_mock_response_content(
     # EMU Success
     geometry = Geometry(load_geometry("polygon_on_ocean"))
     data_source = EcologicalMarineUnits()
-    response = data_source._request(geometry)
+    response = await data_source._request(geometry)
     json = dumps(response, indent=4)
     with open(output_directory.joinpath("emu_success.json"), "w") as f:
         f.write(json)
@@ -63,7 +63,7 @@ def create_mock_response_content(
     # EMU Fail
     geometry = Geometry(load_geometry("polygon_on_land"))
     data_source = EcologicalMarineUnits()
-    response = data_source._request(geometry)
+    response = await data_source._request(geometry)
     json = dumps(response, indent=4)
     with open(output_directory.joinpath("emu_fail.json"), "w") as f:
         f.write(json)
@@ -71,7 +71,7 @@ def create_mock_response_content(
     # EMU Success (another one, for testing depth inputs)
     geometry = Geometry(load_geometry("point_on_ocean_with_depth"))
     data_source = EcologicalMarineUnits()
-    response = data_source._request(geometry)
+    response = await data_source._request(geometry)
     json = dumps(response, indent=4)
     with open(
         output_directory.joinpath("emu_success_point_on_ocean_with_depth.json"), "w"

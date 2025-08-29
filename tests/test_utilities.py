@@ -3,6 +3,8 @@
 import json
 from importlib.resources import files
 
+import pytest
+
 from geoenv.data_sources.world_terrestrial_ecosystems import apply_code_mapping
 from geoenv.geometry import Geometry
 from geoenv.utilities import (
@@ -92,7 +94,8 @@ def test_get_properties():
     assert len(result["Not a valid attribute"]) == 0
 
 
-def test_construct_response(scenarios, mocker, empty_data_model):
+@pytest.mark.asyncio
+async def test_construct_response(scenarios, mocker, empty_data_model):
     """Test the construct_response function."""
     # Compiles a list of Environment into the data model represented by the
     # Response object and tests for expected properties
@@ -102,7 +105,7 @@ def test_construct_response(scenarios, mocker, empty_data_model):
     for scenario in scenarios:
         mocker.patch("requests.get", return_value=scenario.get("response"))
         data_source = scenario["data_source"]
-        environment = data_source.get_environment(Geometry(scenario["geometry"]))
+        environment = await data_source.get_environment(Geometry(scenario["geometry"]))
         environments.extend(environment)
     identifier = "Some identifier"
     geometry = scenarios[0]["geometry"]  # Any geometry will do

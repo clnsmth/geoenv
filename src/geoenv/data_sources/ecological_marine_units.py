@@ -6,8 +6,8 @@ from json import dumps, loads
 from typing import List
 
 import pandas as pd
-import requests
 import daiquiri
+import aiohttp
 from geoenv.data_sources.data_source import DataSource
 from geoenv.geometry import Geometry
 from geoenv.environment import Environment
@@ -96,7 +96,7 @@ class EcologicalMarineUnits(DataSource):
         self._properties = properties
 
     # pylint: disable=duplicate-code
-    def get_environment(self, geometry: Geometry) -> List[Environment]:
+    async def get_environment(self, geometry: Geometry) -> List[Environment]:
         """
         Resolves a given geometry to environmental descriptions using the
         Ecological Marine Units dataset.
@@ -111,7 +111,7 @@ class EcologicalMarineUnits(DataSource):
         )
 
         self.geometry = geometry.data  # access z values to filter on depth
-        self.data = self._request(geometry)
+        self.data = await self._request(geometry)
         environments = self.convert_data()
 
         logger.info(
@@ -120,7 +120,7 @@ class EcologicalMarineUnits(DataSource):
         )
         return environments
 
-    def _request(self, geometry: Geometry) -> dict:
+    async def _request(self, geometry: Geometry) -> dict:
         """
         Sends a request to the Ecological Marine Units data source and
         retrieves raw response data.
@@ -163,14 +163,15 @@ class EcologicalMarineUnits(DataSource):
         # pylint: disable=unused-variable
         # pylint: disable=duplicate-code
         try:
-            response = requests.get(
-                base, params=payload, timeout=10, headers=user_agent()
-            )
-            logger.debug(
-                f"Received response from {self.__class__.__name__}. "
-                f"Status: {response.status_code}"
-            )
-            return response.json()
+            async with aiohttp.ClientSession() as session:
+                async with session.get(
+                    base, params=payload, timeout=10, headers=user_agent()
+                ) as response:
+                    logger.debug(
+                        f"Received response from {self.__class__.__name__}. "
+                        f"Status: {response.status}"
+                    )
+                    return await response.json()
         except Exception as e:
             logger.error(
                 f"Failed to fetch data from {self.__class__.__name__}. " f"Error: {e}",
@@ -223,7 +224,7 @@ class EcologicalMarineUnits(DataSource):
         :return: The updated properties dictionary.
         """
         if len(unique_environment_properties) == 0:
-            return None
+            return {}
 
         # There are two properties returned by this data source (OceanName and
         # Name_2018), the latter of which is composed of 7 atomic properties.

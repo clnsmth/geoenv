@@ -8,6 +8,7 @@ dependencies:
   - aom=3.9.1
   - babel=2.17.0
   - backoff=2.2.1
+  - backports.asyncio.runner=1.2.0
   - black=25.1.0
   - blosc=1.21.6
   - branca=0.8.1
@@ -130,6 +131,7 @@ dependencies:
   - pyparsing=3.2.1
   - pyproj=3.7.1
   - pysocks=1.7.1
+  - pytest-asyncio=1.1.0
   - python=3.11.13
   - python-dateutil=2.9.0.post0
   - python-gitlab=4.13.0
@@ -186,12 +188,17 @@ dependencies:
   - zstandard=0.23.0
   - zstd=1.5.6
   - pip:
+      - aiohappyeyeballs==2.6.1
+      - aiohttp==3.12.15
+      - aiosignal==1.4.0
       - alabaster==0.7.16
       - astroid==3.3.9
+      - attrs==25.3.0
       - certifi==2025.1.31
       - click-option-group==0.5.7
       - coverage==7.6.12
       - daiquiri==3.3.0
+      - frozenlist==1.7.0
       - geoenv==0.2.0
       - geopandas==1.0.1
       - numpy==2.2.3

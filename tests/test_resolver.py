@@ -1,12 +1,15 @@
 """Test the resolver module"""
 
+import pytest
+
 from geoenv.resolver import Resolver
 from geoenv.geometry import Geometry
 from geoenv.data_sources import WorldTerrestrialEcosystems
 from geoenv.data_sources import EcologicalMarineUnits
 
 
-def test_resolve(use_mock, scenarios, assert_identify, mocker):
+@pytest.mark.asyncio
+async def test_resolve(use_mock, scenarios, assert_identify, mocker):
     """Test the resolve method"""
     for scenario in scenarios:
 
@@ -19,7 +22,7 @@ def test_resolve(use_mock, scenarios, assert_identify, mocker):
         geometry = Geometry(scenario.get("geometry"))
 
         # Run
-        result = resolver.resolve(geometry)
+        result = await resolver.resolve(geometry)
 
         # Assert
         assert_identify(result, scenario)
