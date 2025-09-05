@@ -34,6 +34,7 @@ Interoperability
 Efficiency
 ~~~~~~~~~~
 
+- Process multiple data sources in parallel using asynchronous requests to minimize I/O wait times.
 - Cache responses to avoid redundant queries
 - Cache data sources locally where possible
 
@@ -58,7 +59,7 @@ Resolver
 
 The `Resolver` is the main entry point. You pass in a `Geometry` and a list of `DataSource` instances, and get back a structured `Response`:
 
-- Calls each data source with the input geometry
+- Calls all configured data sources concurrently using asynchronous I/O
 - Wraps results into `Environment` objects
 - Maps terms to `ENVO`_ by default
 - Returns a `Response` object with the result set

@@ -116,10 +116,12 @@ class Resolver:
 #     resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
 #
 #     # Resolve the geometry to environmental descriptions
-#     response = resolver.resolve(
-#         geometry,
-#         identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-#         description="Point on land",
+#     response = asyncio.run(
+#         resolver.resolve(
+#             geometry,
+#             identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
+#             description="Point on land",
+#         )
 #     )
 #
 #     # The response is a GeoJSON feature with environmental properties
