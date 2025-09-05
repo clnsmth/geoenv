@@ -57,6 +57,7 @@ Resolve a point on land:
 
 .. code-block:: python
 
+   import asyncio
    from geoenv.data_sources import WorldTerrestrialEcosystems
    from geoenv.geometry import Geometry
    from geoenv.resolver import Resolver
@@ -75,8 +76,9 @@ Resolve a point on land:
    # Configure the resolver with a data source (there can be multiple)
    resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
 
-   # Resolve the geometry to environmental descriptions
-   response = resolver.get_environment(geometry)
+   # Resolve the geometry to environmental descriptions. Concurrent resolution
+   # to multiple data sources is supported via asyncio.
+   response = asyncio.run(resolver.resolve(geometry))
 
 The response is a GeoJSON `Feature` with structured environments mapped to `ENVO`_ (by default):
 

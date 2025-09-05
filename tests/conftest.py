@@ -2,6 +2,7 @@
 
 import os
 import json
+import asyncio
 import tempfile
 from importlib.resources import files
 import pytest
@@ -222,11 +223,12 @@ def empty_data_model():
 def data_model(mocker):
     """Data model for testing purposes."""
     mocker.patch("requests.get", return_value=load_response("wte_success"))
-
     data_source = WorldTerrestrialEcosystems()
     geometry = Geometry(load_geometry("point_on_land"))
-    environment = data_source.get_environment(geometry)
 
+    environment = asyncio.get_event_loop().run_until_complete(
+        data_source.get_environment(geometry)
+    )
     data = construct_response(
         geometry,
         environment,

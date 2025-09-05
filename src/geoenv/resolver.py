@@ -5,6 +5,7 @@ The primary client-facing API for resolving spatial geometries to environmental
 descriptions.
 """
 
+import asyncio
 from typing import List
 import daiquiri
 from geoenv.data_sources.data_source import DataSource
@@ -52,7 +53,7 @@ class Resolver:
         """
         self._data_source = data_source
 
-    def resolve(
+    async def resolve(
         self,
         geometry: Geometry,
         semantic_resource: str = "ENVO",
@@ -80,9 +81,10 @@ class Resolver:
         )
         # pylint: disable=broad-exception-caught
         try:
+            tasks = [item.get_environment(geometry) for item in self.data_source]
+            results_nested = await asyncio.gather(*tasks)
             results = []
-            for item in self.data_source:
-                environment = item.get_environment(geometry)
+            for environment in results_nested:
                 results.extend(environment)
             result = construct_response(
                 geometry=geometry,
@@ -101,24 +103,38 @@ class Resolver:
 
 # if __name__ == "__main__":
 #
+#     import time
 #     from json import dumps
-#     from geoenv.data_sources import WorldTerrestrialEcosystems
+#     from geoenv.data_sources import WorldTerrestrialEcosystems, EcologicalMarineUnits, EcologicalCoastalUnits
 #     from geoenv.resolver import Resolver
 #     from geoenv.geometry import Geometry
+# 
+#     start_time = time.time()
 #
 #     # Create a geometry in GeoJSON format
 #     point_on_land = {"type": "Point", "coordinates": [-122.622364, 37.905931]}
 #     geometry = Geometry(point_on_land)
 #
 #     # Configure the resolver with one or more data sources
-#     resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
+#     resolver = Resolver(
+#         data_source=[
+#             WorldTerrestrialEcosystems(),
+#             EcologicalMarineUnits(),
+#             EcologicalCoastalUnits(),
+#         ]
+#     )
 #
 #     # Resolve the geometry to environmental descriptions
-#     response = resolver.resolve(
-#         geometry,
-#         identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-#         description="Point on land",
+#     response = asyncio.run(
+#         resolver.resolve(
+#             geometry,
+#             identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
+#             description="Point on land",
+#         )
 #     )
+#
+#     duration = time.time() - start_time
+#     print(f"requests took {duration:.2f} seconds")
 #
 #     # The response is a GeoJSON feature with environmental properties
 #     print(dumps(response.data, indent=2))

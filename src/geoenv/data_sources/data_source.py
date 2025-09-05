@@ -80,7 +80,7 @@ class DataSource(ABC):
         """
 
     @abstractmethod
-    def get_environment(self, geometry: Geometry) -> List[Environment]:
+    async def get_environment(self, geometry: Geometry) -> List[Environment]:
         """
         Resolves a given geometry to environmental descriptions using the data
         source.

@@ -2,11 +2,12 @@
 *ecological_coastal_units.py*
 """
 
+import asyncio
 from json import dumps
 from typing import List
 
-import requests
 import daiquiri
+import aiohttp
 from geoenv.data_sources.data_source import DataSource
 from geoenv.geometry import Geometry
 from geoenv.environment import Environment
@@ -124,7 +125,7 @@ class EcologicalCoastalUnits(DataSource):
         self._buffer = buffer
 
     # pylint: disable=duplicate-code
-    def get_environment(self, geometry: Geometry) -> List[Environment]:
+    async def get_environment(self, geometry: Geometry) -> List[Environment]:
         """
         Resolves a given geometry to environmental descriptions using the
         Ecological Coastal Units dataset.
@@ -148,7 +149,15 @@ class EcologicalCoastalUnits(DataSource):
             )
             geometry.data = geometry.point_to_polygon(buffer=self.buffer)
 
-        self.data = self._request(geometry)
+        # This method remains `async` and uses `aiohttp` by design, even though
+        # it only resolves a single geometry at a time. This is critical to
+        # ensure the method is non-blocking and integrates safely into a larger
+        # asyncio application. Using a synchronous library like `requests` here
+        # would freeze the entire event loop, halting all other concurrent tasks
+        # until this single network request completes.
+        async with aiohttp.ClientSession() as session:
+            self.data = await self._request(session, geometry)
+
         environments = self.convert_data()
         logger.info(
             f"Resolved {len(environments)} environments for geometry in "
@@ -156,11 +165,14 @@ class EcologicalCoastalUnits(DataSource):
         )
         return environments
 
-    def _request(self, geometry: Geometry) -> dict:
+    async def _request(
+        self, session: aiohttp.ClientSession, geometry: Geometry
+    ) -> dict:
         """
         Sends a request to the Ecological Coastal Units data source and
         retrieves raw response data.
 
+        :param session: An active aiohttp ClientSession.
         :param geometry: The geographic location to query.
         :return: A dictionary containing raw response data from the data
             source.
@@ -188,19 +200,19 @@ class EcologicalCoastalUnits(DataSource):
 
         logger.debug(f"Sending request to {self.__class__.__name__}")
 
-        # pylint: disable=broad-exception-caught
         # pylint: disable=unused-variable
         # pylint: disable=duplicate-code
         try:
-            response = requests.get(
+            async with session.get(
                 base, params=payload, timeout=10, headers=user_agent()
-            )
-            logger.debug(
-                f"Received response from {self.__class__.__name__}. "
-                f"Status: {response.status_code}"
-            )
-            return response.json()
-        except Exception as e:
+            ) as response:
+                response.raise_for_status()
+                logger.debug(
+                    f"Received response from {self.__class__.__name__}. "
+                    f"Status: {response.status}"
+                )
+                return await response.json()
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(
                 f"Failed to fetch data from {self.__class__.__name__}. " f"Error: {e}",
                 exc_info=True,
@@ -254,7 +266,7 @@ class EcologicalCoastalUnits(DataSource):
         :return: The updated properties dictionary.
         """
         if len(unique_environment_properties) == 0:
-            return None
+            return {}
 
         # There is only one property returned by this data source
         # (CSU_Descriptor), which is composed of 10 atomic properties. Split
