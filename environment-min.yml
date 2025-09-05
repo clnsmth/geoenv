@@ -10,4 +10,5 @@ dependencies:
   - sphinx
   - geopandas
   - pytest-asyncio
+  - aiohttp
 prefix: /opt/miniconda3/envs/geoenv
