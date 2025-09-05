@@ -103,17 +103,26 @@ class Resolver:
 
 # if __name__ == "__main__":
 #
+#     import time
 #     from json import dumps
-#     from geoenv.data_sources import WorldTerrestrialEcosystems
+#     from geoenv.data_sources import WorldTerrestrialEcosystems, EcologicalMarineUnits, EcologicalCoastalUnits
 #     from geoenv.resolver import Resolver
 #     from geoenv.geometry import Geometry
+# 
+#     start_time = time.time()
 #
 #     # Create a geometry in GeoJSON format
 #     point_on_land = {"type": "Point", "coordinates": [-122.622364, 37.905931]}
 #     geometry = Geometry(point_on_land)
 #
 #     # Configure the resolver with one or more data sources
-#     resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
+#     resolver = Resolver(
+#         data_source=[
+#             WorldTerrestrialEcosystems(),
+#             EcologicalMarineUnits(),
+#             EcologicalCoastalUnits(),
+#         ]
+#     )
 #
 #     # Resolve the geometry to environmental descriptions
 #     response = asyncio.run(
@@ -123,6 +132,9 @@ class Resolver:
 #             description="Point on land",
 #         )
 #     )
+#
+#     duration = time.time() - start_time
+#     print(f"requests took {duration:.2f} seconds")
 #
 #     # The response is a GeoJSON feature with environmental properties
 #     print(dumps(response.data, indent=2))
