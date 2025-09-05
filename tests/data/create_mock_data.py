@@ -3,6 +3,9 @@
 from json import dumps
 from pathlib import Path
 from importlib.resources import files
+
+import aiohttp
+
 from geoenv.geometry import Geometry
 from geoenv.data_sources import WorldTerrestrialEcosystems
 from geoenv.data_sources import EcologicalCoastalUnits
@@ -20,63 +23,66 @@ async def create_mock_response_content(
     returns no results.
     """
 
-    # WTE Success
-    geometry = Geometry(load_geometry("point_on_land"))
-    data_source = WorldTerrestrialEcosystems()
-    response = await data_source._request(geometry)
-    json = dumps(response, indent=4)
-    with open(output_directory.joinpath("wte_success.json"), "w") as f:
-        f.write(json)
+    # Create a single session to be reused for all requests
+    async with aiohttp.ClientSession() as session:
 
-    # WTE Fail
-    geometry = Geometry(load_geometry("point_on_ocean"))
-    data_source = WorldTerrestrialEcosystems()
-    response = await data_source._request(geometry)
-    json = dumps(response, indent=4)
-    with open(output_directory.joinpath("wte_fail.json"), "w") as f:
-        f.write(json)
+        # WTE Success
+        geometry = Geometry(load_geometry("point_on_land"))
+        data_source = WorldTerrestrialEcosystems()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("wte_success.json"), "w") as f:
+            f.write(json)
 
-    # ECU Success
-    geometry = Geometry(load_geometry("polygon_on_land_and_ocean"))
-    data_source = EcologicalCoastalUnits()
-    response = await data_source._request(geometry)
-    json = dumps(response, indent=4)
-    with open(output_directory.joinpath("ecu_success.json"), "w") as f:
-        f.write(json)
+        # WTE Fail
+        geometry = Geometry(load_geometry("point_on_ocean"))
+        data_source = WorldTerrestrialEcosystems()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("wte_fail.json"), "w") as f:
+            f.write(json)
 
-    # ECU Fail
-    geometry = Geometry(load_geometry("polygon_on_land"))
-    data_source = EcologicalCoastalUnits()
-    response = await data_source._request(geometry)
-    json = dumps(response, indent=4)
-    with open(output_directory.joinpath("ecu_fail.json"), "w") as f:
-        f.write(json)
+        # ECU Success
+        geometry = Geometry(load_geometry("polygon_on_land_and_ocean"))
+        data_source = EcologicalCoastalUnits()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("ecu_success.json"), "w") as f:
+            f.write(json)
 
-    # EMU Success
-    geometry = Geometry(load_geometry("polygon_on_ocean"))
-    data_source = EcologicalMarineUnits()
-    response = await data_source._request(geometry)
-    json = dumps(response, indent=4)
-    with open(output_directory.joinpath("emu_success.json"), "w") as f:
-        f.write(json)
+        # ECU Fail
+        geometry = Geometry(load_geometry("polygon_on_land"))
+        data_source = EcologicalCoastalUnits()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("ecu_fail.json"), "w") as f:
+            f.write(json)
 
-    # EMU Fail
-    geometry = Geometry(load_geometry("polygon_on_land"))
-    data_source = EcologicalMarineUnits()
-    response = await data_source._request(geometry)
-    json = dumps(response, indent=4)
-    with open(output_directory.joinpath("emu_fail.json"), "w") as f:
-        f.write(json)
+        # EMU Success
+        geometry = Geometry(load_geometry("polygon_on_ocean"))
+        data_source = EcologicalMarineUnits()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("emu_success.json"), "w") as f:
+            f.write(json)
 
-    # EMU Success (another one, for testing depth inputs)
-    geometry = Geometry(load_geometry("point_on_ocean_with_depth"))
-    data_source = EcologicalMarineUnits()
-    response = await data_source._request(geometry)
-    json = dumps(response, indent=4)
-    with open(
-        output_directory.joinpath("emu_success_point_on_ocean_with_depth.json"), "w"
-    ) as f:
-        f.write(json)
+        # EMU Fail
+        geometry = Geometry(load_geometry("polygon_on_land"))
+        data_source = EcologicalMarineUnits()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("emu_fail.json"), "w") as f:
+            f.write(json)
+
+        # EMU Success (another one, for testing depth inputs)
+        geometry = Geometry(load_geometry("point_on_ocean_with_depth"))
+        data_source = EcologicalMarineUnits()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(
+            output_directory.joinpath("emu_success_point_on_ocean_with_depth.json"), "w"
+        ) as f:
+            f.write(json)
 
 
 def create_schema_org_fixture(

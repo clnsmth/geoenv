@@ -2,6 +2,7 @@
 *world_terrestrial_ecosystems.py*
 """
 
+import asyncio
 from json import dumps, loads
 from pathlib import Path
 from typing import List
@@ -150,9 +151,12 @@ class WorldTerrestrialEcosystems(DataSource):
         # Resolve each geometry, and in the case of multiple points, construct
         # a single response object emulating the API response format. This is
         # to maintain compatibility with the downstream code.
+        async with aiohttp.ClientSession() as session:
+            tasks = [self._request(session, item) for item in geometries]
+            responses = await asyncio.gather(*tasks)
+
         results = []
-        for item in geometries:
-            response = await self._request(item)
+        for response in responses:
             if response.get("properties"):
                 results.extend(response["properties"].get("Values", []))
         self.data = {"properties": {"Values": results}}
@@ -164,11 +168,14 @@ class WorldTerrestrialEcosystems(DataSource):
         )
         return environments
 
-    async def _request(self, geometry: Geometry) -> dict:
+    async def _request(
+        self, session: aiohttp.ClientSession, geometry: Geometry
+    ) -> dict:
         """
         Sends a request to the World Terrestrial Ecosystems data source and
         retrieves raw response data.
 
+        :param session: An active aiohttp ClientSession.
         :param geometry: The geographic location to query.
         :return: A dictionary containing raw response data from the data
             source.
@@ -186,20 +193,19 @@ class WorldTerrestrialEcosystems(DataSource):
 
         logger.debug(f"Sending request to {self.__class__.__name__}")
 
-        # pylint: disable=broad-exception-caught
         # pylint: disable=unused-variable
         # pylint: disable=duplicate-code
         try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(
-                    base, params=payload, timeout=10, headers=user_agent()
-                ) as response:
-                    logger.debug(
-                        f"Received response from {self.__class__.__name__}. "
-                        f"Status: {response.status}"
-                    )
-                    return await response.json()
-        except Exception as e:
+            async with session.get(
+                base, params=payload, timeout=10, headers=user_agent()
+            ) as response:
+                response.raise_for_status()
+                logger.debug(
+                    f"Received response from {self.__class__.__name__}. "
+                    f"Status: {response.status}"
+                )
+                return await response.json()
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(
                 f"Failed to fetch data from {self.__class__.__name__}. " f"Error: {e}",
                 exc_info=True,
