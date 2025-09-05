@@ -3,49 +3,6 @@
 
 
 
-## v0.3.0 (2025-09-05)
-
-
-### Documentation
-
-* docs: change PyPI badge to blue coloration ([`238d8c9`](https://github.com/clnsmth/geoenv/commit/238d8c979d8650f0c66185a01eda52202cf634fb)) 
-* docs: remove stray sidebar and changelog files ([`0d8223c`](https://github.com/clnsmth/geoenv/commit/0d8223cc8c843bd8db987a4b48342dc30fd03f28)) 
-* docs: more nuanced motivation section ([`696f0f8`](https://github.com/clnsmth/geoenv/commit/696f0f8cd49da7130788e05a396e10957b16b0d8)) 
-
-### Features
-
-* feat: implement concurrent data source resolution ([`de5a2a8`](https://github.com/clnsmth/geoenv/commit/de5a2a850f7c6c4f6dcfc34588755a1adf919133)) 
-
-### Testing
-
-* test: control real requests with environmental variable ([`af42d08`](https://github.com/clnsmth/geoenv/commit/af42d0823b5f381458cf9d616d08f7e5876a8d3c)) 
-
-## v0.2.4 (2025-08-11)
-
-
-### Bug fixes
-
-* fix: don't template sidebars ([`b2f9b26`](https://github.com/clnsmth/geoenv/commit/b2f9b265d23af915f48d2d069a7e79bb3149d439)) 
-
-## v0.2.3 (2025-08-11)
-
-
-### Bug fixes
-
-* fix: broken logo reference ([`6942561`](https://github.com/clnsmth/geoenv/commit/69425618f73cf3caea8ad81c6b1630501054c750)) 
-
-## v0.2.2 (2025-08-11)
-
-
-### Bug fixes
-
-* fix: logo and quickstart reference ([`b9c1b81`](https://github.com/clnsmth/geoenv/commit/b9c1b816e4cf517e20b2a73b4eda1a0201c9a53b)) 
-
-### Documentation
-
-* docs: fix changelog auto build ([`da623c3`](https://github.com/clnsmth/geoenv/commit/da623c311aee1166c876fcd9d2edf80db91a5c3b)) 
-* docs: align .toml project description ([`d866852`](https://github.com/clnsmth/geoenv/commit/d866852c34022fe5532eebfd1bac09ab5f5409f0)) 
-
 ## v0.2.1 (2025-08-11)
 
 
