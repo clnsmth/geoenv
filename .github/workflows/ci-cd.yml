@@ -106,6 +106,7 @@ jobs:
       run: poetry install
 
     - name: Use Python Semantic Release to prepare release
+      id: release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -116,22 +117,6 @@ jobs:
           git checkout development
           git merge main
           git push origin development
-
-    # - name: Publish to TestPyPI
-    #   uses: pypa/gh-action-pypi-publish@release/v1
-    #   if: steps.release.outputs.released == 'true'
-    #   with:
-    #     user: __token__
-    #     password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-    #     repository_url: https://test.pypi.org/legacy/
-
-
-#       - name: Test install from TestPyPI
-#         run: |
-#             pip install \
-#             --index-url https://test.pypi.org/simple/ \
-#             --extra-index-url https://pypi.org/simple \
-#             geoenv
 
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
