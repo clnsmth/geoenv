@@ -1,5 +1,6 @@
 """Create mock data for the tests"""
 
+import asyncio
 from json import dumps
 from pathlib import Path
 from importlib.resources import files
@@ -109,5 +110,5 @@ def create_schema_org_fixture(
 
 
 if __name__ == "__main__":
-    create_mock_response_content()
+    asyncio.run(create_mock_response_content())
     # create_schema_org_fixture()
