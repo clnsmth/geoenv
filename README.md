@@ -35,13 +35,15 @@ Install from PyPI:
 pip install geoenv
 ```
 
-Resolve a point on land:
+Resolve a point location to environmental descriptions:
 
 ```python
 import asyncio
-from geoenv.data_sources import WorldTerrestrialEcosystems
 from geoenv.geometry import Geometry
 from geoenv.resolver import Resolver
+from geoenv.data_sources import (WorldTerrestrialEcosystems,
+                                 EcologicalMarineUnits,
+                                 EcologicalCoastalUnits)
 
 # Define a geometry in GeoJSON format (Point or Polygon)
 geometry = Geometry(
@@ -54,11 +56,19 @@ geometry = Geometry(
     }
 )
 
-# Configure the resolver with a data source (there can be multiple)
-resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
+# Set up the resolver. When the location's environment is not known, 
+# multiple data sources are included to cover all potential 
+# environment types.
+resolver = Resolver(
+    data_source=[
+        WorldTerrestrialEcosystems(),
+        EcologicalMarineUnits(),
+        EcologicalCoastalUnits(),
+    ]
+)
 
-# Resolve the geometry to environmental descriptions. Concurrent 
-# resolution to multiple data sources is supported via asyncio.
+# Resolve the geometry to environmental descriptions. The resolver 
+# queries multiple data sources concurrently using `asyncio`.
 response = asyncio.run(resolver.resolve(geometry))
 ```
 
