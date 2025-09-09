@@ -24,24 +24,6 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
 
 `geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments.
 
-Motivation
-----------
-
-Finding datasets based on their environmental context is a challenge in data synthesis. The process often relies on vague or inconsistent metadata. This variability presents a barrier to reliable, large-scale analysis due to time lost in data discovery and incomplete search results.
-
-`geoenv` helps address this challenge by using a dataset’s originating location as a consistent and objective starting point. It can programmatically map the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach aims to enrich datasets with uniform, semantic metadata, making them potentially easier to discover, query, and integrate at scale.
-
-Features
---------
-
-- **Semantic Annotation:** Supplements inconsistent, manual descriptions with standardized environmental terms from controlled vocabularies.
-- **Structured, Interoperable Output:** Generates GeoJSON objects enriched with terms from `ENVO`_ (by default).
-- **Global Coverage:** Provides worldwide coverage for terrestrial, coastal, and marine environments using high-resolution data sources.
-- **Extensible:** Designed to accommodate new data sources or vocabularies for specific research needs.
-
-Know of a useful data source or vocabulary? `Suggest it! <https://github.com/clnsmth/geoenv/issues>`_
-
-
 .. _quickstart:
 
 Quick Start
@@ -51,9 +33,9 @@ Install from PyPI:
 
 .. code-block:: bash
 
-   pip install geoenv
+   $ pip install geoenv
 
-Resolve a point on land:
+Resolve a point location to environmental descriptions:
 
 .. code-block:: python
 
@@ -76,8 +58,8 @@ Resolve a point on land:
    )
 
    # Set up the resolver. When the location's environment is not known,
-   # multiple data sources are included to cover all potential
-   # environment types.
+   # multiple data sources are included to cover potential environment
+   # types.
    resolver = Resolver(
        data_source=[
            WorldTerrestrialEcosystems(),
@@ -90,7 +72,7 @@ Resolve a point on land:
    # queries multiple data sources concurrently using `asyncio`.
    response = asyncio.run(resolver.resolve(geometry))
 
-The response is a GeoJSON `Feature` with structured environmental descriptions mapped to `ENVO`_ (by default):
+The response is a GeoJSON `Feature` with structured environmental descriptions mapped to `ENVO`_ (by default). Only resolved environments are included:
 
 .. code-block:: json
 
@@ -144,6 +126,21 @@ The response is a GeoJSON `Feature` with structured environmental descriptions m
        ]
      }
    }
+
+Motivation
+----------
+
+Finding datasets based on their environmental context is a challenge in data synthesis. The process often relies on vague or inconsistent metadata. This variability presents a barrier to reliable, large-scale analysis due to time lost in data discovery and incomplete search results.
+
+`geoenv` helps address this challenge by using a dataset’s originating location as a consistent and objective starting point. It can programmatically map the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach aims to enrich datasets with uniform, semantic metadata, making them potentially easier to discover, query, and integrate at scale.
+
+Features
+--------
+
+- **Semantic Annotation:** Supplements inconsistent, manual descriptions with standardized environmental terms from controlled vocabularies.
+- **Structured, Interoperable Output:** Generates GeoJSON objects enriched with terms from `ENVO`_ (by default).
+- **Global Coverage:** Provides worldwide coverage for terrestrial, coastal, and marine environments using high-resolution data sources.
+- **Extensible:** Designed to accommodate new data sources or vocabularies for specific research needs.
 
 Related Projects
 ----------------
