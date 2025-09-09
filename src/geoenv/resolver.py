@@ -103,13 +103,13 @@ class Resolver:
 
 # if __name__ == "__main__":
 #
-# import time
-# from json import dumps
-# from geoenv.data_sources import (WorldTerrestrialEcosystems,
-#                                  EcologicalMarineUnits,
-#                                  EcologicalCoastalUnits)
-# from geoenv.resolver import Resolver
-# from geoenv.geometry import Geometry
+#     import time
+#     from json import dumps
+#     from geoenv.data_sources import (WorldTerrestrialEcosystems,
+#                                      EcologicalMarineUnits,
+#                                      EcologicalCoastalUnits)
+#     from geoenv.resolver import Resolver
+#     from geoenv.geometry import Geometry
 #
 #     start_time = time.time()
 #
