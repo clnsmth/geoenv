@@ -17,10 +17,10 @@ Finding datasets based on their environmental context is a challenge in data syn
 `geoenv` helps address this challenge by using a dataset’s originating location as a consistent and objective starting point. It can programmatically map the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach aims to enrich datasets with uniform, semantic metadata, making them potentially easier to discover, query, and integrate at scale.
 
 
-## Key Features
+## Features
 
-- **Automated Semantic Annotation:** Supplements inconsistent, manual descriptions with standardized environmental terms from controlled vocabularies.
-- **Structured, Interoperable Output:** Generates GeoJSON objects enriched with formal terms from [ENVO](https://sites.google.com/site/environmentontology/) (by default).
+- **Semantic Annotation:** Supplements inconsistent, manual descriptions with standardized environmental terms from controlled vocabularies.
+- **Structured, Interoperable Output:** Generates GeoJSON objects enriched with terms from [ENVO](https://sites.google.com/site/environmentontology/) (by default).
 - **Global Coverage:** Provides worldwide coverage for terrestrial, coastal, and marine environments using high-resolution data sources.
 - **Extensible:** Designed to accommodate new data sources or vocabularies for specific research needs.
 
@@ -57,12 +57,12 @@ geometry = Geometry(
 # Configure the resolver with a data source (there can be multiple)
 resolver = Resolver(data_source=[WorldTerrestrialEcosystems()])
 
-# Resolve the geometry to environmental descriptions. Concurrent resolution 
-# to multiple data sources is supported via asyncio.
+# Resolve the geometry to environmental descriptions. Concurrent 
+# resolution to multiple data sources is supported via asyncio.
 response = asyncio.run(resolver.resolve(geometry))
 ```
 
-The response is a GeoJSON `Feature` with structured environments mapped to [ENVO](https://sites.google.com/site/environmentontology/) (by default):
+The response is a GeoJSON `Feature` with structured environmental descriptions mapped to [ENVO](https://sites.google.com/site/environmentontology/) (by default):
 
 ```json
 {

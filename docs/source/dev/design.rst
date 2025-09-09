@@ -3,7 +3,7 @@
 Project Design
 ==============
 
-Welcome to the design guide for `geoenv`! This page provides an in-depth overview of the architecture, components, and principles that shape the project. Our goal is to make `geoenv` intuitive to understand and easy to contribute to.
+Welcome to the design guide for `geoenv`! This page provides an overview of the architecture, components, and principles that shape the project. Our goal is to make `geoenv` intuitive to understand and easy to contribute to.
 
 Have suggestions or questions? Open a `GitHub issue <https://github.com/clnsmth/geoenv/issues>`_ —we'd love your feedback!
 
@@ -34,7 +34,7 @@ Interoperability
 Efficiency
 ~~~~~~~~~~
 
-- Process multiple data sources in parallel using asynchronous requests to minimize I/O wait times.
+- Process multiple data sources in parallel using asynchronous requests
 - Cache responses to avoid redundant queries
 - Cache data sources locally where possible
 
@@ -42,7 +42,7 @@ Sustainability
 ~~~~~~~~~~~~~~
 
 - Use pluggable `DataSource` implementations
-- Ensure long-term community-driven growth
+- Promote community-driven growth
 
 Architecture
 ------------
