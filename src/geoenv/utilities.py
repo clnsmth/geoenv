@@ -5,6 +5,7 @@
 from datetime import datetime
 
 import daiquiri
+import geoenv  # Import the package to access __version__
 
 logger = daiquiri.getLogger(__name__)
 
@@ -128,5 +129,6 @@ def user_agent() -> dict:
 
     :return: A dictionary containing the user agent string.
     """
-    header = {"user-agent": "geoenv Python package"}
+    version = getattr(geoenv, "__version__", "unknown")
+    header = {"user-agent": f"geoenv/{version} (+https://pypi.org/project/geoenv)"}
     return header
