@@ -3,6 +3,30 @@
 
 
 
+## v0.4.0 (2025-10-06)
+
+
+### Continuous integration
+
+* ci: separate real request tests, add new triggers ([`a66003b`](https://github.com/clnsmth/geoenv/commit/a66003b5a9cb473c93377976360b494cc0a12c89)) 
+* ci: fix release to PyPI step ([`5600685`](https://github.com/clnsmth/geoenv/commit/5600685c8723214207693da0593d8eae2084d836)) 
+
+### Documentation
+
+* docs: reorder top level documentation ([`404f489`](https://github.com/clnsmth/geoenv/commit/404f489d5780bd7e7603a4e4ed95341153306185)) 
+* docs: improve quickstart clarity and reorder sections ([`a5aa115`](https://github.com/clnsmth/geoenv/commit/a5aa1158577deee0991a534797ce6346e798aeb4)) 
+* docs: demo a common use case ([`ec2fa07`](https://github.com/clnsmth/geoenv/commit/ec2fa07884850fa922a71e220a5218d75aca353d)) 
+* docs: edit documentation ([`570ceb4`](https://github.com/clnsmth/geoenv/commit/570ceb488950c5ae877b273db514e7a2f5e47031)) 
+
+### Features
+
+* feat: improve user agent string for HTTP requests (#43) ([`60163eb`](https://github.com/clnsmth/geoenv/commit/60163ebbdf22fe4ccd72d951e402a94030003774)) 
+
+### Testing
+
+* test: relax ECU response comparison to reduce test flakiness ([`09efa1c`](https://github.com/clnsmth/geoenv/commit/09efa1c6b404c4c2fb4eda188b196190715a2a7f)) 
+* test: realign ECU mock with changed API response ([`42ec6ad`](https://github.com/clnsmth/geoenv/commit/42ec6ad0da53447d88b5f698db908ffd2ceabb7d)) 
+
 ## v0.3.0 (2025-09-05)
 
 
