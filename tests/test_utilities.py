@@ -5,12 +5,10 @@ from importlib.resources import files
 
 import pytest
 
+import geoenv
 from geoenv.data_sources.world_terrestrial_ecosystems import apply_code_mapping
 from geoenv.geometry import Geometry
-from geoenv.utilities import (
-    EnvironmentDataModel,
-    get_properties,
-)
+from geoenv.utilities import EnvironmentDataModel, get_properties, user_agent
 from geoenv.response import Response, construct_response
 from tests.conftest import load_response
 
@@ -303,3 +301,13 @@ def test__to_schema_org_keywords(data_model):
     data.data["properties"]["environment"] = []
     keywords = data._to_schema_org_keywords()
     assert keywords is None
+
+
+def test_user_agent():
+    """Test the user_agent function returns the correct User-Agent header."""
+    header = user_agent()
+    assert isinstance(header, dict)
+    assert "user-agent" in header
+    expected = (f"geoenv/{getattr(geoenv, '__version__', 'unknown')} "
+                f"(+https://pypi.org/project/geoenv)")
+    assert header["user-agent"] == expected
