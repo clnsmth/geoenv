@@ -308,6 +308,8 @@ def test_user_agent():
     header = user_agent()
     assert isinstance(header, dict)
     assert "user-agent" in header
-    expected = (f"geoenv/{getattr(geoenv, '__version__', 'unknown')} "
-                f"(+https://pypi.org/project/geoenv)")
+    expected = (
+        f"geoenv/{getattr(geoenv, '__version__', 'unknown')} "
+        f"(+https://pypi.org/project/geoenv)"
+    )
     assert header["user-agent"] == expected
