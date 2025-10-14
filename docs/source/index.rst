@@ -22,24 +22,16 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
     :alt: PyPI - Version
 
 
-`geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to standardized environmental terms. It’s like reverse geocoding, but for environments.
-
-Motivation
-----------
-
-Finding datasets based on their environmental context is a challenge in data synthesis. The process often relies on vague or inconsistent metadata. This variability presents a barrier to reliable, large-scale analysis due to time lost in data discovery and incomplete search results.
-
-`geoenv` helps address this challenge by using a dataset’s originating location as a consistent and objective starting point. It can programmatically map the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach aims to enrich datasets with uniform, semantic metadata, making them potentially easier to discover, query, and integrate at scale.
+`geoenv` is a Python library that maps geospatial geometries, such as points and polygons, to environmental terms in vocabularies/ontologies (e.g. `ENVO`_). It’s like reverse geocoding, but for environments.
 
 Features
 --------
 
-- **Semantic Annotation:** Supplements inconsistent, manual descriptions with standardized environmental terms from controlled vocabularies.
-- **Structured, Interoperable Output:** Generates GeoJSON objects enriched with terms from `ENVO`_ (by default).
-- **Global Coverage:** Provides worldwide coverage for terrestrial, coastal, and marine environments using high-resolution data sources.
-- **Extensible:** Designed to accommodate new data sources or vocabularies for specific research needs.
-
-Know of a useful data source or vocabulary? `Suggest it! <https://github.com/clnsmth/geoenv/issues>`_
+- **Broad scale environmental context:** Provides consistent broad scale environmental context supplementing local scale environmental descriptions.
+- **Global Coverage**: Provides worldwide resolution of terrestrial, coastal, and marine environments.
+- **GeoJSON Output:** Outputs data as a GeoJSON Feature, for integration with other tools and libraries.
+- **Concurrent Data Resolution:** Leverages `asyncio` to query multiple geospatial data sources concurrently, providing fast results.
+- **Modular and Extensible**: Designed with a modular architecture to facilitate integration of new data sources and vocabularies.
 
 .. _quickstart:
 
@@ -89,7 +81,10 @@ Resolve a point location to environmental descriptions:
    # queries multiple data sources concurrently using `asyncio`.
    response = asyncio.run(resolver.resolve(geometry))
 
-The response is a GeoJSON `Feature` with structured environmental descriptions mapped to `ENVO`_ (by default). Only resolved environments are included:
+   # Access response data.
+   print(response.data)
+
+The response is a GeoJSON `Feature` with environmental terms mapped to `ENVO`_ (by default). Only resolved environments are included:
 
 .. code-block:: json
 
@@ -143,6 +138,13 @@ The response is a GeoJSON `Feature` with structured environmental descriptions m
        ]
      }
    }
+
+Motivation
+----------
+
+Finding datasets based on their environmental context is a challenge in data synthesis. The process often relies on vague or inconsistent metadata. This variability presents a barrier to reliable, large-scale analysis due to time lost in data discovery and incomplete search results.
+
+`geoenv` helps address this challenge by using a dataset’s originating location as a consistent and objective starting point. It can programmatically map the geometry of this location to standardized environmental terms, providing a scalable and repeatable method for generating interoperable metadata. This approach aims to enrich datasets with uniform, semantic metadata, making them potentially easier to discover, query, and integrate at scale.
 
 Related Projects
 ----------------
