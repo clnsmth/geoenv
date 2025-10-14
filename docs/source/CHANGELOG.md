@@ -3,6 +3,13 @@
 
 
 
+## v0.4.1 (2025-10-14)
+
+
+### Bug fixes
+
+* fix: refine highlevel documentation for understanding and brevity ([`74d41ae`](https://github.com/clnsmth/geoenv/commit/74d41aedb25393f7cdec14f8b9fc55d40ab25b17)) 
+
 ## v0.4.0 (2025-10-06)
 
 
