@@ -3,12 +3,12 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - myst-parser
   - python=3.11.13
   - black
-  - myst-parser
+  - pytest-asyncio
+  - aiohttp
   - pytest
   - sphinx
   - geopandas
-  - pytest-asyncio
-  - aiohttp
 prefix: /opt/miniconda3/envs/geoenv
