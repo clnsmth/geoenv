@@ -131,23 +131,7 @@ Dependency & Environment Management
 
 We use `Poetry`_ for managing development and distribution dependencies. 📦
 
-For users who prefer `Conda`_, we provide `environment.yml` files to help maintain compatibility.
-
-Update them with:
-
-::
-
-    conda env export --from-history --file environment-min.yml
-    conda env export --no-builds --file environment.yml
-
-To generate `requirements.txt` for pip installs:
-
-::
-
-    pip list --format=freeze > requirements.txt
-
 .. _Poetry: https://python-poetry.org/
-.. _Conda: https://conda.io/projects/conda/en/latest/
 .. _pip: https://pip.pypa.io/en/stable/
 .. _Python Semantic Release: https://python-semantic-release.readthedocs.io/en/latest/
 .. _Angular commit style: https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit
