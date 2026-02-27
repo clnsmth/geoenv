@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   - myst-parser
-  - python=3.11.13
+  - python=3.12
   - black
   - pytest-asyncio
   - aiohttp

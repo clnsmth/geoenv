@@ -42,11 +42,11 @@ myst-parser==5.0.0
 networkx==3.6.1
 numpy==2.4.2
 packaging==26.0
-pandas==3.0.0
+pandas==3.0.1
 pathspec==1.0.4
 pillow==12.1.1
 pip==26.0.1
-platformdirs==4.5.1
+platformdirs==4.9.2
 pluggy==1.6.0
 propcache==0.3.1
 Pygments==2.19.2
@@ -68,7 +68,7 @@ setuptools==82.0.0
 shapely==2.1.2
 six==1.17.0
 snowballstemmer==3.0.1
-Sphinx==9.0.4
+Sphinx==9.1.0
 sphinxcontrib-applehelp==2.0.0
 sphinxcontrib-devhelp==2.0.0
 sphinxcontrib-htmlhelp==2.1.0
@@ -78,7 +78,7 @@ sphinxcontrib-serializinghtml==1.1.10
 threadpoolctl==3.6.0
 tomli==2.4.0
 typing_extensions==4.15.0
-unicodedata2==17.0.0
+unicodedata2==17.0.1
 urllib3==2.6.3
 wheel==0.46.3
 xyzservices==2025.11.0

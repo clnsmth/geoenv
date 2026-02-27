@@ -32,7 +32,7 @@ Review Checklist
 
 When reviewing a pull request, please follow this checklist 📋:
 
-1. Point the pull request to the `development` branch.
+1. Point the pull request to the `main` branch.
 2. Open a GitHub review on the pull request.
 3. Confirm that the :ref:`ci-workflow` passes.
 4. Check the CI logs—look for any Pylint messages (even if not failing).
@@ -41,14 +41,13 @@ When reviewing a pull request, please follow this checklist 📋:
 7. Confirm commit messages follow :ref:`writing-good-commit-messages`.
 8. Submit the review, or collaborate via a `feature branch` if needed.
 
-Once reviewed, the PR is ready to merge into `development`. See :ref:`merging-features-into-development` for how.
+Once reviewed, the PR is ready to merge into `main`.
 
 
 Branch Strategy
 ---------------
 
-- `main`: Current stable release
-- `development`: In-progress features (always stable & releasable)
+- `main`: The trunk, is always stable & releasable
 - `feature`: All new work starts here
 
 .. _feature-branches:
@@ -59,57 +58,13 @@ Feature Branches
 Use `feature` branches for all changes—even docs or refactors. Include the issue number and a short description:
 Example: ``30-release-workflow``
 
-.. _merging--into-development:
+Releases
+~~~~~~~~
 
-Merging into Development
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-When a feature is complete, merge the feature branch into `development` using GitHub:
-
-1. Squash merge the pull request
-2. Edit the commit message to follow :ref:`writing-good-commit-messages`
-3. Delete the feature branch
-
-Forgot something? Just open a new PR. Don’t resurrect merged branches.
-
-.. _commit message footer: https://github.com/angular/angular/blob/convert/CONTRIBUTING.md#commit-message-footer
-
-Merging Development into Main
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When releasing:
-
-1. Open a PR from `development` → `main`
-2. Ensure CI/CD checks pass
-3. Get a review from another maintainer
-4. **Do not merge in GitHub**
-
-Instead:
-
-5. Pull `development` and `main` locally
-6. Merge `development` into `main`
-7. Push to `main`
-
-This preserves a clean, linear history with correct commit styling.
-
-After merging:
-
-8. CI/CD runs a release via `Python Semantic Release`_
-9. Docs are deployed to `readthedocs.io`_
-10. Pull `main` and `development` again to sync locally
+A repository maintainer will manually dispatch the :ref:`cd-workflow`, which runs a series of automated release tasks.
 
 .. _readthedocs.io: https://geoenv.readthedocs.io/en/latest/
 
-
-.. _hot-fixes:
-
-Hotfixes
-~~~~~~~~
-
-All hotfixes 🚑 go through the same flow:
-`feature` → `development` → `main`
-
-Never hotfix `main` directly.
 
 Branch Protection & Secrets
 ---------------------------
@@ -117,7 +72,7 @@ Branch Protection & Secrets
 Branch Rules
 ~~~~~~~~~~~~
 
-The following GitHub branch rules ✅ are enforced on `main` and `development`:
+The following GitHub branch rules ✅ are enforced on `main`:
 
 - PR approval
 - CI checks pass
@@ -143,7 +98,7 @@ GitHub Actions power our automation. 🤖
 CI Workflow
 ~~~~~~~~~~~~
 
-Runs on PRs and pushes to `main` / `development`. It checks:
+Runs on PRs and pushes to `main`. It checks:
 
 1. Code formatting with `Black`_ (required)
 2. Linting with `Pylint`_ (optional but encouraged)
@@ -155,10 +110,10 @@ Runs on PRs and pushes to `main` / `development`. It checks:
 CD Workflow
 ~~~~~~~~~~~~
 
-Runs on push to `main`:
+Run on workflow dispatch:
 
 1. Builds, versions, and tags via `Python Semantic Release`_
-2. Merges `main` → `development` automatically
+2. Pushes the new release to PyPI
 
 .. _Black: https://black.readthedocs.io/en/stable/
 .. _Pylint: https://pylint.pycqa.org/en/latest/
@@ -169,7 +124,7 @@ Runs on push to `main`:
 Developing as a Maintainer
 --------------------------
 
-You don’t need to fork the repo—just create a `feature` branch directly in the upstream repository and open a pull request to `development`. 🏗
+You don’t need to fork the repo—just create a `feature` branch directly in the upstream repository and open a pull request to `main`. 🏗
 
 Dependency & Environment Management
 -----------------------------------

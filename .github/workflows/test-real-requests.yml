@@ -3,9 +3,6 @@ name: test-real-requests
 on:
   schedule:
     - cron: '0 0 * * 0'  # Every Sunday at 00:00 UTC
-  pull_request:
-    branches:
-      - main  # The release branch
 
 jobs:
   test-real-requests:
@@ -16,12 +13,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+
       - name: Check-out repository
         uses: actions/checkout@v4
+
       - name: Install poetry
         uses: snok/install-poetry@v1
+
       - name: Install package
         run: poetry install --sync --with dev
+
       - name: Test with pytest
         run: poetry run pytest tests/
