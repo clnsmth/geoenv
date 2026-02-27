@@ -3,7 +3,6 @@
 
 def test_data_source_init(data_sources):
     """Test the DataSource class initialization"""
-    # pylint: disable=protected-access
     for data_source in data_sources:
         assert data_source._geometry is None
         assert data_source.data is None
@@ -61,7 +60,6 @@ def test_convert_data(scenarios, empty_environment_data_model):
     little different for each data_source.
     """
     for scenario in scenarios:
-
         # Configure and run
         data_source = scenario["data_source"]
         data_source.data = scenario["response"].json()

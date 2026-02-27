@@ -96,7 +96,6 @@ class EcologicalMarineUnits(DataSource):
     def properties(self, properties: dict):
         self._properties = properties
 
-    # pylint: disable=duplicate-code
     async def get_environment(self, geometry: Geometry) -> List[Environment]:
         """
         Resolves a given geometry to environmental descriptions using the
@@ -107,8 +106,7 @@ class EcologicalMarineUnits(DataSource):
             classifications.
         """
         logger.debug(
-            f"Starting environment resolution for geometry in "
-            f"{self.__class__.__name__}"
+            f"Starting environment resolution for geometry in {self.__class__.__name__}"
         )
 
         self.geometry = geometry.data  # access z values to filter on depth
@@ -171,8 +169,6 @@ class EcologicalMarineUnits(DataSource):
 
         logger.debug(f"Sending request to {self.__class__.__name__}")
 
-        # pylint: disable=unused-variable
-        # pylint: disable=duplicate-code
         try:
             async with session.get(
                 base, params=payload, timeout=10, headers=user_agent()
@@ -185,12 +181,11 @@ class EcologicalMarineUnits(DataSource):
                 return await response.json()
         except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(
-                f"Failed to fetch data from {self.__class__.__name__}. " f"Error: {e}",
+                f"Failed to fetch data from {self.__class__.__name__}. Error: {e}",
                 exc_info=True,
             )
             return {}
 
-    # pylint: disable=duplicate-code
     def convert_data(self) -> List[Environment]:
         logger.debug(f"Starting data conversion in {self.__class__.__name__}")
         result = []

@@ -38,17 +38,17 @@ Here’s a simple guide to submitting a pull request 🛠:
 
 1. Fork the repo.
 2. Create a new feature branch off `main`.
-3. Install the project:
-   ``poetry install``
+3. Install the project with `uv`_:
+   ``uv sync --extra dev``
 4. Run the tests:
-   ``poetry run pytest``
+   ``uv run pytest``
    Investigate and fix any failures.
 5. Add test cases to support your change.
 6. Make your changes. Update docs where relevant (see :ref:`improving-the-documentation`).
 7. Re-run tests to confirm everything still works.
 8. Format and lint your code (see :ref:`code-style-&-linting`).
 9. Build the docs:
-   ``poetry run make --directory=docs clean html``
+   ``uv run make --directory=docs clean html``
 10. Write a good commit message (see :ref:`writing-good-commit-messages`).
 11. Open a Pull Request targeting the `main` branch.
 
@@ -64,19 +64,14 @@ We’ll review your submission and may offer suggestions. Once everything looks 
 Code Style & Linting
 ~~~~~~~~~~~~~~~~~~~~
 
-To keep the codebase consistent 🧹, we use:
-
-- `Black`_ for automatic formatting
-- `Pylint`_ for static code analysis
+To keep the codebase consistent 🧹, we use `ruff`_ for automatic formatting and static code analysis.
 
 Run both with:
 
 ::
 
-    poetry run black src/ tests/
-    poetry run pylint src/ tests/
-
-
+    uv run ruff format src/ tests/
+    uv run ruff check src/ tests/
 
 .. _improving-the-documentation:
 
@@ -91,7 +86,7 @@ To build them locally:
 
 ::
 
-    poetry run make --directory=docs clean html
+    uv run make --directory=docs clean html
 
 API docs are generated from `PEP 287`_-style docstrings.
 
@@ -148,8 +143,8 @@ Example:
 `Thank you again for contributing to geoenv 💚. You help make open science more powerful and more connected.`
 
 
-.. _Black: https://black.readthedocs.io/en/stable/
-.. _Pylint: https://pylint.pycqa.org/en/latest/
+.. _uv: https://docs.astral.sh/uv/
+.. _ruff: https://docs.astral.sh/ruff/
 .. _reStructuredText: https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _PEP 287: https://peps.python.org/pep-0287/

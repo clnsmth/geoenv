@@ -7,7 +7,6 @@ import daiquiri
 logger = daiquiri.getLogger(__name__)
 
 
-# pylint: disable=too-few-public-methods
 class Environment:
     """
     The Environment class represents environmental descriptions retrieved from

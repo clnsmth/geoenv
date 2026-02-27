@@ -214,7 +214,6 @@ def test_to_schema_org(data_model):
 def test__to_schema_org_geo(data_model):
     """Test the _to_schema_org_geo method of the EnvironmentDataModel class."""
     # Polygon
-    # pylint: disable=protected-access
     geo = data_model._to_schema_org_geo()
     assert geo == {
         "@type": "GeoCoordinates",
@@ -226,7 +225,6 @@ def test__to_schema_org_geo(data_model):
     # Point
     data_model.data["geometry"]["type"] = "Point"
     data_model.data["geometry"]["coordinates"] = [-123.552, 39.804, 0]
-    # pylint: disable=protected-access
     geo = data_model._to_schema_org_geo()
     assert geo == {
         "@type": "GeoCoordinates",
@@ -237,7 +235,6 @@ def test__to_schema_org_geo(data_model):
 
     # Other types
     data_model.data["geometry"]["type"] = "LineString"
-    # pylint: disable=protected-access
     geo = data_model._to_schema_org_geo()
     assert geo is None
 
@@ -246,7 +243,6 @@ def test__to_schema_org_additional_property(data_model):
     """Test the _to_schema_org_additional_property method of the
     EnvironmentDataModel class."""
     # With properties
-    # pylint: disable=protected-access
     additional_property = data_model._to_schema_org_additional_property()
     assert isinstance(additional_property, list)
     for item in additional_property:
@@ -256,7 +252,6 @@ def test__to_schema_org_additional_property(data_model):
         assert "value" in item
 
     # With duplicates removed
-    # pylint: disable=protected-access
     data_model.data["properties"]["environment"].append(
         data_model.data["properties"]["environment"][0]
     )
@@ -265,7 +260,6 @@ def test__to_schema_org_additional_property(data_model):
         assert additional_property.count(item) == 1
 
     # Without properties
-    # pylint: disable=protected-access
     data = data_model
     data.data["properties"]["environment"] = []
     additional_property = data._to_schema_org_additional_property()
@@ -276,7 +270,6 @@ def test__to_schema_org_keywords(data_model):
     """Test the _to_schema_org_keywords method of the EnvironmentDataModel
     class."""
     # With ENVO terms
-    # pylint: disable=protected-access
     keywords = data_model._to_schema_org_keywords()
     assert isinstance(keywords, list)
     for item in keywords:
@@ -287,7 +280,6 @@ def test__to_schema_org_keywords(data_model):
         assert "termCode" in item
 
     # With duplicates removed
-    # pylint: disable=protected-access
     data_model.data["properties"]["environment"].append(
         data_model.data["properties"]["environment"][0]
     )
@@ -296,7 +288,6 @@ def test__to_schema_org_keywords(data_model):
         assert keywords.count(item) == 1
 
     # Without ENVO terms
-    # pylint: disable=protected-access
     data = data_model
     data.data["properties"]["environment"] = []
     keywords = data._to_schema_org_keywords()

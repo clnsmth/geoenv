@@ -37,11 +37,8 @@ def data_sources():
     ]
 
 
-# pylint: disable=too-many-arguments
-# pylint: disable=too-many-positional-arguments
-# pylint: disable=redefined-outer-name
 @pytest.fixture
-def scenarios(
+def scenarios(  # noqa: PLR0913
     raw_properties_of_ecological_coastal_units,
     raw_properties_of_ecological_marine_units,
     raw_properties_of_world_terrestrial_ecosystems,
@@ -260,7 +257,6 @@ def load_response(filename: str):
         return response
 
 
-# pylint: disable=too-few-public-methods
 class RequestsResponse:
     """A mock object of
     https://requests.readthedocs.io/en/latest/api/#requests.Response for

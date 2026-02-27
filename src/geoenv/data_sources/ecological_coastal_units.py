@@ -75,12 +75,10 @@ class EcologicalCoastalUnits(DataSource):
         self._buffer = buffer
 
     @property
-    # pylint: disable=duplicate-code
     def geometry(self) -> dict:
         return self._geometry
 
     @geometry.setter
-    # pylint: disable=duplicate-code
     def geometry(self, geometry: dict):
         self._geometry = geometry
 
@@ -124,7 +122,6 @@ class EcologicalCoastalUnits(DataSource):
         """
         self._buffer = buffer
 
-    # pylint: disable=duplicate-code
     async def get_environment(self, geometry: Geometry) -> List[Environment]:
         """
         Resolves a given geometry to environmental descriptions using the
@@ -135,8 +132,7 @@ class EcologicalCoastalUnits(DataSource):
             classifications.
         """
         logger.debug(
-            f"Starting environment resolution for geometry in "
-            f"{self.__class__.__name__}"
+            f"Starting environment resolution for geometry in {self.__class__.__name__}"
         )
 
         # Enable buffer-based sampling for points. Without this, the data
@@ -145,7 +141,7 @@ class EcologicalCoastalUnits(DataSource):
         # features.
         if geometry.geometry_type() == "Point" and self.buffer is not None:
             logger.debug(
-                f"Applying buffer of {self.buffer} kilometers to point " f"geometry"
+                f"Applying buffer of {self.buffer} kilometers to point geometry"
             )
             geometry.data = geometry.point_to_polygon(buffer=self.buffer)
 
@@ -200,8 +196,6 @@ class EcologicalCoastalUnits(DataSource):
 
         logger.debug(f"Sending request to {self.__class__.__name__}")
 
-        # pylint: disable=unused-variable
-        # pylint: disable=duplicate-code
         try:
             async with session.get(
                 base, params=payload, timeout=10, headers=user_agent()
@@ -214,12 +208,11 @@ class EcologicalCoastalUnits(DataSource):
                 return await response.json()
         except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(
-                f"Failed to fetch data from {self.__class__.__name__}. " f"Error: {e}",
+                f"Failed to fetch data from {self.__class__.__name__}. Error: {e}",
                 exc_info=True,
             )
             return {}
 
-    # pylint: disable=duplicate-code
     def convert_data(self) -> List[Environment]:
         logger.debug(f"Starting data conversion in {self.__class__.__name__}")
         result = []

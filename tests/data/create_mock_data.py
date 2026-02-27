@@ -26,7 +26,6 @@ async def create_mock_response_content(
 
     # Create a single session to be reused for all requests
     async with aiohttp.ClientSession() as session:
-
         # WTE Success
         geometry = Geometry(load_geometry("point_on_land"))
         data_source = WorldTerrestrialEcosystems()

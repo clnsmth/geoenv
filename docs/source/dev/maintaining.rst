@@ -35,7 +35,7 @@ When reviewing a pull request, please follow this checklist 📋:
 1. Point the pull request to the `main` branch.
 2. Open a GitHub review on the pull request.
 3. Confirm that the :ref:`ci-workflow` passes.
-4. Check the CI logs—look for any Pylint messages (even if not failing).
+4. Check the CI logs—look for any Ruff messages (even if not failing).
 5. Ensure new features or bug fixes include meaningful test coverage.
 6. Review the code and docs diffs.
 7. Confirm commit messages follow :ref:`writing-good-commit-messages`.
@@ -100,8 +100,8 @@ CI Workflow
 
 Runs on PRs and pushes to `main`. It checks:
 
-1. Code formatting with `Black`_ (required)
-2. Linting with `Pylint`_ (optional but encouraged)
+1. Code formatting with `ruff`_ (required)
+2. Linting with `ruff`_ (optional but encouraged)
 3. Testing with `Pytest`_ (required)
 4. Docs build with `Sphinx`_ (required)
 
@@ -115,10 +115,6 @@ Run on workflow dispatch:
 1. Builds, versions, and tags via `Python Semantic Release`_
 2. Pushes the new release to PyPI
 
-.. _Black: https://black.readthedocs.io/en/stable/
-.. _Pylint: https://pylint.pycqa.org/en/latest/
-.. _Pytest: https://docs.pytest.org/en/latest/
-
 .. _developing-features-as-a-maintainer:
 
 Developing as a Maintainer
@@ -129,9 +125,11 @@ You don’t need to fork the repo—just create a `feature` branch directly in t
 Dependency & Environment Management
 -----------------------------------
 
-We use `Poetry`_ for managing development and distribution dependencies. 📦
+We use `uv`_ for managing development and distribution dependencies. 📦
 
-.. _Poetry: https://python-poetry.org/
+.. _ruff: https://docs.astral.sh/ruff/
+.. _Pytest: https://docs.pytest.org/en/latest/
+.. _uv: https://docs.astral.sh/uv/
 .. _pip: https://pip.pypa.io/en/stable/
 .. _Python Semantic Release: https://python-semantic-release.readthedocs.io/en/latest/
 .. _Angular commit style: https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit

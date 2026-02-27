@@ -1,36 +1,54 @@
-[tool.poetry]
+[project]
 name = "geoenv"
 version = "0.4.1"
 description = "Map geometries to environmental semantics"
-authors = ["Colin Smith <colin.smith@wisc.edu>"]
-maintainers = ["Colin Smith <colin.smith@wisc.edu>"]
-license = "MIT"
+authors = [{ name = "Colin Smith", email = "colin.smith@wisc.edu" }]
+requires-python = ">=3.12,<4"
 readme = "README.md"
+license = "MIT"
+maintainers = [{ name = "Colin Smith", email = "colin.smith@wisc.edu" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "pandas>=2.2.3,<3",
+    "geopandas>=1.0.1,<2",
+    "daiquiri>=3.3.0,<4",
+    "requests>=2.32.3,<3",
+    "aiohttp>=3.12.15,<4",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-pandas = "^2.2.3"
-geopandas = "^1.0.1"
-daiquiri = "^3.3.0"
-requests = "^2.32.3"
-aiohttp = "^3.12.15"
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.2,<10",
+    "pytest-cov>=7.0.0,<8",
+    "sphinx>=9.1.0,<10",
+    "sphinx-autoapi>=3.6.0,<4",
+    "myst-parser>=5.0.0,<6",
+    "python-semantic-release>=10.5.3,<11",
+    "pytest-mock>=3.14.0,<4",
+    "pytest-asyncio>=1.1.0,<2",
+    "ruff>=0.15.3,<1.0.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^9.0.2"
-pytest-cov = "^7.0.0"
-sphinx = "^9.1.0"
-sphinx-autoapi = "^3.6.0"
-myst-parser = "^5.0.0"
-pylint = "^4.0.4"
-black = "^26.1.0"
-python-semantic-release = "^10.5.3"
-pytest-mock = "^3.14.0"
-pytest-asyncio = "^1.1.0"
+[tool.uv]
+default-groups = "all"
+
+[tool.ruff.lint]
+select = ["PL"]
+ignore = ["PLR2004"]
+
+[build-system]
+requires = ["uv_build>=0.9.3,<0.10.0"]
+build-backend = "uv_build"
 
 [tool.semantic_release]
-version_toml = ["pyproject.toml:tool.poetry.version"] # version location
+version_toml = ["pyproject.toml:project.version"] # version location
 branch = "main"                             # branch to make releases of
-build_command = "poetry build"              # build dists
+build_command = "uv build"              # build dists
 dist_path = "dist/"                         # where to put dists
 upload_to_release = true                    # auto-convert GitHub release
 upload_to_pypi = false                      # don't auto-upload to PyPI
@@ -40,10 +58,3 @@ allow_zero_version = true
 
 [tool.semantic_release.changelog]
 template_dir = "docs/source/_templates/"    # changelog template directory
-
-[tool.pylint.'MESSAGES.CONTROL']
-disable = "too-many-public-methods,c-extension-no-member"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"

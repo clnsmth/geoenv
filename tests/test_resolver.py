@@ -12,7 +12,6 @@ from geoenv.data_sources import EcologicalMarineUnits
 async def test_resolve(use_mock, scenarios, assert_identify, mocker):
     """Test the resolve method"""
     for scenario in scenarios:
-
         if use_mock:
             mocker.patch("requests.get", return_value=scenario.get("response"))
 
