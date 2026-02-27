@@ -72,7 +72,7 @@ class Geometry:
         :return: A dictionary representing the Esri-formatted geometry.
         """
         logger.debug(
-            f"Converting geometry of type '{self.geometry_type()}' to Esri " f"format"
+            f"Converting geometry of type '{self.geometry_type()}' to Esri format"
         )
 
         if self.geometry_type() == "Point":
@@ -123,7 +123,6 @@ class Geometry:
 
         logger.debug(f"Converting Point to Polygon with buffer {buffer} km")
 
-        # pylint: disable=broad-exception-caught
         try:
             point = gpd.GeoSeries.from_file(StringIO(dumps(self.data)))
             point = point.to_crs(32634)  # A CRS in units of meters
@@ -143,7 +142,7 @@ class Geometry:
                 ],
             }
             logger.debug(
-                f"Successfully converted Point to Polygon with buffer " f"{buffer} km"
+                f"Successfully converted Point to Polygon with buffer {buffer} km"
             )
             return polygon
         except Exception as e:
@@ -166,7 +165,6 @@ class Geometry:
             )
             return self.data
 
-        # pylint: disable=broad-exception-caught
         try:
             # Get points from within the polygon
             polygon = gpd.GeoSeries.from_file(StringIO(dumps(self.data)))
@@ -179,7 +177,7 @@ class Geometry:
                 result = geojson["features"][0]["geometry"]
                 points.append(result)
             logger.debug(
-                f"Extracted {len(points)} representative points from the " f"polygon"
+                f"Extracted {len(points)} representative points from the polygon"
             )
 
             # Get points from the vertices of the polygon
@@ -199,7 +197,6 @@ class Geometry:
             return self.data
 
 
-# pylint: disable=too-many-locals
 def grid_sample_polygon(polygon: shapely.Polygon, grid_size: float) -> gpd.GeoSeries:
     """
     Generates a set of representative points within a polygon using grid-based
@@ -211,9 +208,8 @@ def grid_sample_polygon(polygon: shapely.Polygon, grid_size: float) -> gpd.GeoSe
     :return: A GeoSeries of Shapely Point objects representing the sample
         points.
     """
-    logger.debug(f"Starting grid sampling for polygon with grid size " f"{grid_size}")
+    logger.debug(f"Starting grid sampling for polygon with grid size {grid_size}")
 
-    # pylint: disable=broad-exception-caught
     try:
         min_x, min_y, max_x, max_y = polygon.bounds
         logger.debug(
@@ -239,15 +235,11 @@ def grid_sample_polygon(polygon: shapely.Polygon, grid_size: float) -> gpd.GeoSe
 
         grid_gdf = gpd.GeoDataFrame(geometry=grid_cells)
         intersecting_cells = grid_gdf[grid_gdf.intersects(polygon)]
-        logger.debug(
-            f"{len(intersecting_cells)} grid cells intersect with " f"the polygon"
-        )
+        logger.debug(f"{len(intersecting_cells)} grid cells intersect with the polygon")
 
         sample_points = intersecting_cells.centroid
         sample_points = sample_points[sample_points.within(polygon)]
-        logger.debug(
-            f"Generated {len(sample_points)} sample points within the " f"polygon"
-        )
+        logger.debug(f"Generated {len(sample_points)} sample points within the polygon")
 
         return sample_points
     except Exception as e:

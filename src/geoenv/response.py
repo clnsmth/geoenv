@@ -81,7 +81,6 @@ class Response:
         :param file_path: The file path where the response should be saved.
         """
         logger.debug(f"Writing response data to {file_path}")
-        # pylint: disable=broad-exception-caught
         try:
             with open(file_path, "w", encoding="utf-8") as file:
                 file.write(json.dumps(self.data))
@@ -99,7 +98,6 @@ class Response:
         :return: The updated Response object.
         """
         logger.debug(f"Attempting to read response data from {file_path}")
-        # pylint: disable=broad-exception-caught
         try:
             with open(file_path, "r", encoding="utf-8") as file:
                 self.data = json.loads(file.read())
@@ -110,7 +108,6 @@ class Response:
             )
         return self
 
-    # pylint: disable=too-many-locals
     def apply_term_mapping(self, semantic_resource: str = "ENVO") -> "Response":
         """
         Maps environmental terms in the response data to a specified semantic
@@ -127,7 +124,6 @@ class Response:
 
         # Iterate over list of environments in data
         for environment in self.data["properties"]["environment"]:
-
             # Load SSSOM of environment for term mapping
             data_source = environment["dataSource"]["name"]
             sssom_file = importlib.resources.files("geoenv.data.sssom").joinpath(
@@ -183,8 +179,7 @@ class Response:
             environment["mappedProperties"] = envo_terms
 
         logger.info(
-            f"Term mapping complete. Mapped terms added to "
-            f"{self.__class__.__name__}."
+            f"Term mapping complete. Mapped terms added to {self.__class__.__name__}."
         )
         return self
 

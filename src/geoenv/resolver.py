@@ -79,7 +79,6 @@ class Resolver:
             f"Resolving geometry with identifier: '{identifier}' and "
             f"description: '{description}'"
         )
-        # pylint: disable=broad-exception-caught
         try:
             tasks = [item.get_environment(geometry) for item in self.data_source]
             results_nested = await asyncio.gather(*tasks)

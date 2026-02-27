@@ -72,12 +72,10 @@ class WorldTerrestrialEcosystems(DataSource):
         self._grid_size = grid_size
 
     @property
-    # pylint: disable=duplicate-code
     def geometry(self) -> dict:
         return self._geometry
 
     @geometry.setter
-    # pylint: disable=duplicate-code
     def geometry(self, geometry: dict):
         self._geometry = geometry
 
@@ -131,8 +129,7 @@ class WorldTerrestrialEcosystems(DataSource):
             classifications.
         """
         logger.debug(
-            f"Starting environment resolution for geometry in "
-            f"{self.__class__.__name__}"
+            f"Starting environment resolution for geometry in {self.__class__.__name__}"
         )
 
         # Enable grid-based sampling for polygons. Without this, the data source
@@ -140,7 +137,7 @@ class WorldTerrestrialEcosystems(DataSource):
         geometries = []
         if geometry.geometry_type() == "Polygon" and self.grid_size is not None:
             logger.debug(
-                f"Applying grid-based sampling with grid size " f"{self.grid_size}"
+                f"Applying grid-based sampling with grid size {self.grid_size}"
             )
             points = geometry.polygon_to_points(grid_size=self.grid_size)
             for point in points:
@@ -193,8 +190,6 @@ class WorldTerrestrialEcosystems(DataSource):
 
         logger.debug(f"Sending request to {self.__class__.__name__}")
 
-        # pylint: disable=unused-variable
-        # pylint: disable=duplicate-code
         try:
             async with session.get(
                 base, params=payload, timeout=10, headers=user_agent()
@@ -207,7 +202,7 @@ class WorldTerrestrialEcosystems(DataSource):
                 return await response.json()
         except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(
-                f"Failed to fetch data from {self.__class__.__name__}. " f"Error: {e}",
+                f"Failed to fetch data from {self.__class__.__name__}. Error: {e}",
                 exc_info=True,
             )
             return {}
@@ -336,7 +331,6 @@ def create_attribute_table(
     )
     payload = {"f": "pjson"}
     response = None
-    # pylint: disable=broad-exception-caught
     try:
         response = requests.get(base, params=payload, timeout=10, headers=user_agent())
     except Exception as e:
