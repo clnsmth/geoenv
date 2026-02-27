@@ -37,7 +37,7 @@ How to Contribute Code
 Here’s a simple guide to submitting a pull request 🛠:
 
 1. Fork the repo.
-2. Create a new feature branch off `development`.
+2. Create a new feature branch off `main`.
 3. Install the project:
    ``poetry install``
 4. Run the tests:
@@ -49,10 +49,8 @@ Here’s a simple guide to submitting a pull request 🛠:
 8. Format and lint your code (see :ref:`code-style-&-linting`).
 9. Build the docs:
    ``poetry run make --directory=docs clean html``
-10. Build the package:
-    ``poetry build``
-11. Write a good commit message (see :ref:`writing-good-commit-messages`).
-12. Open a Pull Request targeting the `development` branch.
+10. Write a good commit message (see :ref:`writing-good-commit-messages`).
+11. Open a Pull Request targeting the `main` branch.
 
 .. _reStructuredText: https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html
 .. _pytest: https://docs.pytest.org/en/latest/

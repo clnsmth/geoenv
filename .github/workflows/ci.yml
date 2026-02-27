@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: Check-out repository
+      uses: actions/checkout@v4
+
+    - name: Install poetry
+      uses: snok/install-poetry@v1
+
+    - name: Install package
+      run: poetry install --sync --with dev
+
+    - name: Run Black formatter
+      run: poetry run black src/ tests/
+
+    - name: Analyze code with pylint
+      run: |
+        poetry run pylint src/ --exit-zero --disable=C0103,W0621,R0904
+        poetry run pylint tests/ --exit-zero --disable=C0103,W0621,R0904
+
+    - name: Test with pytest
+      run: poetry run pytest tests/ --cov=soso --cov-report=xml
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4.0.1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Build documentation
+      run: poetry run make html --directory docs/

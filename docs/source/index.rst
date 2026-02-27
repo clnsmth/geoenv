@@ -9,9 +9,13 @@ Release v\ |version|. (:ref:`Installation <quickstart>`)
     :target: https://www.repostatus.org/#wip
     :alt: Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.
 
-.. image:: https://github.com/clnsmth/geoenv/actions/workflows/ci-cd.yml/badge.svg
-    :target: https://github.com/clnsmth/geoenv/actions/workflows/ci-cd.yml
-    :alt: CI/CD pipeline status
+.. image:: https://github.com/clnsmth/soso/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/clnsmth/geoenv/actions/workflows/ci.yml
+    :alt: CI pipeline status
+
+.. image:: https://github.com/clnsmth/soso/actions/workflows/cd.yml/badge.svg
+    :target: https://github.com/clnsmth/geoenv/actions/workflows/cd.yml
+    :alt: CD pipeline status
 
 .. image:: https://codecov.io/github/clnsmth/geoenv/graph/badge.svg?token=2J4MNIXCTD
     :target: https://codecov.io/github/clnsmth/geoenv
