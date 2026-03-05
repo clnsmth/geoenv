@@ -13,19 +13,23 @@ jobs:
     env:
       GEOENV_USE_MOCK: "false"
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
-
       - name: Check-out repository
         uses: actions/checkout@v4
 
-      - name: Install poetry
-        uses: snok/install-poetry@v1
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          python-version: "3.12"
+          enable-cache: true
 
-      - name: Install package
-        run: poetry install --sync --with dev
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Run Ruff formatter
+        run: uv run ruff format src/ tests/
+
+      - name: Run Ruff linter
+        run: uv run ruff check src/ tests/
 
       - name: Test with pytest
-        run: poetry run pytest tests/
+        run: uv run pytest tests/
