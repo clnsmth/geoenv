@@ -59,3 +59,10 @@ Utilities
    :members:
    :exclude-members: EnvironmentDataModel, get_properties
 
+
+Package Version
+---------------
+
+.. autofunction:: geoenv.get_version
+
+
