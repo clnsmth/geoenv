@@ -3,6 +3,40 @@
 
 
 
+## v0.5.0 (2026-06-01)
+
+
+### Build system
+
+* build: update environment ([`56aa67d`](https://github.com/clnsmth/geoenv/commit/56aa67d87386680f8e31b4a85afbfbce40c0166f)) 
+* build: update environment ([`3b2af9b`](https://github.com/clnsmth/geoenv/commit/3b2af9b8da02d26cb23a9cf0444910e01a5c608b)) 
+* build: update environment ([`109bfe3`](https://github.com/clnsmth/geoenv/commit/109bfe3ee93cbf2342dc4c7536a5fbd294529aa9)) 
+* build(deps): bump aiohttp in the uv group across 1 directory ([`e8625a6`](https://github.com/clnsmth/geoenv/commit/e8625a66c3b67c31cbad5716053abe66929761ec)) 
+* build: migrate to uv and ruff for tooling (#64) ([`0de84e0`](https://github.com/clnsmth/geoenv/commit/0de84e00a6ee9692498e57f0d324a8377499737b)) 
+* build: switch to Poetry-only dependency management (#68) ([`52bcd7f`](https://github.com/clnsmth/geoenv/commit/52bcd7f6e8ef3f72162437080be85c3a81562a74)) 
+* build: update environment ([`e405161`](https://github.com/clnsmth/geoenv/commit/e4051612e48220cb2e23cab9fd4c5a80dd317249)) 
+* build: update environment ([`2da1410`](https://github.com/clnsmth/geoenv/commit/2da1410798fd8ccdd015661637c0c3469c358c93)) 
+* build: update environment ([`90ebdac`](https://github.com/clnsmth/geoenv/commit/90ebdac4755238ae630db9cd02e623a0d1c5dd97)) 
+* build: update environment ([`6cdfa91`](https://github.com/clnsmth/geoenv/commit/6cdfa91eef9829892be7ddfa404442d1a4f29b92)) 
+* build: update environment ([`e73a442`](https://github.com/clnsmth/geoenv/commit/e73a4429c40621d4801c8bfaea49e5a22facca91)) 
+* build: address CVEs ([`d784565`](https://github.com/clnsmth/geoenv/commit/d784565adb04d4b2903537d66eaf2c93cf36aca4)) 
+* build: address CVEs raised by Dependabot ([`8378211`](https://github.com/clnsmth/geoenv/commit/8378211dc98554777400488d5b82f095dbb410d6)) 
+* build: address CVEs ([`6c70302`](https://github.com/clnsmth/geoenv/commit/6c70302fb0169798c82fc707161dc98cdfc84847)) 
+
+### Continuous integration
+
+* ci: align test-real-requests.yml with ci.yml to fix failing test ([`6b114b4`](https://github.com/clnsmth/geoenv/commit/6b114b487a7d29da9f451bda6c17166e4134c73f)) 
+* ci: split ci/cd workflows and update workflow docs (#66) ([`c2db710`](https://github.com/clnsmth/geoenv/commit/c2db7102ddb938f79563713b8d5115bc43179ad1)) 
+
+### Features
+
+* feat(core): add get_version utility function ([`d74a84d`](https://github.com/clnsmth/geoenv/commit/d74a84d3c046352662b5c698923833f58f548a75)) 
+
+### Testing
+
+* test: add manual trigger for test-real-requests workflow ([`0417983`](https://github.com/clnsmth/geoenv/commit/041798347cd285a13dfa11f2afad1de9fc398299)) 
+* test: add read permissions to test-real-requests workflow (#71) ([`fd1f1ec`](https://github.com/clnsmth/geoenv/commit/fd1f1ec569b4f1bbd7ceed2a42066b564b3f4fb6)) 
+
 ## v0.4.1 (2025-10-14)
 
 
