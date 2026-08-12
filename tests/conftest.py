@@ -38,7 +38,7 @@ def data_sources():
 
 
 @pytest.fixture
-def scenarios(  # noqa: PLR0913
+def scenarios(  # noqa: PLR0913, PLR0917
     raw_properties_of_ecological_coastal_units,
     raw_properties_of_ecological_marine_units,
     raw_properties_of_world_terrestrial_ecosystems,
@@ -223,7 +223,7 @@ def data_model(mocker):
     data_source = WorldTerrestrialEcosystems()
     geometry = Geometry(load_geometry("point_on_land"))
 
-    environment = asyncio.get_event_loop().run_until_complete(
+    environment = asyncio.run(
         data_source.get_environment(geometry)
     )
     data = construct_response(
