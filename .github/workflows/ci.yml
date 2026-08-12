@@ -23,7 +23,7 @@ jobs:
         cache-dependency-glob: "pyproject.toml" # Force the cache to hash the manifest instead of a lockfile
 
     - name: Install dependencies
-      run: uv pip install -r pyproject.toml --extra dev
+      run: uv pip install -r pyproject.toml --extra dev --system
 
 
     - name: Run Ruff formatter
