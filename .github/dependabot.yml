@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Tells routine checks to strictly respect our existing pyproject.toml bounds
+    versioning-strategy: "increase_if_necessary"
+    # Setting this to 0 blocks routine version upgrade PRs entirely
+    open-pull-requests-limit: 0

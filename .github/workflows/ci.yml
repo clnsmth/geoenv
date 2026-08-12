@@ -22,7 +22,7 @@ jobs:
         enable-cache: true
 
     - name: Install dependencies
-      run: uv sync --extra dev
+      run: uv sync --extra dev --no-lock
 
     - name: Run Ruff formatter
       run: uv run ruff format src/ tests/
