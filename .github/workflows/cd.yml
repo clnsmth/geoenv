@@ -22,6 +22,7 @@ jobs:
       with:
         python-version: "3.12"
         enable-cache: true
+        cache-dependency-glob: "pyproject.toml" # Force the cache to hash the manifest instead of a lockfile
 
     - name: Install dependencies
       run: uv sync --extra dev --no-lock
