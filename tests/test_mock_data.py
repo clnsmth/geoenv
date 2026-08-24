@@ -1,7 +1,6 @@
 """Test the mock_data"""
 
 from json import loads
-from importlib.resources import files
 import pytest
 from geoenv.data_sources import (
     WorldTerrestrialEcosystems,
@@ -18,27 +17,23 @@ async def test_mock_response_content(use_mock, tmp_path):
     with data source parsers."""
 
     if use_mock:
-        pytest.skip("Skipping test when use_mock is False")
+        pytest.skip("Skipping live test when use_mock is True")
 
     await create_mock_response_content(output_directory=tmp_path)  # fresh responses
     for file in tmp_path.iterdir():
         with open(file, "r", encoding="utf-8") as f:
             new_data = loads(f.read())
-            mock_file = files("tests.data.response").joinpath(file.name)
-            with open(mock_file, "r", encoding="utf-8") as mf:
-                mock_data = loads(mf.read())
-
             is_success = "_success" in file.name
 
             if "wte_" in file.name:
-                validate_wte_response(new_data, mock_data, is_success)
+                validate_wte_response(new_data, is_success)
             elif "ecu_" in file.name:
-                validate_ecu_response(new_data, mock_data, is_success)
+                validate_ecu_response(new_data, is_success)
             elif "emu_" in file.name:
-                validate_emu_response(new_data, mock_data, is_success, file.name)
+                validate_emu_response(new_data, is_success, file.name)
 
 
-def validate_wte_response(new_data: dict, mock_data: dict, is_success: bool) -> None:
+def validate_wte_response(new_data: dict, is_success: bool) -> None:
     """Validate World Terrestrial Ecosystems response structure and compatibility."""
     assert isinstance(new_data, dict), "WTE response must be a JSON dictionary"
 
@@ -71,7 +66,7 @@ def validate_wte_response(new_data: dict, mock_data: dict, is_success: bool) -> 
         )
 
 
-def validate_ecu_response(new_data: dict, mock_data: dict, is_success: bool) -> None:
+def validate_ecu_response(new_data: dict, is_success: bool) -> None:
     """Validate Ecological Coastal Units response structure and compatibility."""
     assert isinstance(new_data, dict), "ECU response must be a JSON dictionary"
     features = new_data.get("features", [])
@@ -121,7 +116,7 @@ def validate_ecu_response(new_data: dict, mock_data: dict, is_success: bool) -> 
 
 
 def validate_emu_response(
-    new_data: dict, mock_data: dict, is_success: bool, file_name: str
+    new_data: dict, is_success: bool, file_name: str
 ) -> None:
     """Validate Ecological Marine Units response structure and compatibility."""
     assert isinstance(new_data, dict), "EMU response must be a JSON dictionary"
