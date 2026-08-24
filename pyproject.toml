@@ -19,6 +19,7 @@ dependencies = [
     "daiquiri>=3.3.0,<4",
     "requests>=2.32.3,<3",
     "aiohttp>=3.12.15,<4",
+    "rasterio>=1.5.1,<2",
 ]
 
 [project.optional-dependencies]

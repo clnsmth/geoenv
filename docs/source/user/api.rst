@@ -32,6 +32,11 @@ Data Sources
       get_environment, get_environments_for_geometry_z_values, has_environment,
       properties, set_properties, unique_environment
 
+.. autoclass:: geoenv.data_sources.GlobalLakesAndWetlands
+   :members:
+   :exclude-members: convert_data, data, geometry, get_environment,
+      has_environment, properties, set_properties, unique_environment
+
 Geometry
 --------
 

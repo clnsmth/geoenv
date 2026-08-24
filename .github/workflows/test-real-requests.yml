@@ -27,6 +27,12 @@ jobs:
       - name: Install dependencies
         run: uv sync --extra dev
 
+      - name: Cache GLWD Dataset
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/geoenv
+          key: geoenv-glwd-v2-54001814
+
       - name: Run Ruff formatter
         run: uv run ruff format src/ tests/
 

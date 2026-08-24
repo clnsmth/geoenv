@@ -6,43 +6,44 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'geoenv'
-copyright = '2025, Colin Smith'
-author = 'Colin Smith'
-release = '0.0.0'
+project = "geoenv"
+copyright = "2025, Colin Smith"
+author = "Colin Smith"
+release = "0.0.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.viewcode',
-    'myst_parser',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
+    "myst_parser",
 ]
 
 # Configure autodoc
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../src'))  # path to source code
+
+sys.path.insert(0, os.path.abspath("../src"))  # path to source code
 napoleon_numpy_docstring = True  # use numpy
 napoleon_google_docstring = False  # not google
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
 
 sys.path.insert(0, os.path.abspath("../src/geoenv"))
 # Get the current version of geoenv for display in the docs
 from importlib.metadata import version
-version = version("geoenv")
 
+version = version("geoenv")
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = "alabaster"
+html_static_path = ["_static"]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
