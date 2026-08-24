@@ -12,11 +12,16 @@ from geoenv.data_sources import EcologicalMarineUnits
 async def test_resolve(use_mock, scenarios, assert_identify, mocker):
     """Test the resolve method"""
     for scenario in scenarios:
+        data_source_obj = scenario.get("data_source")
         if use_mock:
-            mocker.patch("requests.get", return_value=scenario.get("response"))
+            mocker.patch.object(
+                data_source_obj,
+                "_request",
+                mocker.AsyncMock(return_value=scenario.get("response").json()),
+            )
 
         # Configure
-        data_source = [scenario.get("data_source")]
+        data_source = [data_source_obj]
         resolver = Resolver(data_source)
         geometry = Geometry(scenario.get("geometry"))
 
