@@ -132,7 +132,6 @@ As an open-source library distributed on PyPI, dependencies are defined as abstr
 .. _ruff: https://docs.astral.sh/ruff/
 .. _Pytest: https://docs.pytest.org/en/latest/
 .. _uv: https://docs.astral.sh/uv/
-.. _pip: https://pip.pypa.io/en/stable/
 .. _Python Semantic Release: https://python-semantic-release.readthedocs.io/en/latest/
 .. _Angular commit style: https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit
 .. _Sphinx: https://www.sphinx-doc.org/en/master/

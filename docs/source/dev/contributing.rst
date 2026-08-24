@@ -38,12 +38,8 @@ Here’s a simple guide to submitting a pull request 🛠:
 
 1. Fork the repo.
 2. Create a new feature branch off `main`.
-3. Install the project for development:
-   Using `uv`_ (recommended):
+3. Install the project with `uv`_:
    ``uv sync --extra dev``
-
-   Or using `pip`_:
-   ``pip install -e ".[dev]"``
 4. Run the tests:
    ``uv run pytest``
    Investigate and fix any failures.
@@ -148,7 +144,6 @@ Example:
 
 
 .. _uv: https://docs.astral.sh/uv/
-.. _pip: https://pip.pypa.io/en/stable/
 .. _ruff: https://docs.astral.sh/ruff/
 .. _reStructuredText: https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
