@@ -44,6 +44,12 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
+.cache/
+cache/
+*.tif
+*.tiff
+*.zip
+data/raster/*.tif
 nosetests.xml
 coverage.xml
 *.cover

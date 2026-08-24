@@ -33,23 +33,17 @@ Resolve a point location to environmental descriptions:
 import asyncio
 from geoenv.geometry import Geometry
 from geoenv.resolver import Resolver
-from geoenv.data_sources import (WorldTerrestrialEcosystems,
-                                 EcologicalMarineUnits,
-                                 EcologicalCoastalUnits)
-
-# Define a geometry in GeoJSON format (Point or Polygon)
-geometry = Geometry(
-    {
-        "type": "Point",
-        "coordinates": [
-            -122.622364,
-            37.905931
-        ]
-    }
+from geoenv.data_sources import (
+    WorldTerrestrialEcosystems,
+    EcologicalMarineUnits,
+    EcologicalCoastalUnits,
 )
 
-# Set up the resolver. When the location's environment is not known, 
-# multiple data sources are included to cover potential environment 
+# Define a geometry in GeoJSON format (Point or Polygon)
+geometry = Geometry({"type": "Point", "coordinates": [-122.622364, 37.905931]})
+
+# Set up the resolver. When the location's environment is not known,
+# multiple data sources are included to cover potential environment
 # types.
 resolver = Resolver(
     data_source=[
@@ -59,7 +53,7 @@ resolver = Resolver(
     ]
 )
 
-# Resolve the geometry to environmental descriptions. The resolver 
+# Resolve the geometry to environmental descriptions. The resolver
 # queries multiple data sources concurrently using `asyncio`.
 response = asyncio.run(resolver.resolve(geometry))
 

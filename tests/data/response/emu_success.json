@@ -257,66 +257,6 @@
         },
         {
             "attributes": {
-                "UnitTop": 0,
-                "UnitBottom": -5,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": 0,
-                "UnitBottom": -5,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": 0,
-                "UnitBottom": -5,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": 0,
-                "UnitBottom": -5,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": 0,
-                "UnitBottom": -5,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -5,
                 "UnitBottom": -10,
                 "OceanName": 6,
@@ -324,66 +264,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -5,
-                "UnitBottom": -10,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -5,
-                "UnitBottom": -10,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -5,
-                "UnitBottom": -10,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -5,
-                "UnitBottom": -10,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -5,
-                "UnitBottom": -10,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -401,66 +281,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -10,
-                "UnitBottom": -15,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -10,
-                "UnitBottom": -15,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -10,
-                "UnitBottom": -15,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -10,
-                "UnitBottom": -15,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -10,
-                "UnitBottom": -15,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -15,
                 "UnitBottom": -20,
                 "OceanName": 6,
@@ -468,66 +288,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -15,
-                "UnitBottom": -20,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -15,
-                "UnitBottom": -20,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -15,
-                "UnitBottom": -20,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -15,
-                "UnitBottom": -20,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -15,
-                "UnitBottom": -20,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -545,66 +305,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -20,
-                "UnitBottom": -25,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -20,
-                "UnitBottom": -25,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -20,
-                "UnitBottom": -25,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -20,
-                "UnitBottom": -25,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -20,
-                "UnitBottom": -25,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -25,
                 "UnitBottom": -30,
                 "OceanName": 6,
@@ -612,66 +312,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -25,
-                "UnitBottom": -30,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -25,
-                "UnitBottom": -30,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -25,
-                "UnitBottom": -30,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -25,
-                "UnitBottom": -30,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -25,
-                "UnitBottom": -30,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -689,66 +329,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -30,
-                "UnitBottom": -35,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -30,
-                "UnitBottom": -35,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -30,
-                "UnitBottom": -35,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -30,
-                "UnitBottom": -35,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -30,
-                "UnitBottom": -35,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -35,
                 "UnitBottom": -40,
                 "OceanName": 6,
@@ -756,66 +336,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -35,
-                "UnitBottom": -40,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -35,
-                "UnitBottom": -40,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -35,
-                "UnitBottom": -40,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -35,
-                "UnitBottom": -40,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -35,
-                "UnitBottom": -40,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -833,66 +353,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -40,
-                "UnitBottom": -45,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -40,
-                "UnitBottom": -45,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -40,
-                "UnitBottom": -45,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -40,
-                "UnitBottom": -45,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -40,
-                "UnitBottom": -45,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -45,
                 "UnitBottom": -50,
                 "OceanName": 6,
@@ -900,66 +360,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -45,
-                "UnitBottom": -50,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -45,
-                "UnitBottom": -50,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -45,
-                "UnitBottom": -50,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -45,
-                "UnitBottom": -50,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -45,
-                "UnitBottom": -50,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -977,66 +377,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -50,
-                "UnitBottom": -55,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -50,
-                "UnitBottom": -55,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -50,
-                "UnitBottom": -55,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -50,
-                "UnitBottom": -55,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -50,
-                "UnitBottom": -55,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -55,
                 "UnitBottom": -60,
                 "OceanName": 6,
@@ -1044,66 +384,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -55,
-                "UnitBottom": -60,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -55,
-                "UnitBottom": -60,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -55,
-                "UnitBottom": -60,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -55,
-                "UnitBottom": -60,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -55,
-                "UnitBottom": -60,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -1121,66 +401,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -60,
-                "UnitBottom": -65,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -60,
-                "UnitBottom": -65,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -60,
-                "UnitBottom": -65,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -60,
-                "UnitBottom": -65,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -60,
-                "UnitBottom": -65,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -65,
                 "UnitBottom": -70,
                 "OceanName": 6,
@@ -1188,66 +408,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -65,
-                "UnitBottom": -70,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -65,
-                "UnitBottom": -70,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -65,
-                "UnitBottom": -70,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -65,
-                "UnitBottom": -70,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -65,
-                "UnitBottom": -70,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -1265,66 +425,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -70,
-                "UnitBottom": -75,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -70,
-                "UnitBottom": -75,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -70,
-                "UnitBottom": -75,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -70,
-                "UnitBottom": -75,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -70,
-                "UnitBottom": -75,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -75,
                 "UnitBottom": -80,
                 "OceanName": 6,
@@ -1332,66 +432,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -75,
-                "UnitBottom": -80,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -75,
-                "UnitBottom": -80,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -75,
-                "UnitBottom": -80,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -75,
-                "UnitBottom": -80,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -75,
-                "UnitBottom": -80,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -1409,66 +449,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -80,
-                "UnitBottom": -85,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -80,
-                "UnitBottom": -85,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -80,
-                "UnitBottom": -85,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -80,
-                "UnitBottom": -85,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -80,
-                "UnitBottom": -85,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -85,
                 "UnitBottom": -90,
                 "OceanName": 6,
@@ -1481,66 +461,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -85,
-                "UnitBottom": -90,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -85,
-                "UnitBottom": -90,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -85,
-                "UnitBottom": -90,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -85,
-                "UnitBottom": -90,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -85,
-                "UnitBottom": -90,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -90,
                 "UnitBottom": -95,
                 "OceanName": 6,
@@ -1548,66 +468,6 @@
             },
             "geometry": {
                 "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -90,
-                "UnitBottom": -95,
-                "OceanName": 6,
-                "Name_2018": 36
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -90,
-                "UnitBottom": -95,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -90,
-                "UnitBottom": -95,
-                "OceanName": 6,
-                "Name_2018": 36
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -90,
-                "UnitBottom": -95,
-                "OceanName": 6,
-                "Name_2018": 30
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -90,
-                "UnitBottom": -95,
-                "OceanName": 6,
-                "Name_2018": 36
-            },
-            "geometry": {
-                "x": -125.625,
                 "y": 48.62499999999999
             }
         },
@@ -1625,6 +485,270 @@
         },
         {
             "attributes": {
+                "UnitTop": -100,
+                "UnitBottom": -125,
+                "OceanName": 6,
+                "Name_2018": 36
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -125,
+                "UnitBottom": -150,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -150,
+                "UnitBottom": -175,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": 0,
+                "UnitBottom": -5,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -5,
+                "UnitBottom": -10,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -10,
+                "UnitBottom": -15,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -15,
+                "UnitBottom": -20,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -20,
+                "UnitBottom": -25,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -25,
+                "UnitBottom": -30,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -30,
+                "UnitBottom": -35,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -35,
+                "UnitBottom": -40,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -40,
+                "UnitBottom": -45,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -45,
+                "UnitBottom": -50,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -50,
+                "UnitBottom": -55,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -55,
+                "UnitBottom": -60,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -60,
+                "UnitBottom": -65,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -65,
+                "UnitBottom": -70,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -70,
+                "UnitBottom": -75,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -75,
+                "UnitBottom": -80,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -80,
+                "UnitBottom": -85,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -85,
+                "UnitBottom": -90,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -90,
+                "UnitBottom": -95,
+                "OceanName": 6,
+                "Name_2018": 36
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
                 "UnitTop": -95,
                 "UnitBottom": -100,
                 "OceanName": 6,
@@ -1633,6 +757,246 @@
             "geometry": {
                 "x": -125.875,
                 "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -100,
+                "UnitBottom": -125,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": 0,
+                "UnitBottom": -5,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -5,
+                "UnitBottom": -10,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -10,
+                "UnitBottom": -15,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -15,
+                "UnitBottom": -20,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -20,
+                "UnitBottom": -25,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -25,
+                "UnitBottom": -30,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -30,
+                "UnitBottom": -35,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -35,
+                "UnitBottom": -40,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -40,
+                "UnitBottom": -45,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -45,
+                "UnitBottom": -50,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -50,
+                "UnitBottom": -55,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -55,
+                "UnitBottom": -60,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -60,
+                "UnitBottom": -65,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -65,
+                "UnitBottom": -70,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -70,
+                "UnitBottom": -75,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -75,
+                "UnitBottom": -80,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -80,
+                "UnitBottom": -85,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -85,
+                "UnitBottom": -90,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -90,
+                "UnitBottom": -95,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.12499999999999,
+                "y": 48.375
             }
         },
         {
@@ -1649,66 +1013,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -95,
-                "UnitBottom": -100,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -95,
-                "UnitBottom": -100,
-                "OceanName": 6,
-                "Name_2018": 19
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -95,
-                "UnitBottom": -100,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -100,
-                "UnitBottom": -125,
-                "OceanName": 6,
-                "Name_2018": 36
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -100,
-                "UnitBottom": -125,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -100,
                 "UnitBottom": -125,
                 "OceanName": 6,
@@ -1721,104 +1025,8 @@
         },
         {
             "attributes": {
-                "UnitTop": -100,
-                "UnitBottom": -125,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -100,
-                "UnitBottom": -125,
-                "OceanName": 6,
-                "Name_2018": 36
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -100,
-                "UnitBottom": -125,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -125.625,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -125,
                 "UnitBottom": -150,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -125,
-                "UnitBottom": -150,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -125,
-                "UnitBottom": -150,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -125,
-                "UnitBottom": -150,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -150,
-                "UnitBottom": -175,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -150,
-                "UnitBottom": -175,
                 "OceanName": 6,
                 "Name_2018": 37
             },
@@ -1832,23 +1040,11 @@
                 "UnitTop": -150,
                 "UnitBottom": -175,
                 "OceanName": 6,
-                "Name_2018": 10
-            },
-            "geometry": {
-                "x": -125.875,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -150,
-                "UnitBottom": -175,
-                "OceanName": 6,
                 "Name_2018": 37
             },
             "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
+                "x": -126.12499999999999,
+                "y": 48.375
             }
         },
         {
@@ -1865,18 +1061,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -175,
-                "UnitBottom": -200,
-                "OceanName": 6,
-                "Name_2018": 37
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -200,
                 "UnitBottom": -225,
                 "OceanName": 6,
@@ -1885,18 +1069,6 @@
             "geometry": {
                 "x": -126.12499999999999,
                 "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -200,
-                "UnitBottom": -225,
-                "OceanName": 6,
-                "Name_2018": 10
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
             }
         },
         {
@@ -1913,18 +1085,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -225,
-                "UnitBottom": -250,
-                "OceanName": 6,
-                "Name_2018": 10
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -250,
                 "UnitBottom": -275,
                 "OceanName": 6,
@@ -1933,18 +1093,6 @@
             "geometry": {
                 "x": -126.12499999999999,
                 "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -250,
-                "UnitBottom": -275,
-                "OceanName": 6,
-                "Name_2018": 10
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
             }
         },
         {
@@ -1961,18 +1109,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -275,
-                "UnitBottom": -300,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -300,
                 "UnitBottom": -325,
                 "OceanName": 6,
@@ -1981,18 +1117,6 @@
             "geometry": {
                 "x": -126.12499999999999,
                 "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -300,
-                "UnitBottom": -325,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
             }
         },
         {
@@ -2009,18 +1133,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -325,
-                "UnitBottom": -350,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -350,
                 "UnitBottom": -375,
                 "OceanName": 6,
@@ -2029,18 +1141,6 @@
             "geometry": {
                 "x": -126.12499999999999,
                 "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -350,
-                "UnitBottom": -375,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
             }
         },
         {
@@ -2057,18 +1157,6 @@
         },
         {
             "attributes": {
-                "UnitTop": -375,
-                "UnitBottom": -400,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -400,
                 "UnitBottom": -425,
                 "OceanName": 6,
@@ -2077,18 +1165,6 @@
             "geometry": {
                 "x": -126.12499999999999,
                 "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -400,
-                "UnitBottom": -425,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
             }
         },
         {
@@ -2105,44 +1181,8 @@
         },
         {
             "attributes": {
-                "UnitTop": -425,
-                "UnitBottom": -450,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
                 "UnitTop": -450,
                 "UnitBottom": -475,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.12499999999999,
-                "y": 48.375
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -450,
-                "UnitBottom": -475,
-                "OceanName": 6,
-                "Name_2018": 33
-            },
-            "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
-            }
-        },
-        {
-            "attributes": {
-                "UnitTop": -475,
-                "UnitBottom": -500,
                 "OceanName": 6,
                 "Name_2018": 33
             },
@@ -2159,8 +1199,8 @@
                 "Name_2018": 33
             },
             "geometry": {
-                "x": -126.375,
-                "y": 48.62499999999999
+                "x": -126.12499999999999,
+                "y": 48.375
             }
         },
         {
@@ -2173,6 +1213,714 @@
             "geometry": {
                 "x": -126.12499999999999,
                 "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": 0,
+                "UnitBottom": -5,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -5,
+                "UnitBottom": -10,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -10,
+                "UnitBottom": -15,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -15,
+                "UnitBottom": -20,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -20,
+                "UnitBottom": -25,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -25,
+                "UnitBottom": -30,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -30,
+                "UnitBottom": -35,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -35,
+                "UnitBottom": -40,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -40,
+                "UnitBottom": -45,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -45,
+                "UnitBottom": -50,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -50,
+                "UnitBottom": -55,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -55,
+                "UnitBottom": -60,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -60,
+                "UnitBottom": -65,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -65,
+                "UnitBottom": -70,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -70,
+                "UnitBottom": -75,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -75,
+                "UnitBottom": -80,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -80,
+                "UnitBottom": -85,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -85,
+                "UnitBottom": -90,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -90,
+                "UnitBottom": -95,
+                "OceanName": 6,
+                "Name_2018": 36
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -95,
+                "UnitBottom": -100,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -100,
+                "UnitBottom": -125,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -125,
+                "UnitBottom": -150,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -150,
+                "UnitBottom": -175,
+                "OceanName": 6,
+                "Name_2018": 10
+            },
+            "geometry": {
+                "x": -125.875,
+                "y": 48.375
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": 0,
+                "UnitBottom": -5,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -5,
+                "UnitBottom": -10,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -10,
+                "UnitBottom": -15,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -15,
+                "UnitBottom": -20,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -20,
+                "UnitBottom": -25,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -25,
+                "UnitBottom": -30,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -30,
+                "UnitBottom": -35,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -35,
+                "UnitBottom": -40,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -40,
+                "UnitBottom": -45,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -45,
+                "UnitBottom": -50,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -50,
+                "UnitBottom": -55,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -55,
+                "UnitBottom": -60,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -60,
+                "UnitBottom": -65,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -65,
+                "UnitBottom": -70,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -70,
+                "UnitBottom": -75,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -75,
+                "UnitBottom": -80,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -80,
+                "UnitBottom": -85,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -85,
+                "UnitBottom": -90,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -90,
+                "UnitBottom": -95,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -95,
+                "UnitBottom": -100,
+                "OceanName": 6,
+                "Name_2018": 19
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -100,
+                "UnitBottom": -125,
+                "OceanName": 6,
+                "Name_2018": 36
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -125,
+                "UnitBottom": -150,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -150,
+                "UnitBottom": -175,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -175,
+                "UnitBottom": -200,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -200,
+                "UnitBottom": -225,
+                "OceanName": 6,
+                "Name_2018": 10
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -225,
+                "UnitBottom": -250,
+                "OceanName": 6,
+                "Name_2018": 10
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -250,
+                "UnitBottom": -275,
+                "OceanName": 6,
+                "Name_2018": 10
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -275,
+                "UnitBottom": -300,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -300,
+                "UnitBottom": -325,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -325,
+                "UnitBottom": -350,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -350,
+                "UnitBottom": -375,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -375,
+                "UnitBottom": -400,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -400,
+                "UnitBottom": -425,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -425,
+                "UnitBottom": -450,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -450,
+                "UnitBottom": -475,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -475,
+                "UnitBottom": -500,
+                "OceanName": 6,
+                "Name_2018": 33
+            },
+            "geometry": {
+                "x": -126.375,
+                "y": 48.62499999999999
             }
         },
         {
@@ -2256,6 +2004,258 @@
             },
             "geometry": {
                 "x": -126.375,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": 0,
+                "UnitBottom": -5,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -5,
+                "UnitBottom": -10,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -10,
+                "UnitBottom": -15,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -15,
+                "UnitBottom": -20,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -20,
+                "UnitBottom": -25,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -25,
+                "UnitBottom": -30,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -30,
+                "UnitBottom": -35,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -35,
+                "UnitBottom": -40,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -40,
+                "UnitBottom": -45,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -45,
+                "UnitBottom": -50,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -50,
+                "UnitBottom": -55,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -55,
+                "UnitBottom": -60,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -60,
+                "UnitBottom": -65,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -65,
+                "UnitBottom": -70,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -70,
+                "UnitBottom": -75,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -75,
+                "UnitBottom": -80,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -80,
+                "UnitBottom": -85,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -85,
+                "UnitBottom": -90,
+                "OceanName": 6,
+                "Name_2018": 30
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -90,
+                "UnitBottom": -95,
+                "OceanName": 6,
+                "Name_2018": 36
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -95,
+                "UnitBottom": -100,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -125.625,
+                "y": 48.62499999999999
+            }
+        },
+        {
+            "attributes": {
+                "UnitTop": -100,
+                "UnitBottom": -125,
+                "OceanName": 6,
+                "Name_2018": 37
+            },
+            "geometry": {
+                "x": -125.625,
                 "y": 48.62499999999999
             }
         }

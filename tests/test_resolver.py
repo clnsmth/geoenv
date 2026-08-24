@@ -6,6 +6,7 @@ from geoenv.resolver import Resolver
 from geoenv.geometry import Geometry
 from geoenv.data_sources import WorldTerrestrialEcosystems
 from geoenv.data_sources import EcologicalMarineUnits
+from geoenv.data_sources import GlobalLakesAndWetlands
 
 
 @pytest.mark.asyncio
@@ -41,7 +42,8 @@ def test_data_source():
     assert isinstance(resolver.data_source[0], WorldTerrestrialEcosystems)
 
     # Set
-    resolver.data_source = [EcologicalMarineUnits()]
+    resolver.data_source = [EcologicalMarineUnits(), GlobalLakesAndWetlands()]
     assert resolver.data_source is not None
     assert isinstance(resolver.data_source, list)
     assert isinstance(resolver.data_source[0], EcologicalMarineUnits)
+    assert isinstance(resolver.data_source[1], GlobalLakesAndWetlands)

@@ -10,6 +10,7 @@ from geoenv.geometry import Geometry
 from geoenv.data_sources import EcologicalCoastalUnits
 from geoenv.data_sources import EcologicalMarineUnits
 from geoenv.data_sources import WorldTerrestrialEcosystems
+from geoenv.data_sources import GlobalLakesAndWetlands
 from geoenv.response import Response, construct_response
 from geoenv.utilities import EnvironmentDataModel
 
@@ -34,6 +35,7 @@ def data_sources():
         EcologicalCoastalUnits(),
         EcologicalMarineUnits(),
         WorldTerrestrialEcosystems(),
+        GlobalLakesAndWetlands(),
     ]
 
 
@@ -42,9 +44,11 @@ def scenarios(  # noqa: PLR0913, PLR0917
     raw_properties_of_ecological_coastal_units,
     raw_properties_of_ecological_marine_units,
     raw_properties_of_world_terrestrial_ecosystems,
+    raw_properties_of_global_lakes_and_wetlands,
     properties_of_ecological_coastal_units,
     properties_of_ecological_marine_units,
     properties_of_world_terrestrial_ecosystems,
+    properties_of_global_lakes_and_wetlands,
 ):
     """List of test scenarios for each data source."""
     scenarios = [
@@ -107,6 +111,26 @@ def scenarios(  # noqa: PLR0913, PLR0917
             "raw_properties": raw_properties_of_ecological_marine_units,
             "properties": properties_of_ecological_marine_units,
             "identifier": "https://doi.org/10.5066/P9Q6ZSGN",
+        },
+        {  # GLWD Success (Point on lake)
+            "data_source": GlobalLakesAndWetlands(),
+            "response": load_response("glwd_success"),
+            "geometry": load_geometry("point_on_lake"),
+            "unique_environment": 1,
+            "has_environment": True,
+            "raw_properties": raw_properties_of_global_lakes_and_wetlands,
+            "properties": properties_of_global_lakes_and_wetlands,
+            "identifier": "https://doi.org/10.6084/m9.figshare.28519994",
+        },
+        {  # GLWD Fail (Point on ocean)
+            "data_source": GlobalLakesAndWetlands(),
+            "response": load_response("glwd_fail"),
+            "geometry": load_geometry("point_on_ocean"),
+            "unique_environment": 0,
+            "has_environment": False,
+            "raw_properties": raw_properties_of_global_lakes_and_wetlands,
+            "properties": properties_of_global_lakes_and_wetlands,
+            "identifier": "https://doi.org/10.6084/m9.figshare.28519994",
         },
     ]
     return scenarios
@@ -197,6 +221,24 @@ def raw_properties_of_world_terrestrial_ecosystems():
 def properties_of_world_terrestrial_ecosystems():
     """Properties of World Terrestrial Ecosystems."""
     return {"temperature", "moisture", "landCover", "landForm", "climate", "ecosystem"}
+
+
+@pytest.fixture
+def raw_properties_of_global_lakes_and_wetlands():
+    """Raw properties of Global Lakes and Wetlands."""
+    return {
+        "ClassID",
+        "ClassName",
+    }
+
+
+@pytest.fixture
+def properties_of_global_lakes_and_wetlands():
+    """Properties of Global Lakes and Wetlands."""
+    return {
+        "classId",
+        "ecosystem",
+    }
 
 
 @pytest.fixture

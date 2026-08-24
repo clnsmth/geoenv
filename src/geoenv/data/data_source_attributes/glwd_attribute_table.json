@@ -1,0 +1,138 @@
+{
+    "0": {
+        "ClassID": 0,
+        "ClassName": "Dryland"
+    },
+    "1": {
+        "ClassID": 1,
+        "ClassName": "Freshwater lake"
+    },
+    "2": {
+        "ClassID": 2,
+        "ClassName": "Saline lake"
+    },
+    "3": {
+        "ClassID": 3,
+        "ClassName": "Reservoir"
+    },
+    "4": {
+        "ClassID": 4,
+        "ClassName": "Large river"
+    },
+    "5": {
+        "ClassID": 5,
+        "ClassName": "Large estuarine river"
+    },
+    "6": {
+        "ClassID": 6,
+        "ClassName": "Other permanent waterbody"
+    },
+    "7": {
+        "ClassID": 7,
+        "ClassName": "Small streams"
+    },
+    "8": {
+        "ClassID": 8,
+        "ClassName": "Lacustrine, forested"
+    },
+    "9": {
+        "ClassID": 9,
+        "ClassName": "Lacustrine, non-forested"
+    },
+    "10": {
+        "ClassID": 10,
+        "ClassName": "Riverine, regularly flooded, forested"
+    },
+    "11": {
+        "ClassID": 11,
+        "ClassName": "Riverine, regularly flooded, non-forested"
+    },
+    "12": {
+        "ClassID": 12,
+        "ClassName": "Riverine, seasonally flooded, forested"
+    },
+    "13": {
+        "ClassID": 13,
+        "ClassName": "Riverine, seasonally flooded, non-forested"
+    },
+    "14": {
+        "ClassID": 14,
+        "ClassName": "Riverine, seasonally saturated, forested"
+    },
+    "15": {
+        "ClassID": 15,
+        "ClassName": "Riverine, seasonally saturated, non-forested"
+    },
+    "16": {
+        "ClassID": 16,
+        "ClassName": "Palustrine, regularly flooded, forested"
+    },
+    "17": {
+        "ClassID": 17,
+        "ClassName": "Palustrine, regularly flooded, non-forested"
+    },
+    "18": {
+        "ClassID": 18,
+        "ClassName": "Palustrine, seasonally saturated, forested"
+    },
+    "19": {
+        "ClassID": 19,
+        "ClassName": "Palustrine, seasonally saturated, non-forested"
+    },
+    "20": {
+        "ClassID": 20,
+        "ClassName": "Ephemeral, forested"
+    },
+    "21": {
+        "ClassID": 21,
+        "ClassName": "Ephemeral, non-forested"
+    },
+    "22": {
+        "ClassID": 22,
+        "ClassName": "Arctic/boreal peatland, forested"
+    },
+    "23": {
+        "ClassID": 23,
+        "ClassName": "Arctic/boreal peatland, non-forested"
+    },
+    "24": {
+        "ClassID": 24,
+        "ClassName": "Temperate peatland, forested"
+    },
+    "25": {
+        "ClassID": 25,
+        "ClassName": "Temperate peatland, non-forested"
+    },
+    "26": {
+        "ClassID": 26,
+        "ClassName": "Tropical/subtropical peatland, forested"
+    },
+    "27": {
+        "ClassID": 27,
+        "ClassName": "Tropical/subtropical peatland, non-forested"
+    },
+    "28": {
+        "ClassID": 28,
+        "ClassName": "Mangrove"
+    },
+    "29": {
+        "ClassID": 29,
+        "ClassName": "Saltmarsh"
+    },
+    "30": {
+        "ClassID": 30,
+        "ClassName": "Large river delta"
+    },
+    "31": {
+        "ClassID": 31,
+        "ClassName": "Other coastal wetland"
+    },
+    "32": {
+        "ClassID": 32,
+        "ClassName": "Salt pan, saline/brackish wetland"
+    },
+    "33": {
+        "ClassID": 33,
+        "ClassName": "Rice paddies"
+    }
+}

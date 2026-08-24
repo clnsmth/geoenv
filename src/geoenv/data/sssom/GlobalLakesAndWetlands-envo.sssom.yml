@@ -1,0 +1,13 @@
+mapping_set_id: b6e5a409-7d84-4b55-a131-b8d96df29c31
+license: https://creativecommons.org/licenses/by/4.0/
+mapping_set_version: 0.0.0.9000
+mapping_set_description: This mapping set is a manually curated alignment of Global Lakes and Wetlands Database (GLWD v2; https://doi.org/10.6084/m9.figshare.28519994) with the Environment Ontology (ENVO; http://purl.obolibrary.org/obo/envo.owl). Property alignment was created using the Simple Standard for Sharing Ontology Mappings (SSSOM; https://doi.org/10.1093/database/baac035). The motivation of this mapping is to facilitate the classification of environmental properties, in ENVO terms, via queries against the GLWD data source.
+subject_source: https://doi.org/10.6084/m9.figshare.28519994
+subject_source_version: '2.0'
+object_source: http://purl.obolibrary.org/obo/envo.owl
+object_source_version: http://purl.obolibrary.org/obo/envo/releases/2024-07-01/envo.owl
+curie_map:
+  GLWD: https://doi.org/10.6084/m9.figshare.28519994#
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  SSSOM: https://w3id.org/sssom/
+  PATO: http://purl.obolibrary.org/obo/PATO_

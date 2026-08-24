@@ -6,6 +6,7 @@ from geoenv.data_sources import (
     WorldTerrestrialEcosystems,
     EcologicalCoastalUnits,
     EcologicalMarineUnits,
+    GlobalLakesAndWetlands,
 )
 from tests.conftest import load_geometry
 from tests.data.create_mock_data import create_mock_response_content
@@ -31,6 +32,8 @@ async def test_mock_response_content(use_mock, tmp_path):
                 validate_ecu_response(new_data, is_success)
             elif "emu_" in file.name:
                 validate_emu_response(new_data, is_success, file.name)
+            elif "glwd_" in file.name:
+                validate_glwd_response(new_data, is_success)
 
 
 def validate_wte_response(new_data: dict, is_success: bool) -> None:
@@ -163,3 +166,35 @@ def validate_emu_response(new_data: dict, is_success: bool, file_name: str) -> N
             "EMU fail response should indicate has_environment=False"
         )
         assert emu.convert_data() == []
+
+
+def validate_glwd_response(new_data: dict, is_success: bool) -> None:
+    """Validate Global Lakes and Wetlands response structure and compatibility."""
+    assert isinstance(new_data, dict), "GLWD response must be a JSON dictionary"
+    assert "properties" in new_data, "GLWD response must contain 'properties'"
+    assert "Values" in new_data["properties"], "GLWD response must contain 'Values'"
+
+    glwd = GlobalLakesAndWetlands()
+    if is_success:
+        geom = load_geometry("point_on_lake")
+        glwd.geometry = geom
+        glwd.data = new_data
+        assert glwd.has_environment(), (
+            "GLWD success response should indicate has_environment=True"
+        )
+        environments = glwd.convert_data()
+        assert len(environments) > 0, (
+            "GLWD success response should resolve at least one Environment"
+        )
+        for env in environments:
+            assert env.data["properties"].get("ecosystem"), (
+                "Environment should contain ecosystem descriptor"
+            )
+    else:
+        geom = load_geometry("point_on_ocean")
+        glwd.geometry = geom
+        glwd.data = new_data
+        assert not glwd.has_environment(), (
+            "GLWD fail response should indicate has_environment=False"
+        )
+        assert glwd.convert_data() == []

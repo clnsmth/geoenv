@@ -11,11 +11,12 @@ from geoenv.geometry import Geometry
 from geoenv.data_sources import WorldTerrestrialEcosystems
 from geoenv.data_sources import EcologicalCoastalUnits
 from geoenv.data_sources import EcologicalMarineUnits
+from geoenv.data_sources import GlobalLakesAndWetlands
 from geoenv.resolver import construct_response
 from tests.conftest import load_geometry
 
 
-async def create_mock_response_content(
+async def create_mock_response_content(  # noqa: PLR0915
     output_directory: Path = files("tests.data.response"),
 ) -> None:
     """Get response content for each data_source, and for both success and fail
@@ -82,6 +83,22 @@ async def create_mock_response_content(
         with open(
             output_directory.joinpath("emu_success_point_on_ocean_with_depth.json"), "w"
         ) as f:
+            f.write(json)
+
+        # GLWD Success
+        geometry = Geometry(load_geometry("point_on_lake"))
+        data_source = GlobalLakesAndWetlands()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("glwd_success.json"), "w") as f:
+            f.write(json)
+
+        # GLWD Fail
+        geometry = Geometry(load_geometry("point_on_ocean"))
+        data_source = GlobalLakesAndWetlands()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("glwd_fail.json"), "w") as f:
             f.write(json)
 
 
