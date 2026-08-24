@@ -219,8 +219,12 @@ def empty_data_model():
 @pytest.fixture
 def data_model(mocker):
     """Data model for testing purposes."""
-    mocker.patch("requests.get", return_value=load_response("wte_success"))
     data_source = WorldTerrestrialEcosystems()
+    mocker.patch.object(
+        data_source,
+        "_request",
+        mocker.AsyncMock(return_value=load_response("wte_success").json()),
+    )
     geometry = Geometry(load_geometry("point_on_land"))
 
     environment = asyncio.run(data_source.get_environment(geometry))

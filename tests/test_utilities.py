@@ -101,8 +101,12 @@ async def test_construct_response(scenarios, mocker, empty_data_model):
     # Create a list of Environment objects, then construct
     environments = []
     for scenario in scenarios:
-        mocker.patch("requests.get", return_value=scenario.get("response"))
         data_source = scenario["data_source"]
+        mocker.patch.object(
+            data_source,
+            "_request",
+            mocker.AsyncMock(return_value=scenario.get("response").json()),
+        )
         environment = await data_source.get_environment(Geometry(scenario["geometry"]))
         environments.extend(environment)
     identifier = "Some identifier"
