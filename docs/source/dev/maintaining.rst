@@ -127,6 +127,8 @@ Dependency & Environment Management
 
 We use `uv`_ for managing development and distribution dependencies. 📦
 
+As an open-source library distributed on PyPI, dependencies are defined as abstract version ranges in ``pyproject.toml`` without committing ``uv.lock``. GitHub Dependabot runs weekly scans directly against ``pyproject.toml`` and opens pull requests when declared version ranges permit known vulnerabilities.
+
 .. _ruff: https://docs.astral.sh/ruff/
 .. _Pytest: https://docs.pytest.org/en/latest/
 .. _uv: https://docs.astral.sh/uv/
