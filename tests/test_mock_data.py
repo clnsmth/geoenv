@@ -115,9 +115,7 @@ def validate_ecu_response(new_data: dict, is_success: bool) -> None:
         assert ecu.convert_data() == []
 
 
-def validate_emu_response(
-    new_data: dict, is_success: bool, file_name: str
-) -> None:
+def validate_emu_response(new_data: dict, is_success: bool, file_name: str) -> None:
     """Validate Ecological Marine Units response structure and compatibility."""
     assert isinstance(new_data, dict), "EMU response must be a JSON dictionary"
     features = new_data.get("features", [])
