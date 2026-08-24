@@ -223,9 +223,7 @@ def data_model(mocker):
     data_source = WorldTerrestrialEcosystems()
     geometry = Geometry(load_geometry("point_on_land"))
 
-    environment = asyncio.run(
-        data_source.get_environment(geometry)
-    )
+    environment = asyncio.run(data_source.get_environment(geometry))
     data = construct_response(
         geometry,
         environment,
