@@ -21,18 +21,64 @@ def test_init():
 
 
 @pytest.mark.asyncio
+async def test_get_environment_polygon_direct(use_mock):
+    """Test direct raster polygon masking (zonal queries) on GLWD"""
+    if use_mock:
+        pytest.skip("Skipping live test when use_mock is True")
+
+    data_source = GlobalLakesAndWetlands()
+
+    # 1. Standard Polygon
+    geometry = Geometry(load_geometry("polygon_on_land_and_ocean"))
+    environments = await data_source.get_environment(geometry)
+    assert isinstance(environments, list)
+    assert len(environments) == 2
+    class_ids = {env.data["properties"]["classId"] for env in environments}
+    assert class_ids == {"6", "14"}
+
+    # 2. Polygon with exclusion ring (donut / hole)
+    hole_geom = Geometry(load_geometry("polygon_with_exclusion_ring_on_land_and_ocean"))
+    hole_envs = await data_source.get_environment(hole_geom)
+    assert len(hole_envs) == 1
+    assert hole_envs[0].data["properties"]["classId"] == "6"
+
+    # 3. Polygon on ocean (no wetland features)
+    ocean_geom = Geometry(load_geometry("polygon_on_ocean"))
+    ocean_envs = await data_source.get_environment(ocean_geom)
+    assert len(ocean_envs) == 0
+
+    # 4. Out of bounds polygon (Antarctica latitude below raster extent)
+    oob_geom = Geometry(
+        {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [0.0, -75.0],
+                    [10.0, -75.0],
+                    [10.0, -70.0],
+                    [0.0, -70.0],
+                    [0.0, -75.0],
+                ]
+            ],
+        }
+    )
+    oob_envs = await data_source.get_environment(oob_geom)
+    assert len(oob_envs) == 0
+
+
+@pytest.mark.asyncio
 async def test_get_environment_with_grid_size(use_mock):
-    """Test the get_environment method with grid_size set"""
+    """Test the get_environment method with grid_size set for interface parity"""
     if use_mock:
         pytest.skip("Skipping test when use_mock is True")
 
     data_source = GlobalLakesAndWetlands()
     geometry = Geometry(load_geometry("polygon_on_land_and_ocean"))
 
-    # When grid_size is set, the polygon is converted to a series of points
     data_source.grid_size = 0.5
     result = await data_source.get_environment(geometry)
     assert isinstance(result, list)
+    assert len(result) > 0
 
 
 def test_grid_size(scenarios):

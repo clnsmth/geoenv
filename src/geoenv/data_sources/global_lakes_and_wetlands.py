@@ -11,11 +11,11 @@ from json import dumps, loads
 from pathlib import Path
 from typing import List, Optional, Tuple, Union
 from importlib.resources import files
-from io import StringIO
 
 import daiquiri
-import geopandas as gpd
+import numpy as np
 import rasterio
+import rasterio.mask
 
 from geoenv.data_sources.data_source import DataSource
 from geoenv.geometry import Geometry
@@ -43,10 +43,9 @@ class GlobalLakesAndWetlands(DataSource):
           lake, river, and wetland classes.
         - ``Point`` geometries are resolved directly by querying the pixel
           value at the specified coordinates.
-        - ``Polygon`` geometries are supported directly via the ``grid_size``
-          property, which enables subsampling of the polygon into
-          representative points. If ``grid_size`` is not set, the centroid of
-          the polygon is used.
+        - ``Polygon`` geometries are resolved directly via raster masking
+          (``rasterio.mask``), extracting all lake and wetland classes
+          intersecting the polygon boundary with 100% pixel coverage.
 
     **Further Information**
         - **Spatial Resolution**: Global coverage at *15 arc-seconds* (~500 m
@@ -81,7 +80,8 @@ class GlobalLakesAndWetlands(DataSource):
         :param cache_dir: Optional directory to store cached datasets. Defaults
             to ``~/.cache/geoenv/glwd_v2`` or the ``GEOENV_CACHE_DIR``
             environment variable.
-        :param grid_size: The grid size used for polygon sampling (in degrees).
+        :param grid_size: Optional grid size parameter retained for DataSource
+            interface compatibility.
         :param auto_download: If True, automatically downloads the dataset if
             not found locally.
         """
@@ -136,8 +136,7 @@ class GlobalLakesAndWetlands(DataSource):
     @property
     def grid_size(self) -> Optional[float]:
         """
-        Retrieves the grid size used for spatial resolution. The size of the
-        grid cells are in the same units as the geometry coordinates.
+        Retrieves the grid size used for spatial resolution.
 
         :return: The grid size as a float or None.
         """
@@ -219,24 +218,7 @@ class GlobalLakesAndWetlands(DataSource):
         """
         logger.debug(f"Starting get_environment in {self.__class__.__name__}")
         self.geometry = geometry
-
-        # For Polygon geometries with grid_size set, perform grid sampling
-        if geometry.geometry_type() == "Polygon" and self.grid_size is not None:
-            points = geometry.polygon_to_points(self.grid_size)
-            responses = []
-            for point in points:
-                res = await self._request(None, Geometry(point))
-                if self.has_environment(res):
-                    responses.append(res)
-            if not responses:
-                self.data = {"properties": {"Values": ["NoData"]}}
-                return []
-            combined_values = []
-            for r in responses:
-                combined_values.extend(r.get("properties", {}).get("Values", []))
-            self.data = {"properties": {"Values": list(set(combined_values))}}
-        else:
-            self.data = await self._request(None, geometry)
+        self.data = await self._request(None, geometry)
 
         if not self.has_environment():
             return []
@@ -245,7 +227,7 @@ class GlobalLakesAndWetlands(DataSource):
 
     async def _request(self, session, geometry: Union[Geometry, dict]) -> dict:
         """
-        Samples the local GLWD raster at the coordinates of the given geometry.
+        Samples the local GLWD raster for the given point or polygon geometry.
 
         :param session: Unused session parameter for DataSource interface parity.
         :param geometry: The Geometry object or GeoJSON dict to sample.
@@ -258,51 +240,73 @@ class GlobalLakesAndWetlands(DataSource):
             logger.warning(f"Could not load GLWD dataset: {e}")
             return nodata_response
 
-        coords = self._extract_coordinates(geometry)
-        if coords is None:
-            return nodata_response
+        geom_data, geom_type = self._parse_geometry(geometry)
+        if geom_type == "Point":
+            return self._sample_point(raster_file, geom_data)
+        if geom_type == "Polygon":
+            return self._mask_polygon(raster_file, geom_data)
 
-        x, y = coords
+        if geom_type is not None:
+            logger.warning(f"Unsupported geometry type '{geom_type}'")
+        return nodata_response
+
+    @staticmethod
+    def _parse_geometry(
+        geometry: Union[Geometry, dict],
+    ) -> Tuple[Optional[dict], Optional[str]]:
+        """Extracts GeoJSON dictionary and geometry type from input."""
+        if isinstance(geometry, Geometry):
+            return geometry.data, geometry.geometry_type()
+        if isinstance(geometry, dict):
+            return geometry, geometry.get("type")
+        logger.warning(f"Unsupported geometry object type '{type(geometry)}'")
+        return None, None
+
+    @staticmethod
+    def _sample_point(raster_file: Path, geom_data: dict) -> dict:
+        """Samples a single point from the GLWD raster."""
+        coords = geom_data.get("coordinates", [])
+        if len(coords) < 2:
+            return {"properties": {"Values": ["NoData"]}}
+        x, y = coords[0], coords[1]
         try:
             with rasterio.open(raster_file) as src:
                 sampled = list(src.sample([(x, y)]))
                 if sampled and len(sampled[0]) > 0:
                     val = int(sampled[0][0])
-                    if val > 0 and val != src.nodata:
+                    if val > 0 and val not in (src.nodata, 255):
                         return {"properties": {"Values": [str(val)]}}
         except Exception as e:
             logger.error(
                 f"Failed to query GLWD raster at ({x}, {y}): {e}",
                 exc_info=True,
             )
-
-        return nodata_response
+        return {"properties": {"Values": ["NoData"]}}
 
     @staticmethod
-    def _extract_coordinates(
-        geometry: Union[Geometry, dict],
-    ) -> Optional[Tuple[float, float]]:
-        """Extracts (x, y) coordinates from a Geometry or GeoJSON dictionary."""
-        if isinstance(geometry, Geometry):
-            geom_data = geometry.data
-            geom_type = geometry.geometry_type()
-        elif isinstance(geometry, dict):
-            geom_data = geometry
-            geom_type = geometry.get("type")
-        else:
-            logger.warning(f"Unsupported geometry type '{type(geometry)}'")
-            return None
-
-        if geom_type == "Point":
-            coords = geom_data.get("coordinates", [])
-            return (coords[0], coords[1])
-        if geom_type == "Polygon":
-            gdf = gpd.read_file(StringIO(dumps(geom_data)))
-            centroid = gdf.geometry.centroid.iloc[0]
-            return (centroid.x, centroid.y)
-
-        logger.warning(f"Unsupported geometry type '{geom_type}'")
-        return None
+    def _mask_polygon(raster_file: Path, geom_data: dict) -> dict:
+        """Extracts unique GLWD classes inside a polygon via rasterio.mask."""
+        try:
+            with rasterio.open(raster_file) as src:
+                out_image, _ = rasterio.mask.mask(
+                    src, [geom_data], crop=True, nodata=src.nodata
+                )
+                unique_vals = np.unique(out_image)
+                valid_vals = [
+                    str(int(v))
+                    for v in unique_vals
+                    if v > 0 and v not in (src.nodata, 255)
+                ]
+                if valid_vals:
+                    return {"properties": {"Values": valid_vals}}
+        except ValueError:
+            logger.debug("Polygon geometry does not overlap GLWD raster")
+        except Exception as e:
+            logger.error(
+                f"Failed to mask GLWD raster for polygon: {e}",
+                exc_info=True,
+            )
+        return {"properties": {"Values": ["NoData"]}}
 
     def convert_data(self) -> List[Environment]:
         """
