@@ -198,6 +198,18 @@ class GlobalLakesAndWetlands(DataSource):
                     self._data_path = candidate
                     return self._data_path
 
+        # Check if an existing zip archive is in cache_dir and can be extracted
+        zip_path = self._cache_dir / "GLWD_v2_0_combined_classes_tif.zip"
+        if zip_path.is_file() and zipfile.is_zipfile(zip_path):
+            logger.info(f"Found existing GLWD archive at {zip_path}. Extracting...")
+            with zipfile.ZipFile(zip_path, "r") as zip_ref:
+                zip_ref.extractall(self._cache_dir)
+
+            for candidate in self._cache_dir.rglob(DEFAULT_DATASET_NAME):
+                if candidate.is_file():
+                    self._data_path = candidate
+                    return self._data_path
+
         if not self._auto_download:
             raise FileNotFoundError(
                 f"GLWD dataset '{DEFAULT_DATASET_NAME}' not found at "
@@ -473,24 +485,25 @@ def download_dataset(
     if target_tif.is_file():
         return target_tif
 
-    url, expected_md5 = fetch_figshare_metadata()
     zip_path = cache_dir / "GLWD_v2_0_combined_classes_tif.zip"
-    logger.info(f"Downloading GLWD v2.0 dataset from {url} to {zip_path}...")
+    if not (zip_path.is_file() and zipfile.is_zipfile(zip_path)):
+        url, expected_md5 = fetch_figshare_metadata()
+        logger.info(f"Downloading GLWD v2.0 dataset from {url} to {zip_path}...")
 
-    req = urllib.request.Request(url, headers={"User-Agent": "geoenv"})
-    hasher = hashlib.md5()
-    with urllib.request.urlopen(req) as resp, open(zip_path, "wb") as out_file:
-        while chunk := resp.read(1024 * 1024):
-            hasher.update(chunk)
-            out_file.write(chunk)
+        req = urllib.request.Request(url, headers={"User-Agent": "geoenv"})
+        hasher = hashlib.md5()
+        with urllib.request.urlopen(req) as resp, open(zip_path, "wb") as out_file:
+            while chunk := resp.read(1024 * 1024):
+                hasher.update(chunk)
+                out_file.write(chunk)
 
-    computed_md5 = hasher.hexdigest()
-    if expected_md5 and computed_md5 != expected_md5:
-        logger.warning(
-            f"MD5 checksum mismatch for {zip_path}: computed {computed_md5}, expected {expected_md5}"
-        )
-    else:
-        logger.info(f"MD5 checksum verified successfully: {computed_md5}")
+        computed_md5 = hasher.hexdigest()
+        if expected_md5 and computed_md5 != expected_md5:
+            logger.warning(
+                f"MD5 checksum mismatch for {zip_path}: computed {computed_md5}, expected {expected_md5}"
+            )
+        else:
+            logger.info(f"MD5 checksum verified successfully: {computed_md5}")
 
     logger.info(f"Extracting {zip_path} to {cache_dir}...")
     with zipfile.ZipFile(zip_path, "r") as zip_ref:

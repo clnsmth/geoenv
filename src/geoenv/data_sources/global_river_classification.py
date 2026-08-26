@@ -196,6 +196,18 @@ class GlobalRiverClassification(DataSource):
                     self._data_path = p
                     return self._data_path
 
+        # Check if an existing zip archive is in cache_dir and can be extracted
+        zip_path = self._cache_dir / "GloRiC_v10_shapefile.zip"
+        if zip_path.is_file() and zipfile.is_zipfile(zip_path):
+            logger.info(f"Found existing GloRiC archive at {zip_path}. Extracting...")
+            with zipfile.ZipFile(zip_path, "r") as zip_ref:
+                zip_ref.extractall(self._cache_dir)
+
+            for p in self._cache_dir.rglob(DEFAULT_SHP_NAME):
+                if p.is_file():
+                    self._data_path = p
+                    return self._data_path
+
         if not self._auto_download:
             raise FileNotFoundError(
                 f"GloRiC dataset '{DEFAULT_SHP_NAME}' not found at "
@@ -535,16 +547,24 @@ def download_dataset(
         return direct_shp
 
     zip_path = cache_dir / "GloRiC_v10_shapefile.zip"
-    logger.info(
-        f"Downloading GloRiC v1.0 dataset from {GLORIC_DOWNLOAD_URL} to {zip_path}..."
-    )
+    if not (zip_path.is_file() and zipfile.is_zipfile(zip_path)):
+        logger.info(
+            f"Downloading GloRiC v1.0 dataset from {GLORIC_DOWNLOAD_URL} to {zip_path}..."
+        )
 
-    req = urllib.request.Request(
-        GLORIC_DOWNLOAD_URL, headers={"User-Agent": "geoenv/0.5.0"}
-    )
-    with urllib.request.urlopen(req) as resp, open(zip_path, "wb") as out_file:
-        while chunk := resp.read(4 * 1024 * 1024):
-            out_file.write(chunk)
+        req = urllib.request.Request(
+            GLORIC_DOWNLOAD_URL, headers={"User-Agent": "geoenv/0.5.0"}
+        )
+        with urllib.request.urlopen(req) as resp, open(zip_path, "wb") as out_file:
+            total_bytes = int(resp.headers.get("Content-Length", 0))
+            downloaded = 0
+            while chunk := resp.read(4 * 1024 * 1024):
+                out_file.write(chunk)
+                downloaded += len(chunk)
+                if total_bytes > 0:
+                    logger.debug(
+                        f"Downloaded {downloaded / (1024 * 1024):.1f} MB of {total_bytes / (1024 * 1024):.1f} MB"
+                    )
 
     logger.info(f"Extracting {zip_path} to {cache_dir}...")
     with zipfile.ZipFile(zip_path, "r") as zip_ref:

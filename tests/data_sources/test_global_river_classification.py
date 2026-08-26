@@ -1,5 +1,6 @@
 """Test the GlobalRiverClassification data source"""
 
+import zipfile
 import pytest
 from tests.conftest import load_geometry, load_response
 from geoenv.geometry import Geometry
@@ -180,3 +181,20 @@ def test_ensure_dataset_missing_error(tmp_path):
     )
     with pytest.raises(FileNotFoundError):
         data_source.ensure_dataset()
+
+
+def test_ensure_dataset_extracts_existing_zip(tmp_path):
+    """Test that an existing zip archive in cache is extracted without downloading."""
+    cache_dir = tmp_path / "cache"
+    cache_dir.mkdir()
+    zip_path = cache_dir / "GloRiC_v10_shapefile.zip"
+
+    # Create a mock zip with the expected shapefile
+    with zipfile.ZipFile(zip_path, "w") as zf:
+        zf.writestr("GloRiC_v10_shapefile/GloRiC_v10.shp", "dummy shapefile content")
+
+    data_source = GlobalRiverClassification(cache_dir=cache_dir, auto_download=False)
+    shp_path = data_source.ensure_dataset()
+    assert shp_path.is_file()
+    assert shp_path.name == "GloRiC_v10.shp"
+    assert shp_path.read_text() == "dummy shapefile content"
