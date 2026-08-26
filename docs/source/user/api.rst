@@ -37,6 +37,11 @@ Data Sources
    :exclude-members: convert_data, data, geometry, get_environment,
       has_environment, properties, set_properties, unique_environment
 
+.. autoclass:: geoenv.data_sources.GlobalRiverClassification
+   :members:
+   :exclude-members: convert_data, data, geometry, get_environment,
+      has_environment, properties, set_properties, unique_environment
+
 Geometry
 --------
 

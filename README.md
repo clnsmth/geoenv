@@ -14,7 +14,7 @@ _Map geometries to environmental semantics_
 ## Features
 
 - **Broad scale environmental context:** Provides consistent broad scale environmental context supplementing local scale environmental descriptions.  
-- **Global Coverage**: Provides worldwide resolution of terrestrial, coastal, and marine environments.  
+- **Global Coverage**: Provides worldwide resolution of terrestrial, freshwater (rivers, lakes, wetlands), coastal, and marine environments.  
 - **GeoJSON Output:** Outputs data as a GeoJSON Feature, for integration with other tools and libraries.  
 - **Concurrent Data Resolution:** Leverages `asyncio` to query multiple geospatial data sources concurrently, providing fast results.
 - **Modular and Extensible**: Designed with a modular architecture to facilitate integration of new data sources and vocabularies.
@@ -37,6 +37,8 @@ from geoenv.data_sources import (
     WorldTerrestrialEcosystems,
     EcologicalMarineUnits,
     EcologicalCoastalUnits,
+    GlobalLakesAndWetlands,
+    GlobalRiverClassification,
 )
 
 # Define a geometry in GeoJSON format (Point or Polygon)
@@ -50,6 +52,8 @@ resolver = Resolver(
         WorldTerrestrialEcosystems(),
         EcologicalMarineUnits(),
         EcologicalCoastalUnits(),
+        GlobalLakesAndWetlands(),
+        GlobalRiverClassification(),
     ]
 )
 

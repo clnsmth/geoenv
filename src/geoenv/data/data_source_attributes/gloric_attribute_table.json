@@ -1,0 +1,1095 @@
+{
+  "hydrologicClasses": {
+    "11": {
+      "flowRegimeVariability": "low variability",
+      "dischargeAverage": "very low discharge"
+    },
+    "12": {
+      "flowRegimeVariability": "low variability",
+      "dischargeAverage": "low discharge"
+    },
+    "13": {
+      "flowRegimeVariability": "low variability",
+      "dischargeAverage": "medium discharge"
+    },
+    "14": {
+      "flowRegimeVariability": "low variability",
+      "dischargeAverage": "high discharge"
+    },
+    "15": {
+      "flowRegimeVariability": "low variability",
+      "dischargeAverage": "very high discharge"
+    },
+    "21": {
+      "flowRegimeVariability": "medium variability",
+      "dischargeAverage": "very low discharge"
+    },
+    "22": {
+      "flowRegimeVariability": "medium variability",
+      "dischargeAverage": "low discharge"
+    },
+    "23": {
+      "flowRegimeVariability": "medium variability",
+      "dischargeAverage": "medium discharge"
+    },
+    "24": {
+      "flowRegimeVariability": "medium variability",
+      "dischargeAverage": "high discharge"
+    },
+    "25": {
+      "flowRegimeVariability": "medium variability",
+      "dischargeAverage": "very high discharge"
+    },
+    "31": {
+      "flowRegimeVariability": "high variability",
+      "dischargeAverage": "very low discharge"
+    },
+    "32": {
+      "flowRegimeVariability": "high variability",
+      "dischargeAverage": "low discharge"
+    },
+    "33": {
+      "flowRegimeVariability": "high variability",
+      "dischargeAverage": "medium discharge"
+    },
+    "34": {
+      "flowRegimeVariability": "high variability",
+      "dischargeAverage": "high discharge"
+    },
+    "35": {
+      "flowRegimeVariability": "high variability",
+      "dischargeAverage": "very high discharge"
+    }
+  },
+  "physioClimaticClasses": {
+    "111": {
+      "minimumTemperature": "low temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "low elevation"
+    },
+    "112": {
+      "minimumTemperature": "low temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "high elevation"
+    },
+    "121": {
+      "minimumTemperature": "low temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "low elevation"
+    },
+    "122": {
+      "minimumTemperature": "low temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "high elevation"
+    },
+    "131": {
+      "minimumTemperature": "low temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "low elevation"
+    },
+    "132": {
+      "minimumTemperature": "low temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "high elevation"
+    },
+    "211": {
+      "minimumTemperature": "medium temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "low elevation"
+    },
+    "212": {
+      "minimumTemperature": "medium temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "high elevation"
+    },
+    "221": {
+      "minimumTemperature": "medium temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "low elevation"
+    },
+    "222": {
+      "minimumTemperature": "medium temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "high elevation"
+    },
+    "231": {
+      "minimumTemperature": "medium temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "low elevation"
+    },
+    "232": {
+      "minimumTemperature": "medium temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "high elevation"
+    },
+    "311": {
+      "minimumTemperature": "high temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "low elevation"
+    },
+    "312": {
+      "minimumTemperature": "high temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "high elevation"
+    },
+    "321": {
+      "minimumTemperature": "high temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "low elevation"
+    },
+    "322": {
+      "minimumTemperature": "high temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "high elevation"
+    },
+    "331": {
+      "minimumTemperature": "high temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "low elevation"
+    },
+    "332": {
+      "minimumTemperature": "high temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "high elevation"
+    },
+    "411": {
+      "minimumTemperature": "very high temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "low elevation"
+    },
+    "412": {
+      "minimumTemperature": "very high temperature",
+      "climateMoistureIndex": "low CMI",
+      "elevation": "high elevation"
+    },
+    "421": {
+      "minimumTemperature": "very high temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "low elevation"
+    },
+    "422": {
+      "minimumTemperature": "very high temperature",
+      "climateMoistureIndex": "medium CMI",
+      "elevation": "high elevation"
+    },
+    "431": {
+      "minimumTemperature": "very high temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "low elevation"
+    },
+    "432": {
+      "minimumTemperature": "very high temperature",
+      "climateMoistureIndex": "high CMI",
+      "elevation": "high elevation"
+    }
+  },
+  "geomorphicClasses": {
+    "11": {
+      "lakeWetlandInfluence": "no lakes or wetlands",
+      "streamPower": "low stream power"
+    },
+    "12": {
+      "lakeWetlandInfluence": "no lakes or wetlands",
+      "streamPower": "high stream power"
+    },
+    "21": {
+      "lakeWetlandInfluence": "lake-wetland influenced",
+      "streamPower": "low stream power"
+    },
+    "22": {
+      "lakeWetlandInfluence": "lake-wetland influenced",
+      "streamPower": "high stream power"
+    }
+  },
+  "reachTypes": {
+    "111": {
+      "Reach_type": 111,
+      "ClassName": "cold, low and medium moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "112": {
+      "Reach_type": 112,
+      "ClassName": "cold, low and medium moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "113": {
+      "Reach_type": 113,
+      "ClassName": "cold, low and medium moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "121": {
+      "Reach_type": 121,
+      "ClassName": "cold, low and medium moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "122": {
+      "Reach_type": 122,
+      "ClassName": "cold, low and medium moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "123": {
+      "Reach_type": 123,
+      "ClassName": "cold, low and medium moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "131": {
+      "Reach_type": 131,
+      "ClassName": "cold, low and medium moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "132": {
+      "Reach_type": 132,
+      "ClassName": "cold, low and medium moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "133": {
+      "Reach_type": 133,
+      "ClassName": "cold, low and medium moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "141": {
+      "Reach_type": 141,
+      "ClassName": "cold, low and medium moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "142": {
+      "Reach_type": 142,
+      "ClassName": "cold, low and medium moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "143": {
+      "Reach_type": 143,
+      "ClassName": "cold, low and medium moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "150": {
+      "Reach_type": 150,
+      "ClassName": "cold, low and medium moisture region, very large river, -",
+      "reducedPhysioClimatic": "cold, low and medium moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "211": {
+      "Reach_type": 211,
+      "ClassName": "cold, high moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "212": {
+      "Reach_type": 212,
+      "ClassName": "cold, high moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "213": {
+      "Reach_type": 213,
+      "ClassName": "cold, high moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "221": {
+      "Reach_type": 221,
+      "ClassName": "cold, high moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "222": {
+      "Reach_type": 222,
+      "ClassName": "cold, high moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "223": {
+      "Reach_type": 223,
+      "ClassName": "cold, high moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "231": {
+      "Reach_type": 231,
+      "ClassName": "cold, high moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "232": {
+      "Reach_type": 232,
+      "ClassName": "cold, high moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "233": {
+      "Reach_type": 233,
+      "ClassName": "cold, high moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "241": {
+      "Reach_type": 241,
+      "ClassName": "cold, high moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "242": {
+      "Reach_type": 242,
+      "ClassName": "cold, high moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "243": {
+      "Reach_type": 243,
+      "ClassName": "cold, high moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "250": {
+      "Reach_type": 250,
+      "ClassName": "cold, high moisture region, very large river, -",
+      "reducedPhysioClimatic": "cold, high moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "311": {
+      "Reach_type": 311,
+      "ClassName": "warm and hot, low moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "312": {
+      "Reach_type": 312,
+      "ClassName": "warm and hot, low moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "313": {
+      "Reach_type": 313,
+      "ClassName": "warm and hot, low moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "321": {
+      "Reach_type": 321,
+      "ClassName": "warm and hot, low moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "322": {
+      "Reach_type": 322,
+      "ClassName": "warm and hot, low moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "323": {
+      "Reach_type": 323,
+      "ClassName": "warm and hot, low moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "331": {
+      "Reach_type": 331,
+      "ClassName": "warm and hot, low moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "332": {
+      "Reach_type": 332,
+      "ClassName": "warm and hot, low moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "333": {
+      "Reach_type": 333,
+      "ClassName": "warm and hot, low moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "341": {
+      "Reach_type": 341,
+      "ClassName": "warm and hot, low moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "342": {
+      "Reach_type": 342,
+      "ClassName": "warm and hot, low moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "343": {
+      "Reach_type": 343,
+      "ClassName": "warm and hot, low moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "350": {
+      "Reach_type": 350,
+      "ClassName": "warm and hot, low moisture region, very large river, -",
+      "reducedPhysioClimatic": "warm and hot, low moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "411": {
+      "Reach_type": 411,
+      "ClassName": "warm, medium moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "412": {
+      "Reach_type": 412,
+      "ClassName": "warm, medium moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "413": {
+      "Reach_type": 413,
+      "ClassName": "warm, medium moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "421": {
+      "Reach_type": 421,
+      "ClassName": "warm, medium moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "422": {
+      "Reach_type": 422,
+      "ClassName": "warm, medium moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "423": {
+      "Reach_type": 423,
+      "ClassName": "warm, medium moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "431": {
+      "Reach_type": 431,
+      "ClassName": "warm, medium moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "432": {
+      "Reach_type": 432,
+      "ClassName": "warm, medium moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "433": {
+      "Reach_type": 433,
+      "ClassName": "warm, medium moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "441": {
+      "Reach_type": 441,
+      "ClassName": "warm, medium moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "442": {
+      "Reach_type": 442,
+      "ClassName": "warm, medium moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "443": {
+      "Reach_type": 443,
+      "ClassName": "warm, medium moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "450": {
+      "Reach_type": 450,
+      "ClassName": "warm, medium moisture region, very large river, -",
+      "reducedPhysioClimatic": "warm, medium moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "511": {
+      "Reach_type": 511,
+      "ClassName": "warm, high moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "512": {
+      "Reach_type": 512,
+      "ClassName": "warm, high moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "513": {
+      "Reach_type": 513,
+      "ClassName": "warm, high moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "521": {
+      "Reach_type": 521,
+      "ClassName": "warm, high moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "522": {
+      "Reach_type": 522,
+      "ClassName": "warm, high moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "523": {
+      "Reach_type": 523,
+      "ClassName": "warm, high moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "531": {
+      "Reach_type": 531,
+      "ClassName": "warm, high moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "532": {
+      "Reach_type": 532,
+      "ClassName": "warm, high moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "533": {
+      "Reach_type": 533,
+      "ClassName": "warm, high moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "541": {
+      "Reach_type": 541,
+      "ClassName": "warm, high moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "542": {
+      "Reach_type": 542,
+      "ClassName": "warm, high moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "543": {
+      "Reach_type": 543,
+      "ClassName": "warm, high moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "550": {
+      "Reach_type": 550,
+      "ClassName": "warm, high moisture region, very large river, -",
+      "reducedPhysioClimatic": "warm, high moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "611": {
+      "Reach_type": 611,
+      "ClassName": "hot, high moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "612": {
+      "Reach_type": 612,
+      "ClassName": "hot, high moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "613": {
+      "Reach_type": 613,
+      "ClassName": "hot, high moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "621": {
+      "Reach_type": 621,
+      "ClassName": "hot, high moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "622": {
+      "Reach_type": 622,
+      "ClassName": "hot, high moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "623": {
+      "Reach_type": 623,
+      "ClassName": "hot, high moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "631": {
+      "Reach_type": 631,
+      "ClassName": "hot, high moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "632": {
+      "Reach_type": 632,
+      "ClassName": "hot, high moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "633": {
+      "Reach_type": 633,
+      "ClassName": "hot, high moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "641": {
+      "Reach_type": 641,
+      "ClassName": "hot, high moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "642": {
+      "Reach_type": 642,
+      "ClassName": "hot, high moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "643": {
+      "Reach_type": 643,
+      "ClassName": "hot, high moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "650": {
+      "Reach_type": 650,
+      "ClassName": "hot, high moisture region, very large river, -",
+      "reducedPhysioClimatic": "hot, high moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "711": {
+      "Reach_type": 711,
+      "ClassName": "very hot, low moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "712": {
+      "Reach_type": 712,
+      "ClassName": "very hot, low moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "713": {
+      "Reach_type": 713,
+      "ClassName": "very hot, low moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "721": {
+      "Reach_type": 721,
+      "ClassName": "very hot, low moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "722": {
+      "Reach_type": 722,
+      "ClassName": "very hot, low moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "723": {
+      "Reach_type": 723,
+      "ClassName": "very hot, low moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "731": {
+      "Reach_type": 731,
+      "ClassName": "very hot, low moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "732": {
+      "Reach_type": 732,
+      "ClassName": "very hot, low moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "733": {
+      "Reach_type": 733,
+      "ClassName": "very hot, low moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "741": {
+      "Reach_type": 741,
+      "ClassName": "very hot, low moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "742": {
+      "Reach_type": 742,
+      "ClassName": "very hot, low moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "743": {
+      "Reach_type": 743,
+      "ClassName": "very hot, low moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "750": {
+      "Reach_type": 750,
+      "ClassName": "very hot, low moisture region, very large river, -",
+      "reducedPhysioClimatic": "very hot, low moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "811": {
+      "Reach_type": 811,
+      "ClassName": "very hot, high moisture region, very small river, low stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "812": {
+      "Reach_type": 812,
+      "ClassName": "very hot, high moisture region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "813": {
+      "Reach_type": 813,
+      "ClassName": "very hot, high moisture region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "821": {
+      "Reach_type": 821,
+      "ClassName": "very hot, high moisture region, small river, low stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "822": {
+      "Reach_type": 822,
+      "ClassName": "very hot, high moisture region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "823": {
+      "Reach_type": 823,
+      "ClassName": "very hot, high moisture region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "831": {
+      "Reach_type": 831,
+      "ClassName": "very hot, high moisture region, medium river, low stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "832": {
+      "Reach_type": 832,
+      "ClassName": "very hot, high moisture region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "833": {
+      "Reach_type": 833,
+      "ClassName": "very hot, high moisture region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "841": {
+      "Reach_type": 841,
+      "ClassName": "very hot, high moisture region, large river, low stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "842": {
+      "Reach_type": 842,
+      "ClassName": "very hot, high moisture region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "843": {
+      "Reach_type": 843,
+      "ClassName": "very hot, high moisture region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "850": {
+      "Reach_type": 850,
+      "ClassName": "very hot, high moisture region, very large river, -",
+      "reducedPhysioClimatic": "very hot, high moisture region",
+      "reducedHydrologic": "very large river",
+      "reducedGeomorphic": "-"
+    },
+    "911": {
+      "Reach_type": 911,
+      "ClassName": "cold and warm, high elevation region, very small river, low stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "912": {
+      "Reach_type": 912,
+      "ClassName": "cold and warm, high elevation region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "913": {
+      "Reach_type": 913,
+      "ClassName": "cold and warm, high elevation region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "921": {
+      "Reach_type": 921,
+      "ClassName": "cold and warm, high elevation region, small river, low stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "922": {
+      "Reach_type": 922,
+      "ClassName": "cold and warm, high elevation region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "923": {
+      "Reach_type": 923,
+      "ClassName": "cold and warm, high elevation region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "931": {
+      "Reach_type": 931,
+      "ClassName": "cold and warm, high elevation region, medium river, low stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "932": {
+      "Reach_type": 932,
+      "ClassName": "cold and warm, high elevation region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "933": {
+      "Reach_type": 933,
+      "ClassName": "cold and warm, high elevation region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "941": {
+      "Reach_type": 941,
+      "ClassName": "cold and warm, high elevation region, large river, low stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "942": {
+      "Reach_type": 942,
+      "ClassName": "cold and warm, high elevation region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "cold and warm, high elevation region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "1011": {
+      "Reach_type": 1011,
+      "ClassName": "hot and very hot, high elevation region, very small river, low stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "1012": {
+      "Reach_type": 1012,
+      "ClassName": "hot and very hot, high elevation region, very small river, medium and high stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "1013": {
+      "Reach_type": 1013,
+      "ClassName": "hot and very hot, high elevation region, very small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "very small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "1021": {
+      "Reach_type": 1021,
+      "ClassName": "hot and very hot, high elevation region, small river, low stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "1022": {
+      "Reach_type": 1022,
+      "ClassName": "hot and very hot, high elevation region, small river, medium and high stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "1023": {
+      "Reach_type": 1023,
+      "ClassName": "hot and very hot, high elevation region, small river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "small river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "1031": {
+      "Reach_type": 1031,
+      "ClassName": "hot and very hot, high elevation region, medium river, low stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "1032": {
+      "Reach_type": 1032,
+      "ClassName": "hot and very hot, high elevation region, medium river, medium and high stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "1033": {
+      "Reach_type": 1033,
+      "ClassName": "hot and very hot, high elevation region, medium river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "medium river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    },
+    "1041": {
+      "Reach_type": 1041,
+      "ClassName": "hot and very hot, high elevation region, large river, low stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "low stream power"
+    },
+    "1042": {
+      "Reach_type": 1042,
+      "ClassName": "hot and very hot, high elevation region, large river, medium and high stream power",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "medium and high stream power"
+    },
+    "1043": {
+      "Reach_type": 1043,
+      "ClassName": "hot and very hot, high elevation region, large river, lake-wetland influenced",
+      "reducedPhysioClimatic": "hot and very hot, high elevation region",
+      "reducedHydrologic": "large river",
+      "reducedGeomorphic": "lake-wetland influenced"
+    }
+  }
+}

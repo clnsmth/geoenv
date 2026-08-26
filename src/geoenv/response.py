@@ -152,6 +152,8 @@ class Response:
             # Map each property value to semantic resource term, if possible
             envo_terms = []
             for _, value in environment["properties"].items():
+                if not isinstance(value, str):
+                    continue
                 try:
                     label = sssom.loc[
                         sssom["subject_label"].str.lower() == value.lower(),
