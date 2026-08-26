@@ -12,6 +12,7 @@ from geoenv.data_sources import WorldTerrestrialEcosystems
 from geoenv.data_sources import EcologicalCoastalUnits
 from geoenv.data_sources import EcologicalMarineUnits
 from geoenv.data_sources import GlobalLakesAndWetlands
+from geoenv.data_sources import GlobalRiverClassification
 from geoenv.resolver import construct_response
 from tests.conftest import load_geometry
 
@@ -99,6 +100,22 @@ async def create_mock_response_content(  # noqa: PLR0915
         response = await data_source._request(session, geometry)
         json = dumps(response, indent=4)
         with open(output_directory.joinpath("glwd_fail.json"), "w") as f:
+            f.write(json)
+
+        # GloRiC Success
+        geometry = Geometry(load_geometry("point_on_river"))
+        data_source = GlobalRiverClassification()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("gloric_success.json"), "w") as f:
+            f.write(json)
+
+        # GloRiC Fail
+        geometry = Geometry(load_geometry("point_on_ocean"))
+        data_source = GlobalRiverClassification()
+        response = await data_source._request(session, geometry)
+        json = dumps(response, indent=4)
+        with open(output_directory.joinpath("gloric_fail.json"), "w") as f:
             f.write(json)
 
 

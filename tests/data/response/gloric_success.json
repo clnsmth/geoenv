@@ -1,0 +1,37 @@
+{
+    "properties": {
+        "Values": [
+            "511",
+            "611"
+        ],
+        "reaches": [
+            {
+                "Reach_ID": 70566461,
+                "Length_km": 0.875,
+                "Log_Q_avg": -0.86328,
+                "Class_hydr": 12,
+                "Class_phys": 331,
+                "Class_geom": 11,
+                "Reach_type": 511
+            },
+            {
+                "Reach_ID": 70566462,
+                "Length_km": 2.437,
+                "Log_Q_avg": 0.10924,
+                "Class_hydr": 12,
+                "Class_phys": 321,
+                "Class_geom": 11,
+                "Reach_type": 611
+            },
+            {
+                "Reach_ID": 70567676,
+                "Length_km": 7.304,
+                "Log_Q_avg": -0.01547,
+                "Class_hydr": 12,
+                "Class_phys": 321,
+                "Class_geom": 11,
+                "Reach_type": 611
+            }
+        ]
+    }
+}

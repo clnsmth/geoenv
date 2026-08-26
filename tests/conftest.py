@@ -11,6 +11,7 @@ from geoenv.data_sources import EcologicalCoastalUnits
 from geoenv.data_sources import EcologicalMarineUnits
 from geoenv.data_sources import WorldTerrestrialEcosystems
 from geoenv.data_sources import GlobalLakesAndWetlands
+from geoenv.data_sources import GlobalRiverClassification
 from geoenv.response import Response, construct_response
 from geoenv.utilities import EnvironmentDataModel
 
@@ -36,6 +37,7 @@ def data_sources():
         EcologicalMarineUnits(),
         WorldTerrestrialEcosystems(),
         GlobalLakesAndWetlands(),
+        GlobalRiverClassification(),
     ]
 
 
@@ -45,10 +47,12 @@ def scenarios(  # noqa: PLR0913, PLR0917
     raw_properties_of_ecological_marine_units,
     raw_properties_of_world_terrestrial_ecosystems,
     raw_properties_of_global_lakes_and_wetlands,
+    raw_properties_of_global_river_classification,
     properties_of_ecological_coastal_units,
     properties_of_ecological_marine_units,
     properties_of_world_terrestrial_ecosystems,
     properties_of_global_lakes_and_wetlands,
+    properties_of_global_river_classification,
 ):
     """List of test scenarios for each data source."""
     scenarios = [
@@ -131,6 +135,26 @@ def scenarios(  # noqa: PLR0913, PLR0917
             "raw_properties": raw_properties_of_global_lakes_and_wetlands,
             "properties": properties_of_global_lakes_and_wetlands,
             "identifier": "https://doi.org/10.6084/m9.figshare.28519994",
+        },
+        {  # GloRiC Success (Point on river)
+            "data_source": GlobalRiverClassification(),
+            "response": load_response("gloric_success"),
+            "geometry": load_geometry("point_on_river"),
+            "unique_environment": 2,
+            "has_environment": True,
+            "raw_properties": raw_properties_of_global_river_classification,
+            "properties": properties_of_global_river_classification,
+            "identifier": "https://doi.org/10.1088/1748-9326/aad8e9",
+        },
+        {  # GloRiC Fail (Point on ocean)
+            "data_source": GlobalRiverClassification(),
+            "response": load_response("gloric_fail"),
+            "geometry": load_geometry("point_on_ocean"),
+            "unique_environment": 0,
+            "has_environment": False,
+            "raw_properties": raw_properties_of_global_river_classification,
+            "properties": properties_of_global_river_classification,
+            "identifier": "https://doi.org/10.1088/1748-9326/aad8e9",
         },
     ]
     return scenarios
@@ -238,6 +262,30 @@ def properties_of_global_lakes_and_wetlands():
     return {
         "classId",
         "ecosystem",
+    }
+
+
+@pytest.fixture
+def raw_properties_of_global_river_classification():
+    """Raw properties of Global River Classification."""
+    return {
+        "Reach_type",
+        "ClassName",
+        "Class_hydr",
+        "Class_phys",
+        "Class_geom",
+    }
+
+
+@pytest.fixture
+def properties_of_global_river_classification():
+    """Properties of Global River Classification."""
+    return {
+        "reachType",
+        "ecosystem",
+        "hydrologicClass",
+        "physioClimaticClass",
+        "geomorphicClass",
     }
 
 

@@ -7,6 +7,7 @@ from geoenv.data_sources import (
     EcologicalCoastalUnits,
     EcologicalMarineUnits,
     GlobalLakesAndWetlands,
+    GlobalRiverClassification,
 )
 from tests.conftest import load_geometry
 from tests.data.create_mock_data import create_mock_response_content
@@ -34,6 +35,8 @@ async def test_mock_response_content(use_mock, tmp_path):
                 validate_emu_response(new_data, is_success, file.name)
             elif "glwd_" in file.name:
                 validate_glwd_response(new_data, is_success)
+            elif "gloric_" in file.name:
+                validate_gloric_response(new_data, is_success)
 
 
 def validate_wte_response(new_data: dict, is_success: bool) -> None:
@@ -198,3 +201,38 @@ def validate_glwd_response(new_data: dict, is_success: bool) -> None:
             "GLWD fail response should indicate has_environment=False"
         )
         assert glwd.convert_data() == []
+
+
+def validate_gloric_response(new_data: dict, is_success: bool) -> None:
+    """Validate Global River Classification response structure and compatibility."""
+    assert isinstance(new_data, dict), "GloRiC response must be a JSON dictionary"
+    assert "properties" in new_data, "GloRiC response must contain 'properties'"
+    assert "Values" in new_data["properties"], "GloRiC response must contain 'Values'"
+
+    gloric = GlobalRiverClassification()
+    if is_success:
+        geom = load_geometry("point_on_river")
+        gloric.geometry = geom
+        gloric.data = new_data
+        assert gloric.has_environment(), (
+            "GloRiC success response should indicate has_environment=True"
+        )
+        environments = gloric.convert_data()
+        assert len(environments) > 0, (
+            "GloRiC success response should resolve at least one Environment"
+        )
+        for env in environments:
+            assert env.data["properties"].get("ecosystem"), (
+                "Environment should contain ecosystem descriptor"
+            )
+            assert env.data["properties"].get("reachType"), (
+                "Environment should contain reachType"
+            )
+    else:
+        geom = load_geometry("point_on_ocean")
+        gloric.geometry = geom
+        gloric.data = new_data
+        assert not gloric.has_environment(), (
+            "GloRiC fail response should indicate has_environment=False"
+        )
+        assert gloric.convert_data() == []
