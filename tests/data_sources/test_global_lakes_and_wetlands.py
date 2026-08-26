@@ -1,5 +1,6 @@
 """Test the GlobalLakesAndWetlands data source"""
 
+import zipfile
 import pytest
 from tests.conftest import load_geometry, load_response
 from geoenv.geometry import Geometry
@@ -195,3 +196,23 @@ def test_fetch_figshare_metadata():
     url, md5 = fetch_figshare_metadata()
     assert "https://" in url
     assert len(md5) == 32
+
+
+def test_ensure_dataset_extracts_existing_zip(tmp_path):
+    """Test that an existing zip archive in cache is extracted without downloading."""
+    cache_dir = tmp_path / "cache"
+    cache_dir.mkdir()
+    zip_path = cache_dir / "GLWD_v2_0_combined_classes_tif.zip"
+
+    # Create a mock zip with the expected GeoTIFF
+    with zipfile.ZipFile(zip_path, "w") as zf:
+        zf.writestr(
+            "GLWD_v2_0_combined_classes/GLWD_v2_0_main_class.tif",
+            "dummy tif content",
+        )
+
+    data_source = GlobalLakesAndWetlands(cache_dir=cache_dir, auto_download=False)
+    tif_path = data_source.ensure_dataset()
+    assert tif_path.is_file()
+    assert tif_path.name == "GLWD_v2_0_main_class.tif"
+    assert tif_path.read_text() == "dummy tif content"
