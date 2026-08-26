@@ -67,6 +67,39 @@ async def test_get_environment_polygon_direct(use_mock):
 
 
 @pytest.mark.asyncio
+async def test_get_environment_polygon_mocked(mocker):
+    """Test get_environment on Polygon geometries using mocked response (offline CI)."""
+    data_source = GlobalLakesAndWetlands()
+    geometry = Geometry(load_geometry("polygon_on_land_and_ocean"))
+
+    # Positive case: multi-class polygon response
+    mocker.patch.object(
+        data_source,
+        "_request",
+        mocker.AsyncMock(return_value={"properties": {"Values": ["6", "14"]}}),
+    )
+    environments = await data_source.get_environment(geometry)
+    assert isinstance(environments, list)
+    assert len(environments) == 2
+    class_ids = {env.data["properties"]["classId"] for env in environments}
+    assert class_ids == {"6", "14"}
+    ecosystems = {env.data["properties"]["ecosystem"] for env in environments}
+    assert ecosystems == {
+        "Other permanent waterbody",
+        "Riverine, seasonally saturated, forested",
+    }
+
+    # Negative case: polygon with no wetlands / NoData
+    mocker.patch.object(
+        data_source,
+        "_request",
+        mocker.AsyncMock(return_value={"properties": {"Values": ["NoData"]}}),
+    )
+    environments_fail = await data_source.get_environment(geometry)
+    assert environments_fail == []
+
+
+@pytest.mark.asyncio
 async def test_get_environment_with_grid_size(use_mock):
     """Test the get_environment method with grid_size set for interface parity"""
     if use_mock:
