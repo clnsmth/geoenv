@@ -450,8 +450,8 @@ class GlobalRiverClassification(DataSource):
 
 def apply_code_mapping(data: dict) -> dict:
     """
-    Applies GloRiC classification code mappings to enrich raw response data
-    with class descriptions.
+    Applies GloRiC classification code mappings to enrich unique reach types
+    with standardized ecosystem and class descriptions.
 
     :param data: Raw response data dictionary containing ``properties.Values``
         or ``properties.reaches``.
@@ -460,45 +460,37 @@ def apply_code_mapping(data: dict) -> dict:
     logger.debug("Applying GloRiC code mapping")
     mapping = get_gloric_code_mapping()
     reach_types_map = mapping.get("reachTypes", {})
-    hydr_map = mapping.get("hydrologicClasses", {})
-    phys_map = mapping.get("physioClimaticClasses", {})
-    geom_map = mapping.get("geomorphicClasses", {})
     results = []
 
     if data and data.get("properties"):
         props = data["properties"]
-        reaches = props.get("reaches", [])
         values = props.get("Values", [])
-
-        if reaches:
-            for reach in reaches:
-                rtype = str(reach.get("Reach_type", ""))
-                type_info = reach_types_map.get(rtype, {})
-                classname = type_info.get("ClassName", f"River Reach Type {rtype}")
-                hydr_c = str(reach.get("Class_hydr", ""))
-                phys_c = str(reach.get("Class_phys", ""))
-                geom_c = str(reach.get("Class_geom", ""))
-                results.append(
+        if not values and props.get("reaches"):
+            values = sorted(
+                list(
                     {
-                        "Reach_type": rtype,
-                        "ClassName": classname,
-                        "Class_hydr": hydr_c,
-                        "Class_phys": phys_c,
-                        "Class_geom": geom_c,
+                        str(r.get("Reach_type"))
+                        for r in props["reaches"]
+                        if r.get("Reach_type") is not None
                     }
                 )
-        elif values and values != ["NoData"]:
+            )
+
+        if values and values != ["NoData"]:
             for v in values:
+                if v in ("NoData", None):
+                    continue
                 v_str = str(v)
                 type_info = reach_types_map.get(v_str, {})
-                classname = type_info.get("ClassName", f"River Reach Type {v_str}")
                 results.append(
                     {
                         "Reach_type": v_str,
-                        "ClassName": classname,
-                        "Class_hydr": "",
-                        "Class_phys": "",
-                        "Class_geom": "",
+                        "ClassName": type_info.get(
+                            "ClassName", f"River Reach Type {v_str}"
+                        ),
+                        "Class_hydr": type_info.get("reducedHydrologic", ""),
+                        "Class_phys": type_info.get("reducedPhysioClimatic", ""),
+                        "Class_geom": type_info.get("reducedGeomorphic", ""),
                     }
                 )
 

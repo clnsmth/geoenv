@@ -49,7 +49,7 @@ def test_apply_code_mapping():
     response = load_response("gloric_success")
     data = apply_code_mapping(response.data)
     assert "results" in data
-    assert len(data["results"]) == 3
+    assert len(data["results"]) == 2
     first_result = data["results"][0]
     assert first_result["Reach_type"] == "511"
     assert "warm, high moisture region" in first_result["ClassName"]
@@ -161,10 +161,22 @@ async def test_get_environment_direct(use_mock):
     assert isinstance(poly_envs, list)
     assert len(poly_envs) > 0
 
+    # Ensure all ecosystems and reach types are strictly unique
+    ecosystems = [env.data["properties"]["ecosystem"] for env in poly_envs]
+    reach_types = [env.data["properties"]["reachType"] for env in poly_envs]
+    assert len(ecosystems) == len(set(ecosystems)), (
+        "Polygon query returned duplicate ecosystems"
+    )
+    assert len(reach_types) == len(set(reach_types)), (
+        "Polygon query returned duplicate reach types"
+    )
+
     # 3. Polygon with exclusion ring (donut / hole)
     hole_geom = Geometry(load_geometry("polygon_with_exclusion_ring_on_land_and_ocean"))
     hole_envs = await data_source.get_environment(hole_geom)
     assert isinstance(hole_envs, list)
+    hole_ecosystems = [env.data["properties"]["ecosystem"] for env in hole_envs]
+    assert len(hole_ecosystems) == len(set(hole_ecosystems))
 
     # 4. Point on ocean (should find 0 reaches)
     ocean_geom = Geometry(load_geometry("point_on_ocean"))
