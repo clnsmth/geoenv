@@ -154,27 +154,23 @@ class Response:
             for _, value in environment["properties"].items():
                 if not isinstance(value, str):
                     continue
-                try:
-                    label = sssom.loc[
-                        sssom["subject_label"].str.lower() == value.lower(),
-                        "object_label",
-                    ].values[0]
-                    curie = sssom.loc[
-                        sssom["subject_label"].str.lower() == value.lower(), "object_id"
-                    ].values[0]
-                    curie_prefix = curie.split(":")[0]
-                    uri = sssom_meta["curie_map"][curie_prefix] + curie.split(":")[1]
-                    logger.debug(f"Mapped '{value}' to '{label}' ({uri})")
-                except IndexError:
-                    label = None
-                    uri = None
+                matches = sssom.loc[sssom["subject_label"].str.lower() == value.lower()]
+                if not matches.empty:
+                    for _, row in matches.iterrows():
+                        label = row.get("object_label")
+                        curie = row.get("object_id")
+                        if pd.notna(curie) and str(curie).lower() != "sssom:nomapping":
+                            curie_prefix = str(curie).split(":")[0]
+                            uri = (
+                                sssom_meta["curie_map"][curie_prefix]
+                                + str(curie).split(":")[1]
+                            )
+                            term = {"label": label, "uri": uri}
+                            if term not in envo_terms:
+                                envo_terms.append(term)
+                                logger.debug(f"Mapped '{value}' to '{label}' ({uri})")
+                else:
                     logger.debug(f"No mapping found for '{value}' in {data_source}")
-
-                # Don't add empty labels. Empty implies no mapping was found.
-                if pd.notna(label) and uri is not None:
-                    # Unmappable objects are useless. Don't add them.
-                    if curie.lower() != "sssom:nomapping":
-                        envo_terms.append({"label": label, "uri": uri})
 
             # Add list of semantic resource terms back to the environment
             # object

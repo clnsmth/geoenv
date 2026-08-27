@@ -1,9 +1,11 @@
 """Test the GlobalLakesAndWetlands data source"""
 
 import zipfile
+from unittest.mock import mock_open, patch
 import pytest
 from tests.conftest import load_geometry, load_response
 from geoenv.geometry import Geometry
+from geoenv.environment import Environment
 from geoenv.data_sources import GlobalLakesAndWetlands
 from geoenv.data_sources.global_lakes_and_wetlands import (
     apply_code_mapping,
@@ -34,14 +36,17 @@ async def test_get_environment_polygon_direct(use_mock):
     environments = await data_source.get_environment(geometry)
     assert isinstance(environments, list)
     assert len(environments) == 2
-    class_ids = {env.data["properties"]["classId"] for env in environments}
-    assert class_ids == {"6", "14"}
+    ecosystems = {env.data["properties"]["ecosystem"] for env in environments}
+    assert ecosystems == {
+        "Other permanent waterbody",
+        "Riverine, seasonally saturated, forested",
+    }
 
     # 2. Polygon with exclusion ring (donut / hole)
     hole_geom = Geometry(load_geometry("polygon_with_exclusion_ring_on_land_and_ocean"))
     hole_envs = await data_source.get_environment(hole_geom)
     assert len(hole_envs) == 1
-    assert hole_envs[0].data["properties"]["classId"] == "6"
+    assert hole_envs[0].data["properties"]["ecosystem"] == "Other permanent waterbody"
 
     # 3. Polygon on ocean (no wetland features)
     ocean_geom = Geometry(load_geometry("polygon_on_ocean"))
@@ -82,8 +87,6 @@ async def test_get_environment_polygon_mocked(mocker):
     environments = await data_source.get_environment(geometry)
     assert isinstance(environments, list)
     assert len(environments) == 2
-    class_ids = {env.data["properties"]["classId"] for env in environments}
-    assert class_ids == {"6", "14"}
     ecosystems = {env.data["properties"]["ecosystem"] for env in environments}
     assert ecosystems == {
         "Other permanent waterbody",
@@ -178,6 +181,55 @@ async def test_term_mapping_envo(use_mock, mocker):
     uris = [m["uri"] for m in mapped]
     assert "freshwater lake" in labels
     assert any("ENVO_00000021" in u for u in uris)
+
+
+def test_term_mapping_multi_row(monkeypatch):
+    """Test applying term mapping when an ecosystem maps to multiple ENVO terms."""
+    mock_tsv = (
+        "subject_category\tsubject_id\tsubject_label\tpredicate_id\tobject_id\tobject_label\tconfidence\tcomment\tmapping_justification\tmapping_date\tcreator_id\n"
+        "GLWD:WetlandClass\tGLWD:RiverineRegularlyFloodedForested\tRiverine, regularly flooded, forested\tskos:broadMatch\tENVO:01000921\triverine wetland\t1\tComment\tsemapv:ManualMappingCuration\t2026-08-24\thttps://orcid.org/0000-0003-2261-9931\n"
+        "GLWD:WetlandClass\tGLWD:RiverineRegularlyFloodedForested\tRiverine, regularly flooded, forested\tskos:broadMatch\tENVO:00000233\tforested wetland\t1\tComment\tsemapv:ManualMappingCuration\t2026-08-24\thttps://orcid.org/0000-0003-2261-9931\n"
+    )
+    mock_yml = (
+        "mapping_set_id: GLWD\n"
+        "curie_map:\n"
+        "  ENVO: http://purl.obolibrary.org/obo/ENVO_\n"
+        "  GLWD: https://example.com/glwd#\n"
+    )
+
+    env = Environment(
+        data={
+            "dataSource": {"name": "GlobalLakesAndWetlands"},
+            "properties": {"ecosystem": "Riverine, regularly flooded, forested"},
+        }
+    )
+    geometry = Geometry(load_geometry("point_on_lake"))
+    response = construct_response(
+        geometry=geometry,
+        environment=[env],
+        identifier="test-multi-row-id",
+        description="GLWD Multi-Row Test",
+    )
+
+    def fake_open(file, *args, **kwargs):
+        if str(file).endswith(".tsv"):
+            return mock_open(read_data=mock_tsv)()
+        elif str(file).endswith(".yml"):
+            return mock_open(read_data=mock_yml)()
+        return open(file, *args, **kwargs)
+
+    with patch("builtins.open", side_effect=fake_open):
+        response.apply_term_mapping("ENVO")
+
+    mapped = response.data["properties"]["environment"][0]["mappedProperties"]
+    assert len(mapped) == 2
+    labels = {m["label"] for m in mapped}
+    assert labels == {"riverine wetland", "forested wetland"}
+    uris = {m["uri"] for m in mapped}
+    assert uris == {
+        "http://purl.obolibrary.org/obo/ENVO_01000921",
+        "http://purl.obolibrary.org/obo/ENVO_00000233",
+    }
 
 
 def test_ensure_dataset_missing(tmp_path):
