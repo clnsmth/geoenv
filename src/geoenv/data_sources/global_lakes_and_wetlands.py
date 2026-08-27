@@ -371,7 +371,6 @@ class GlobalLakesAndWetlands(DataSource):
         new_descriptors = []
         for descriptor in descriptors:
             new_descriptor = {
-                "classId": str(descriptor.get("ClassID", "")),
                 "ecosystem": descriptor.get("ClassName", ""),
             }
             new_descriptors.append(new_descriptor)

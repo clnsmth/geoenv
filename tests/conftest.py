@@ -260,7 +260,6 @@ def raw_properties_of_global_lakes_and_wetlands():
 def properties_of_global_lakes_and_wetlands():
     """Properties of Global Lakes and Wetlands."""
     return {
-        "classId",
         "ecosystem",
     }
 
