@@ -80,8 +80,8 @@ async def test_get_environment_point_mocked(mocker):
     environments = await data_source.get_environment(geometry)
     assert isinstance(environments, list)
     assert len(environments) == 2
-    reach_types = {env.data["properties"]["reachType"] for env in environments}
-    assert reach_types == {"511", "611"}
+    hydr_classes = {env.data["properties"]["hydrologicClass"] for env in environments}
+    assert "very small river" in hydr_classes
     ecosystems = {env.data["properties"]["ecosystem"] for env in environments}
     assert any("warm, high moisture region" in e for e in ecosystems)
 
@@ -161,14 +161,10 @@ async def test_get_environment_direct(use_mock):
     assert isinstance(poly_envs, list)
     assert len(poly_envs) > 0
 
-    # Ensure all ecosystems and reach types are strictly unique
+    # Ensure all ecosystems are strictly unique
     ecosystems = [env.data["properties"]["ecosystem"] for env in poly_envs]
-    reach_types = [env.data["properties"]["reachType"] for env in poly_envs]
     assert len(ecosystems) == len(set(ecosystems)), (
         "Polygon query returned duplicate ecosystems"
-    )
-    assert len(reach_types) == len(set(reach_types)), (
-        "Polygon query returned duplicate reach types"
     )
 
     # 3. Polygon with exclusion ring (donut / hole)

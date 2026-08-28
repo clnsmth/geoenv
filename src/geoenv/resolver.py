@@ -100,45 +100,47 @@ class Resolver:
             return result
 
 
-# if __name__ == "__main__":
-#
-#     import time
-#     from json import dumps
-#     from geoenv.data_sources import (WorldTerrestrialEcosystems,
-#                                      EcologicalMarineUnits,
-#                                      EcologicalCoastalUnits)
-#     from geoenv.resolver import Resolver
-#     from geoenv.geometry import Geometry
-#
-#     start_time = time.time()
-#
-#     # Create a geometry in GeoJSON format
-#     point_on_land = {"type": "Point", "coordinates": [-122.622364, 37.905931]}
-#     geometry = Geometry(point_on_land)
-#
-#     # Configure the resolver with one or more data sources
-#     resolver = Resolver(
-#         data_source=[
-#             WorldTerrestrialEcosystems(),
-#             EcologicalMarineUnits(),
-#             EcologicalCoastalUnits(),
-#         ]
-#     )
-#
-#     # Resolve the geometry to environmental descriptions
-#     response = asyncio.run(
-#         resolver.resolve(
-#             geometry,
-#             identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
-#             description="Point on land",
-#         )
-#     )
-#
-#     duration = time.time() - start_time
-#     print(f"requests took {duration:.2f} seconds")
-#
-#     # The response is a GeoJSON feature with environmental properties
-#     print(dumps(response.data, indent=2))
-#
-#     # Format as Schema.org
-#     schema_org = response.to_schema_org()
+if __name__ == "__main__":
+    import time
+    from json import dumps
+    from geoenv.data_sources import GlobalRiverClassification
+    from geoenv.resolver import Resolver
+    from geoenv.geometry import Geometry
+
+    start_time = time.time()
+
+    # Create a geometry in GeoJSON format
+    point_on_land = {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [-123.0969557, 47.5101852],
+                [-122.8913472, 47.7342106],
+                [-123.0660372, 47.782017],
+                [-123.2500026, 47.5352403],
+                [-123.0969557, 47.5101852],
+            ]
+        ],
+    }
+    geometry = Geometry(point_on_land)
+
+    # Configure the resolver with one or more data sources
+    resolver = Resolver(data_source=[GlobalRiverClassification()])
+
+    # Resolve the geometry to environmental descriptions
+    response = asyncio.run(
+        resolver.resolve(
+            geometry,
+            identifier="5b4edec5-ea5e-471a-8a3c-2c1171d59dee",
+            description="Point on land",
+        )
+    )
+
+    # duration = time.time() - start_time
+    # print(f"requests took {duration:.2f} seconds")
+
+    # The response is a GeoJSON feature with environmental properties
+    print(dumps(response.data, indent=2))
+
+    # # Format as Schema.org
+    # schema_org = response.to_schema_org()

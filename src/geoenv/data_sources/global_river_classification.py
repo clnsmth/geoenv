@@ -421,7 +421,6 @@ class GlobalRiverClassification(DataSource):
         new_descriptors = []
         for descriptor in descriptors:
             new_descriptor = {
-                "reachType": str(descriptor.get("Reach_type", "")),
                 "ecosystem": str(descriptor.get("ClassName", "")),
                 "hydrologicClass": str(descriptor.get("Class_hydr", "")),
                 "physioClimaticClass": str(descriptor.get("Class_phys", "")),
