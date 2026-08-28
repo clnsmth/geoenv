@@ -225,8 +225,8 @@ def validate_gloric_response(new_data: dict, is_success: bool) -> None:
             assert env.data["properties"].get("ecosystem"), (
                 "Environment should contain ecosystem descriptor"
             )
-            assert env.data["properties"].get("reachType"), (
-                "Environment should contain reachType"
+            assert env.data["properties"].get("hydrologicClass"), (
+                "Environment should contain hydrologicClass"
             )
     else:
         geom = load_geometry("point_on_ocean")

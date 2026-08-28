@@ -280,7 +280,6 @@ def raw_properties_of_global_river_classification():
 def properties_of_global_river_classification():
     """Properties of Global River Classification."""
     return {
-        "reachType",
         "ecosystem",
         "hydrologicClass",
         "physioClimaticClass",
